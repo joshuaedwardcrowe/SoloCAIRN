@@ -12,6 +12,7 @@ CAIRN does not invent new roles. It maps the ones you already have to a shared s
 | [Backend Dev](backend-dev.md) | Owns backend stories, architecture contributions |
 | [Frontend Dev](frontend-dev.md) | Owns frontend stories, UX implementation |
 | [Mobile Dev (Android + iOS)](mobile-dev.md) | Owns mobile stories, platform-specific patterns |
+| [QA Engineer](qa.md) | Owns checklists, verifies done, leads exploratory testing |
 
 ## How to read these
 
@@ -26,7 +27,7 @@ Each role guide is structured the same way:
 
 ## Roles not covered
 
-CAIRN is flexible about roles. If your team has a QA engineer, a DevOps engineer, a data engineer, a product manager, or a security specialist, they fit the method without needing their own dedicated guide. The shape is the same: they own the artifacts in their domain, they review PRs that touch their concerns, and they use AI as an accelerator.
+CAIRN is flexible about roles. If your team has a DevOps engineer, a data engineer, a product manager, or a security specialist, they fit the method without needing their own dedicated guide. The shape is the same: they own the artifacts in their domain, they review PRs that touch their concerns, and they use AI as an accelerator.
 
 If you want a guide for a role that is not here, write one. The template is above.
 

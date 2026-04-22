@@ -96,7 +96,7 @@ Each story follows the [story template](../templates/story.md).
 
 **How AI helps.** Expands a scope bullet into a full story file with acceptance criteria. Proposes a reasonable slicing. Spots missing stories by cross-checking scope and architecture.
 
-**Done when.** A **Story PR** is opened containing all the stories for this feature. Reviewed by the relevant devs, who push back on anything unclear. Merge is the gate.
+**Done when.** A **Story PR** is opened containing all the stories for this feature. Reviewed by the relevant devs and QA. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Merge is the gate.
 
 ### 6. Build
 
@@ -112,17 +112,17 @@ Each story follows the [story template](../templates/story.md).
 
 ### 7. Review
 
-**What happens.** A teammate reviews the code PR against the story's acceptance criteria, the repo conventions, and general quality. Design and UX may review separately for visual and interaction concerns.
+**What happens.** A teammate reviews the code PR against the story's acceptance criteria, the repo conventions, and general quality. QA verifies the feature against the QA checklist, often by running it. UX reviews for visual and interaction fidelity. These can happen in parallel.
 
-**Who leads.** The reviewer owns the review. The author owns the fixes.
+**Who leads.** The code reviewer owns the code review. QA owns the verification against the checklist. The author owns the fixes.
 
-**Artifacts produced.** Comments, suggestions, approvals. Occasionally a new story if scope leaked.
+**Artifacts produced.** Comments, suggestions, approvals. Bug reports for issues found. Occasionally a new story if scope leaked.
 
-**How AI helps.** Drafts reviews. Spots things humans miss (missing null checks, accessibility gaps, test holes). Explains unfamiliar code.
+**How AI helps.** Drafts reviews. Spots things humans miss (missing null checks, accessibility gaps, test holes). Drafts test cases. Explains unfamiliar code.
 
-**How AI does not help.** It cannot approve a PR. Approval is a human decision with accountability attached.
+**How AI does not help.** It cannot approve a PR. It cannot run the feature on a real device and feel whether it is right. Approval and verification are human decisions with accountability attached.
 
-**Done when.** The PR is approved and merged.
+**Done when.** The PR is approved, the QA checklist is signed off, and the PR is merged.
 
 ### 8. Release
 

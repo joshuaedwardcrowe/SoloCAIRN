@@ -115,6 +115,14 @@ stories/pub-quiz-live-scoring
 
 The same pattern: pick a story, branch, AI-assisted implement, open Code PR, review.
 
+### QA Engineer (across the week)
+
+- Monday morning. Review the open Story PR. Add acceptance criteria for two stories (an empty state, an offline behaviour). Comment with reasoning so devs see the why.
+- Mid-week. Pair with backend dev on the test plan for a tricky story. Identify two edge cases the unit tests would miss; agree how to cover them.
+- Wednesday afternoon. Pull a Code PR branch locally. Test on real devices. File a structured bug for an iOS keyboard issue; link it to the PR.
+- Thursday. Run a 90-minute exploratory session against staging. Try the things the team did not predict. Write up findings.
+- Friday. Sign off the QA checklist on a feature that has cleared review and verification. The signature is what closes the gate.
+
 ## Git etiquette
 
 - **Small PRs.** One story per PR. If a story is too big, split the story first, not the PR.

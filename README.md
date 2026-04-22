@@ -1,6 +1,13 @@
-# CAIRN
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="logos/cairn-logo-dark.svg">
+    <img alt="CAIRN" src="logos/cairn-logo-light.svg" width="340">
+  </picture>
+</p>
 
-*A calm way to build software with AI, in a team.*
+<p align="center"><em>A calm way to build software with AI, in a team.</em></p>
+
+# CAIRN
 
 **CAIRN** stands for **C**ontext-driven, **A**rtifact-based, **I**n-repo, **R**eviewed, **N**atural-flow. It is a lightweight methodology for teams who want to use AI as an accelerator without losing control of their codebase, their product, or their people.
 

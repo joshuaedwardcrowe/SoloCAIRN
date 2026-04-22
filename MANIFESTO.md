@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="logos/cairn-logo-dark-md.svg">
+    <img alt="CAIRN" src="logos/cairn-logo-light-md.svg" width="176">
+  </picture>
+</p>
+
 # The CAIRN Manifesto
 
 We are building software with AI in our hands. This changes a lot, but not everything. The craft of shipping good product still depends on clear thinking, shared understanding, and honest feedback.

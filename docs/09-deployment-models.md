@@ -31,7 +31,7 @@ A dedicated repo, owned by your team (or your company), holds the CAIRN artifact
 1. **Branch creation.** When a feature is greenlit, create a folder under `features/<feature-slug>/` in the CAIRN repo and a branch `feat/<feature-slug>` in the CAIRN repo to land the initial artifacts.
 2. **Spec PR.** Open a normal PR in the CAIRN repo against its `main`. This PR does merge, into the CAIRN repo's `main`, not the code repo's.
 3. **Iterate.** Problem, research, scope, architecture, stories all land on the feature folder via reviewed PRs in the CAIRN repo.
-4. **Build.** Code happens on `feat/*` branches off the code repo's `main`, merging to `main` per your team's normal flow. Each code PR description links to the artifact files by path within the CAIRN repo.
+4. **Build.** Code happens on `feat/*` branches off the code repo's `main`, merging to `main` per your team's normal flow. Each code PR description links to the artifact files using an **absolute URL** to the CAIRN repo (e.g. `https://github.com/<org>/my-team-cairn/blob/main/features/<feature>/stories/<platform>/STORY-XX.md`). Filesystem-relative paths do not resolve across repos in web review UIs.
 5. **Release.** The feature ships and stabilises.
 6. **End of life.** When the feature is stable, move its folder from `features/<feature-slug>/` to `archive/<feature-slug>/`, or delete it. Your call. The CAIRN repo's git history remains as the historical record. The code on `main` is the operational truth from this point on.
 
@@ -126,7 +126,7 @@ If you find yourself rationalising Option B, push harder on getting a new repo f
 - Code is on `main` in the code repo and merges normally.
 - CAIRN artifacts never reach the code repo's `main`.
 - Artifacts are reviewed before they influence implementation.
-- Code PRs reference their story by path or URL.
+- Code PRs reference their story: an absolute URL in the separate-repo model (filesystem-relative paths do not resolve across repos in web review UIs); a normal in-repo URL or tree-relative path in the branch model.
 - AI sessions need access to both code and artifacts; how that happens is the mechanical difference.
 
 ## When neither fits

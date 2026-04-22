@@ -63,7 +63,11 @@ When the feature ships and stabilises, move the folder to `archive/` or delete i
 
 **Merge criteria.** Acceptance criteria met. Tests pass. Review approved. The relevant QA checklist item ticked. **Merges into `main`.**
 
-**Linking.** PR description references the story file by path in the CAIRN repo, or by URL. Devs have both repos cloned side by side so AI sessions can read both.
+**Linking.** Two consumers, two link forms:
+- **Reviewers in the web UI (GitHub, GitLab, Bitbucket)**: use an **absolute URL** to the file in the CAIRN repo (e.g. `https://github.com/<org>/my-team-cairn/blob/main/features/<feature>/stories/<platform>/STORY-XX.md`). Relative filesystem paths do not resolve across repos in any common git host's web UI.
+- **AI sessions in the IDE**: filesystem paths work because devs have both repos cloned side by side. The AI reads from the sibling folder.
+
+In the branch model the artifacts are in the same repo as the code, so a normal in-repo URL or a tree-relative link works for both consumers.
 
 ## A day in the life, by role
 
@@ -122,7 +126,7 @@ The same pattern: pick a story, branch, AI-assisted implement, open Code PR, rev
 ## Git etiquette
 
 - **Small PRs.** One story per PR. If a story is too big, split the story first, not the PR.
-- **PR descriptions link to the story.** `Implements [QUIZ-01](../my-team-cairn/features/pub-quiz/stories/backend/QUIZ-01-session-service.md).`
+- **PR descriptions link to the story with an absolute URL.** Filesystem-relative paths render correctly in your IDE but break in GitHub, GitLab, and Bitbucket PR views, because the CAIRN repo is a different repository. Use the full URL to the file in the CAIRN repo. Example: `Implements [QUIZ-01](https://github.com/<org>/my-team-cairn/blob/main/features/pub-quiz/stories/backend/QUIZ-01-session-service.md).` (In the branch model, the artifact is in the same repo and either a normal in-repo URL or a tree-relative link works.)
 - **Commits are cheap.** WIP commits are fine in-branch. Squash on merge if you like a clean history, or keep them if they tell a useful story.
 - **Draft PRs are welcome.** Open a draft as soon as the branch has meaningful work. This gives teammates visibility and lets AI reviewers run early.
 - **Rebase vs merge.** Team choice. Pick one and stick with it. Do not mix.

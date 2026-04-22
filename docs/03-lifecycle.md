@@ -168,7 +168,7 @@ Each story follows the [story template](../templates/story.md).
 CAIRN distinguishes two kinds of work. The exact PR shapes depend on your chosen deployment model.
 
 1. **CAIRN PRs** land artifacts in your chosen CAIRN location (a separate repo or a feature branch). Reviewed by the people whose work depends on the artifact. In a separate CAIRN repo these merge to that repo's `main` normally. In the branch model they land on the feature branch via sub-PRs, and the long-lived branch PR against the code repo's `main` is never merged.
-2. **Code PRs** are normal code PRs in the code repo from `feat/<story-id>` into `main`, the implementation of a single story. Reviewed against the story's acceptance criteria. Link to the story file by path or URL.
+2. **Code PRs** are normal code PRs in the code repo from `feat/<story-id>` into `main`, the implementation of a single story. Reviewed against the story's acceptance criteria. The PR description links to the story file using an absolute URL when the artifacts live in a separate CAIRN repo (filesystem-relative paths do not resolve cross-repo in web review UIs), or a normal in-repo URL when the artifacts live on a branch in the same repo.
 
 See [09-deployment-models.md](09-deployment-models.md) for the full mechanics under each model.
 

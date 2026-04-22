@@ -18,7 +18,7 @@ For each new feature:
 1. Create a folder under `features/<feature-slug>/`.
 2. Open a CAIRN PR with the problem statement. Reviewers: <list your team's typical reviewers>.
 3. Layer in scope, architecture, stories, QA checklist via subsequent PRs.
-4. Build the code in our code repo at <link to code repo>. Code PRs link to the relevant story file here.
+4. Build the code in our code repo at <link to code repo>. Code PRs in that repo link to the relevant story file here using an **absolute URL** in the form `https://<git-host>/<org>/<this-repo>/blob/main/features/<feature>/stories/<platform>/<STORY-ID>.md`. Filesystem-relative paths render in your IDE but do not resolve in PR review UIs across repos.
 5. When the feature ships and stabilises, write a `retro.md`, then move the folder to `archive/`.
 
 ## Setup for working with this repo

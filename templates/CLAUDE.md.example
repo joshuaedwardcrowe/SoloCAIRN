@@ -1,0 +1,84 @@
+# Project context
+
+> Rename this file to `CLAUDE.md` (or `.cursor/rules/project.md`, or `.github/copilot-instructions.md`, depending on your tooling) and place at the repo root.
+> This is the top-level AI context file. Keep it tight. Aim for a few hundred lines, not thousands.
+
+## What this project is
+
+One or two sentences. What this codebase does, for whom.
+
+## Tech stack
+
+- Language: ...
+- Framework: ...
+- Key libraries: ...
+- Database: ...
+- Runtime / hosting: ...
+
+## Layout
+
+```
+repo/
+  docs/              # Specs, architecture, research
+  tasks/             # Stories, organised by platform
+  src/               # ...
+  tests/             # ...
+```
+
+Full layout explanation for any non-obvious directories.
+
+## How we work
+
+- Docs live in the repo. See `cairn/` for the methodology we follow.
+- Features start with a Spec PR, then a Story PR, then Code PRs.
+- Stories live in `tasks/<platform>/`.
+
+## Conventions
+
+### General
+
+- Indentation: ... spaces
+- Commit messages: <convention reference>
+- Branch names: `feat/<story-id>-<slug>`, `spec/<feature>`, `stories/<feature>`
+
+### Code style
+
+- ... (linter config, formatter, type strictness)
+- Naming: ...
+- Error handling: ...
+
+### Testing
+
+- Test runner: ...
+- Minimum coverage: ... (if you enforce one)
+- What gets tested: unit for pure logic, integration for data boundaries, E2E sparingly
+- Mocking policy: ...
+
+### Data
+
+- Migrations are written by the backend dev touching the feature
+- Never hand-edit production data
+
+## What to never do
+
+- Do not modify files under `generated/` or `vendor/`
+- Do not run migrations against shared environments
+- Do not commit secrets; `.env` files are gitignored
+- Do not bypass the linter or the type checker
+- Do not add dependencies without discussion in a Spec PR
+- Do not invent libraries that are not in `package.json`, `pyproject.toml`, or equivalent
+
+## Where to find more
+
+- Project-wide architecture: `docs/architecture.md`
+- Conventions in detail: `docs/conventions.md`
+- Active features: `docs/features/`
+- Active stories: `tasks/`
+- Retros: `docs/retros/`
+
+## Notes for AI sessions
+
+- Always show me the plan before you write code for non-trivial changes.
+- Reference the relevant story file in responses.
+- Flag anything you skipped, simplified, or faked at the end of a session.
+- If you are about to invent a requirement, stop and ask instead.

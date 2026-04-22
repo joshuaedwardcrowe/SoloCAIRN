@@ -1,0 +1,57 @@
+# Example: Pub Quiz Live Scoring
+
+This is a worked example of a feature going through CAIRN end to end. It shows what the artifacts actually look like, in realistic detail, so you can see the method applied rather than described.
+
+> This is example content. The product, the company, and the stakeholders are invented. Any resemblance to a real quiz platform is coincidental.
+
+## The feature
+
+A hosted pub-quiz experience for venues:
+
+- The **host** runs a quiz session from a web console on their laptop or tablet.
+- A **big screen** at the venue (the "venue display") shows questions and the live leaderboard.
+- **Players** join on their phones by scanning a QR code, answer on their phones, and see their own score.
+
+## What this example demonstrates
+
+- A **Spec PR** that covers problem, stakeholders, research, scope, architecture, and open questions.
+- A **Story PR** that breaks the feature into implementable slices across backend, frontend, mobile, and database.
+- Cross-role handoffs, with each artifact produced by the right role.
+- Pragmatic compromises and open questions kept visible instead of hidden.
+
+## The artifacts
+
+### Spec PR contents
+
+- [00-problem-statement.md](00-problem-statement.md)
+- [01-stakeholder-interviews.md](01-stakeholder-interviews.md)
+- [02-ux-research.md](02-ux-research.md)
+- [03-scope.md](03-scope.md)
+- [04-architecture.md](04-architecture.md)
+- [05-open-questions.md](05-open-questions.md)
+
+### Story PR contents
+
+- [stories/backend/](stories/backend/)
+  - [QUIZ-01-session-service.md](stories/backend/QUIZ-01-session-service.md)
+  - [QUIZ-02-live-scoring-worker.md](stories/backend/QUIZ-02-live-scoring-worker.md)
+  - [QUIZ-03-question-bank-api.md](stories/backend/QUIZ-03-question-bank-api.md)
+- [stories/frontend/](stories/frontend/)
+  - [QUIZ-04-host-console.md](stories/frontend/QUIZ-04-host-console.md)
+  - [QUIZ-05-venue-display.md](stories/frontend/QUIZ-05-venue-display.md)
+- [stories/mobile/](stories/mobile/)
+  - [QUIZ-06-player-join-flow.md](stories/mobile/QUIZ-06-player-join-flow.md)
+  - [QUIZ-07-player-answer-ui.md](stories/mobile/QUIZ-07-player-answer-ui.md)
+- [stories/database/](stories/database/)
+  - [QUIZ-08-schema.md](stories/database/QUIZ-08-schema.md)
+
+## How to read it
+
+1. Start with [00-problem-statement.md](00-problem-statement.md). Notice how it stays out of solution mode.
+2. Skim [01-stakeholder-interviews.md](01-stakeholder-interviews.md) for the raw input.
+3. Read [02-ux-research.md](02-ux-research.md) to see how the interviews become themes.
+4. Read [03-scope.md](03-scope.md) to see the decisions.
+5. Read [04-architecture.md](04-architecture.md) to see the design.
+6. Skim the stories under `stories/` to see how a team would slice this into week-sized chunks.
+
+The point is not to admire the example. The point is to notice what each artifact is doing, and to be able to produce similar shapes for your own features.

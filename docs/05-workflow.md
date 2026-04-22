@@ -45,7 +45,7 @@ my-team-cairn (separate repo)
                 └── QUIZ-04-player-app-join-flow.md
 ```
 
-When the feature ships and stabilises, move the folder to `archive/` or delete it. The CAIRN repo's git history is the durable record.
+When the feature ships and stabilises, move the folder to `archive/` or delete it. The CAIRN repo's git history remains as the historical record (the code is the operational truth from this point on).
 
 ### Code PR
 
@@ -86,7 +86,7 @@ When the feature ships and stabilises, move the folder to `archive/` or delete i
 ### UX Designer (Wednesday)
 
 - 09:00. Sketch the two key flows on paper.
-- 11:00. Convert to wireframes in the design tool. Export to the repo as images under `docs/features/<feature>/ux/`.
+- 11:00. Convert to wireframes in the design tool. Export as images under `features/<feature>/ux/` in the CAIRN repo.
 - 13:00. Write a short `ux-research.md` that links to the wireframes and explains the design intent.
 - 15:00. Review the mobile team's story drafts for interaction fidelity. Suggest two missing acceptance criteria.
 

@@ -33,7 +33,7 @@ A dedicated repo, owned by your team (or your company), holds the CAIRN artifact
 3. **Iterate.** Problem, research, scope, architecture, stories all land on the feature folder via reviewed PRs in the CAIRN repo.
 4. **Build.** Code happens on `feat/*` branches off the code repo's `main`, merging to `main` per your team's normal flow. Each code PR description links to the artifact files by path within the CAIRN repo.
 5. **Release.** The feature ships and stabilises.
-6. **End of life.** When the feature is stable, move its folder from `features/<feature-slug>/` to `archive/<feature-slug>/`, or delete it. Your call. The CAIRN repo's git history is the durable record.
+6. **End of life.** When the feature is stable, move its folder from `features/<feature-slug>/` to `archive/<feature-slug>/`, or delete it. Your call. The CAIRN repo's git history remains as the historical record. The code on `main` is the operational truth from this point on.
 
 ### Why this is the recommended model
 

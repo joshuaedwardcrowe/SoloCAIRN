@@ -23,7 +23,7 @@ A hosted pub-quiz experience for venues:
 
 When the feature ships and stabilises, the team would archive these artifacts (or close the long-lived branch PR, depending on the deployment model). The code repo's `main` never sees them.
 
-## The artifacts (all on the feature branch)
+## The artifacts (all in the CAIRN location)
 
 ### Spec artifacts
 

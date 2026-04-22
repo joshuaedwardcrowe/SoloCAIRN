@@ -21,13 +21,12 @@ One or two sentences. What this codebase does, for whom.
 
 ```
 repo/
-  docs/              # Specs, architecture, research
-  tasks/             # Stories, organised by platform
   src/               # ...
   tests/             # ...
+  docs/              # Project-level docs (NOT CAIRN); architecture, runbooks, conventions
 ```
 
-Full layout explanation for any non-obvious directories.
+Full layout explanation for any non-obvious directories. Note: CAIRN feature artifacts (problem statements, stories, etc.) do **not** live in this repo. See "How we work" below.
 
 ## How we work
 
@@ -72,11 +71,10 @@ Full layout explanation for any non-obvious directories.
 
 ## Where to find more
 
-- Project-wide architecture: `docs/architecture.md`
-- Conventions in detail: `docs/conventions.md`
-- Active features: `docs/features/`
-- Active stories: `tasks/`
-- Retros: `docs/retros/`
+- Project-wide architecture: `docs/architecture.md` (in this code repo)
+- Conventions in detail: `docs/conventions.md` (in this code repo)
+- Active CAIRN features and stories: in our team's CAIRN repo at `<link>` (clone alongside this one)
+- Postmortems and runbooks: `docs/runbooks/` (in this code repo)
 
 ## Notes for AI sessions
 

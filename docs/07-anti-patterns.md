@@ -108,6 +108,21 @@ Things that look like CAIRN but are not. If you see these happening on your team
 
 **How to fix it.** Keep the discipline. Spec PRs, story PRs, real human review. The AI makes those steps faster, not optional.
 
+## CAIRN repo rot
+
+**What it looks like.** A search in your team's archived CAIRN features turns up a 2024 architecture for an area of the system that has been substantially rewritten since. A new joiner reads it as if it were current. AI is fed it as context and produces stale-shaped suggestions.
+
+**Why it happens.** CAIRN deliberately keeps artifacts out of the code repo's `main`, but the CAIRN repo's history accumulates indefinitely. Old features live there long after their code has been refactored or replaced. Without a convention, they look as authoritative as new ones.
+
+**Why it is dangerous.** This is the same problem CAIRN was trying to avoid by keeping `main` clean. Moving the rot next door does not eliminate it; it just hides it.
+
+**How to fix it.**
+- Treat the code on `main` as the operational truth, always. Treat archived CAIRN artifacts as historical record, never as current truth.
+- Date-stamp archive folder names (e.g. `archive/2026-Q2-pub-quiz/`) so age is visible at a glance.
+- When AI references an archived feature, prompt it to verify against current code before acting.
+- Periodically (every 6 to 12 months) sweep the archive: delete anything that no longer reflects how the system works, or annotate it with "superseded by <new feature>" links.
+- If a recurring stakeholder question keeps returning to the same archived spec, that is a signal the information should be promoted into project-level documentation, not left in CAIRN history.
+
 ## The meta-anti-pattern
 
 If you find yourself doing the method because the method says so, rather than because the artifact is about to support a real decision, you have lost the plot.

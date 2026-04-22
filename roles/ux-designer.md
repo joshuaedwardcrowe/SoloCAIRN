@@ -12,7 +12,7 @@ You are the person who watches users, designs flows, and makes sure the interfac
 ## Artifacts you own
 
 - `ux-research.md`: themes and opportunities from research.
-- Wireframes, flows, prototypes: lived under `docs/features/<feature>/ux/`.
+- Wireframes, flows, prototypes: lived under `features/<feature>/ux/` in the CAIRN repo.
 - Persona docs and journey maps, when relevant.
 - Design system contributions: patterns that should be reused.
 
@@ -49,7 +49,7 @@ You are the person who watches users, designs flows, and makes sure the interfac
 
 **Morning.** Review interview notes from the BA. Extract three candidate themes. Sketch a rough journey map on paper.
 
-**Late morning.** Turn the sketch into a proper flow diagram. Save under `docs/features/<feature>/ux/journey.svg`. Write a short `ux-research.md` that explains what the diagram shows and what it implies for the design.
+**Late morning.** Turn the sketch into a proper flow diagram. Save under `features/<feature>/ux/journey.svg` in the CAIRN repo. Write a short `ux-research.md` that explains what the diagram shows and what it implies for the design.
 
 **Afternoon.** Start on wireframes for the two key screens. Export as PNGs to the repo. Update `ux-research.md` with links.
 

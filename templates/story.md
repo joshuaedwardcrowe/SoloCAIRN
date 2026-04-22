@@ -7,7 +7,7 @@
 
 One or two sentences on why this story exists. Link to the design it belongs to.
 
-See `docs/features/<feature>/architecture.md` and `docs/features/<feature>/scope.md`.
+See `features/<feature>/architecture.md` and `features/<feature>/scope.md`.
 
 ## Acceptance criteria
 

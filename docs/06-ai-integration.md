@@ -19,7 +19,7 @@ Everything else in this doc is a consequence of those two rules.
 
 Most AI tools look for a well-known file at the repo root: `CLAUDE.md`, `.cursor/rules/`, `.github/copilot-instructions.md`. This file describes the project's stack, conventions, and never-do rules.
 
-This is **not a CAIRN artifact.** It is project-level setup, owned by your team according to your conventions. CAIRN does not require you to have one and does not put one on the feature branch. If you do have one, it lives on `main` and benefits every AI session in the repo.
+This is **not a CAIRN artifact.** It is project-level setup, owned by your team according to your conventions. CAIRN does not require you to have one and does not put one in the CAIRN location. If you do have one, it lives on the code repo's `main` and benefits every AI session in the repo.
 
 A starting point for one (if you want it) is in [templates/CLAUDE.md.example](../templates/CLAUDE.md.example), labelled clearly as adjacent to CAIRN, not part of it.
 

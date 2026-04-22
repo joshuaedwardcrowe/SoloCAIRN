@@ -14,7 +14,7 @@ You are the person who holds the thread. In CAIRN, you are the connective tissue
 - `scope.md`: you draft it, stakeholders review it, the team approves it.
 - `open-questions.md`: you keep it alive and chase owners.
 - `architecture.md`: for small features. For big ones, you facilitate while specialists contribute.
-- Stories in `tasks/`: you draft the breakdown, devs refine their own.
+- Stories in `features/<feature>/stories/`: you draft the breakdown, devs refine their own.
 - Retro docs: you capture them after each feature ships.
 
 ## Artifacts you contribute to

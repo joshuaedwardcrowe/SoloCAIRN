@@ -20,7 +20,7 @@ See [04-architecture.md](../../04-architecture.md) §Data.
 - [ ] Indexes on hot paths: `quiz_answers(session_id, team_id, question_id)`, `quiz_sessions(code)`, `quiz_teams(session_id)`.
 - [ ] Retention: `quiz_sessions` and their children purged 30 days after `ended_at`.
 - [ ] Down-migration drops the tables cleanly (tested).
-- [ ] Schema diagram added to `docs/features/pub-quiz/schema.md`.
+- [ ] Schema diagram added to `features/pub-quiz/schema.md`.
 
 ## Proposed schema (sketch)
 
@@ -86,7 +86,7 @@ quiz_scores
 
 - `database/migrations/NNNN-add-quiz-tables.sql` (new)
 - `database/migrations/NNNN-add-quiz-tables.down.sql` (new)
-- `docs/features/pub-quiz/schema.md` (new)
+- `features/pub-quiz/schema.md` (new)
 
 ## Dependencies
 

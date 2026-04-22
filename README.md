@@ -15,9 +15,20 @@ Most AI development methodologies try to solve the problem by adding more AI: mo
 2. **Review them like code.** Spec changes go through pull requests. Approvals are the real stage gate.
 3. **Let AI read what you already wrote.** Open the CAIRN repo and the code repo together so the AI can cross-reference both.
 4. **Skip the personas.** You don't need "Architect Agent" when you have a real architect reviewing a real PR.
-5. **End them when the feature ships.** Artifacts were scaffolding for the build; the code is the durable record. Your code repo's `main` stays clean indefinitely.
+5. **End them when the feature ships.** Artifacts were scaffolding for the build; the code is the **operational truth** from then on. Your code repo's `main` stays clean indefinitely. The CAIRN repo's git history (or the closed PR) remains as a **historical record** if you ever need to look back.
 
 That is the whole thing. Everything else in this repo is details, templates, and examples.
+
+## What CAIRN does and does not claim
+
+CAIRN is **scaffolding for the build phase of one feature, in an AI-assisted team**. It is not a transformation programme. It does not fix:
+
+- **Project-level documentation** (system architecture, schema, runbooks): out of scope, your team's call.
+- **Production reliability and on-call**: not addressed.
+- **Prioritisation and what to build next**: not addressed.
+- **Onboarding and long-horizon institutional knowledge**: not directly addressed.
+
+What CAIRN does claim: with AI as an accelerator, the cost of producing reviewed, shared context for a feature build collapses, and a small set of habits captures most of the benefit. The teams that adopt it should expect a build phase that is more coherent and less wasteful, not a transformed organisation. See [docs/10-what-cairn-does-not-solve.md](docs/10-what-cairn-does-not-solve.md) for the honest boundary.
 
 ## Who this is for
 

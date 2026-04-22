@@ -1,6 +1,6 @@
 # Retro: <feature name>
 
-> Copy this to `features/<feature-slug>/retro.md` (separate-repo model) or `docs/features/<feature-slug>/retro.md` (branch model).
+> Copy to `features/<feature-slug>/retro.md` in your CAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
 > Aim for one page. Held within a week of the feature shipping. Closes with the feature.
 
 ## When

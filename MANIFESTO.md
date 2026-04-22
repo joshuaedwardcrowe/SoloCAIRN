@@ -45,10 +45,11 @@ Business analysts, UX designers, team leads, developers, testers: these are real
 - We are not saying AI is bad. We use it daily and it makes us faster.
 - We are not saying process is bad. We are saying ceremony is bad.
 - We are not saying every team should adopt CAIRN. If what you have works, keep it.
-- We are not promising a silver bullet. This is a set of habits. The habits compound.
+- We are not promising a silver bullet. This is a set of habits for the build phase of a feature. The habits compound, but they do not replace runbooks, prioritisation, onboarding, or the thousand other things real teams need.
+- We are not solving project-level documentation. That is a different problem; we leave it to your team.
 
 ## The shortest possible summary
 
-> Write clear docs in a place that is not your code repo's main. Review them. Let AI read them. Let humans decide. End them when the feature ships.
+> Keep your code repo's `main` for code. Keep feature scaffolding (problem, scope, architecture, stories) somewhere else, reviewed like code. Let AI read it. Let humans decide. End it when the feature ships.
 
 That is CAIRN.

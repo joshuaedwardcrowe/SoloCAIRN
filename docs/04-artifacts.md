@@ -77,7 +77,7 @@ The others below are valuable but optional.
 - **Owner.** Backend lead or database specialist.
 - **Size.** Short. Tables, fields, relationships.
 - **When to write.** During Design, alongside architecture.
-- **End of life.** Closes with the Spec PR. The migration in the codebase is the durable record.
+- **End of life.** Closes with the Spec PR. The migration in the codebase is the operational truth thereafter; this artifact is just the rationale.
 
 ### Story
 
@@ -85,7 +85,7 @@ The others below are valuable but optional.
 - **Owner.** Team Lead writes, Dev refines.
 - **Size.** Half to one page. Context link, acceptance criteria, files likely touched, out-of-scope, notes.
 - **When to write.** During Breakdown.
-- **End of life.** Closes with the Spec PR. The shipped code is the durable record.
+- **End of life.** Closes with the Spec PR. The shipped code is the operational truth thereafter; this story is just the rationale.
 - **Anti-patterns.** Stories that take more than three days. Stories that span platforms.
 
 ### QA checklist
@@ -94,7 +94,7 @@ The others below are valuable but optional.
 - **Owner.** QA, contributed to by everyone.
 - **Size.** Short. Ten to fifteen items per feature is plenty.
 - **When to write.** During Breakdown or before Release.
-- **End of life.** Closes with the Spec PR. The test suite in the codebase is the durable record.
+- **End of life.** Closes with the Spec PR. The test suite in the codebase is the operational truth thereafter; this checklist is just the rationale.
 
 ### Spec PR description
 
@@ -123,7 +123,7 @@ CAIRN deliberately does not own:
 - **Project-level AI context files** (CLAUDE.md, .cursor/rules, etc.).
 - **Postmortems and incident records.**
 
-These are valuable artifacts. They are not feature-scoped. Whether and how your team maintains them is decided by your team or your company, not by CAIRN. If you have them, they live wherever your team has decided. CAIRN does not put them on the feature branch and does not put them on `main` either; that is your call.
+These are valuable artifacts. They are not feature-scoped. Whether and how your team maintains them is decided by your team or your company, not by CAIRN. If you have them, they live wherever your team has decided. CAIRN does not put them in the CAIRN location and does not put them on `main` either; that is your call.
 
 If your team has none of these today, CAIRN does not require you to start. You can adopt CAIRN purely as feature-build scaffolding without changing anything else.
 
@@ -135,4 +135,4 @@ For any artifact you consider creating, ask:
 2. **What decision does this support?** If none, do not write it.
 3. **Could this be a paragraph in an existing artifact?** If yes, put it there instead of making a new file.
 
-Every file on the feature branch has a cost. Pay it on purpose.
+Every file in your CAIRN location has a cost. Pay it on purpose.

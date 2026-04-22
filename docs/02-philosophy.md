@@ -78,12 +78,10 @@ This is *operational* ephemerality, not deletion. The artifact may remain in the
 
 **Why it matters.** If artifacts merged into the code repo's `main`, every team's history would accumulate there and `main` would drown in old specs, dead stories, and rotting docs that contradict the current code. By keeping artifacts off `main`, the code repo stays clean indefinitely. The historical record (if you want one) lives somewhere it cannot pollute the working tree.
 
-**How to apply it.** Pick one of two deployment models:
+**How to apply it.** Pick one of two deployment models. They are not equally strong:
 
-- **A separate CAIRN repo** (recommended for most teams): a dedicated repo holds your team's or company's CAIRN artifacts. Devs clone it alongside the code repo. The code repo is untouched. Old features are archived to a folder or deleted from the working tree (git history preserves them either way).
-- **A long-lived branch in the code repo**: a `cairn/<feature>` branch holds the artifacts; a PR is opened against `main` and never merged. Closed at release.
-
-See [09-deployment-models.md](09-deployment-models.md) for the tradeoffs and how to choose. The separate repo model is structurally sound; the branch model is a fallback when you cannot create a new repo, and comes with real ergonomic costs documented there.
+- **A separate CAIRN repo (recommended)**: a dedicated repo holds your team's or company's CAIRN artifacts. Devs clone it alongside the code repo. The code repo is untouched. Old features are archived to a folder or deleted from the working tree (git history preserves them either way). Structurally sound, no git anti-patterns, recommended for most teams.
+- **A long-lived branch in the code repo (fallback only)**: a `cairn/<feature>` branch holds the artifacts; a PR is opened against `main` and never merged. Closed at release. Use this only when you genuinely cannot create a separate repo. Comes with real ergonomic and audit-tool costs documented in [09-deployment-models.md](09-deployment-models.md).
 
 In both cases: code merges to `main` through your team's normal flow, with code PRs linking to artifacts in the chosen location.
 

@@ -140,7 +140,7 @@ Each story follows the [story template](../templates/story.md).
 
 ### 9. Operate
 
-**What happens.** The feature is live. It is being used, misused, and monitored. Bugs, edge cases, and surprising usage patterns surface. The team learns. Once the feature is stable, the long-lived Spec PR is closed without merging; the closed PR remains as the historical record.
+**What happens.** The feature is live. It is being used, misused, and monitored. Bugs, edge cases, and surprising usage patterns surface. The team learns. Once the feature is stable, the CAIRN artifacts are ended: the feature folder is archived (separate-repo model) or the long-lived branch PR is closed without merging (branch model). Either way, the code on `main` is the operational truth from now on; the CAIRN history is the searchable record.
 
 **Who leads.** The whole team, with the Team Lead coordinating.
 

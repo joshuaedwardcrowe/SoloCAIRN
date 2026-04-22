@@ -44,7 +44,7 @@ Questions that affect the problem itself, not yet the solution.
 
 ## Not yet decided
 
-If the team has not yet agreed this problem is worth solving, say so. Problem statements can merge without commitment to build. The Scope PR is where the commitment lives.
+If the team has not yet agreed this problem is worth solving, say so. Problem statements can land on the feature branch without commitment to build. The Scope artifact is where the commitment lives.
 
 ---
 

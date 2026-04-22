@@ -1,8 +1,10 @@
-# Spec PR: <feature name>
+# [CAIRN] <feature name> (do not merge)
 
-> Copy this into the PR description when opening a Spec PR.
+> Copy this into the PR description when opening the long-lived Spec PR from `cairn/<feature-slug>` to `main`.
+>
+> **This PR will not merge.** It is the review surface for the feature's CAIRN artifacts. It accumulates artifacts as the work progresses and is closed without merging when the feature ships and stabilises.
 
-## What this PR contains
+## What this PR contains (or will contain over time)
 
 - [ ] Problem statement
 - [ ] Stakeholder interview notes (sanitised)
@@ -10,6 +12,8 @@
 - [ ] Scope
 - [ ] Architecture
 - [ ] Open questions
+- [ ] Stories (per platform)
+- [ ] QA checklist
 
 ## Summary
 
@@ -25,7 +29,7 @@ Name the two or three most important decisions in this spec. These are where rev
 
 ## Still unresolved
 
-What is not yet decided. Open questions that should not block the merge, with owners.
+What is not yet decided. Open questions that should not block the next stage of work, with owners.
 
 - ...
 - ...

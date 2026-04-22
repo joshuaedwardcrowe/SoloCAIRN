@@ -1,6 +1,8 @@
 # Project context
 
-> Rename this file to `CLAUDE.md` (or `.cursor/rules/project.md`, or `.github/copilot-instructions.md`, depending on your tooling) and place at the repo root.
+> **This template is adjacent to CAIRN, not part of it.** CAIRN does not require or own a project-level AI context file. This template is offered as a convenience for teams that want one. Whether to have one, what to put in it, and how to maintain it is your team's call.
+>
+> Rename this file to `CLAUDE.md` (or `.cursor/rules/project.md`, or `.github/copilot-instructions.md`, depending on your tooling) and place at the repo root **on `main`** (not on a CAIRN feature branch).
 > This is the top-level AI context file. Keep it tight. Aim for a few hundred lines, not thousands.
 
 ## What this project is
@@ -29,7 +31,7 @@ Full layout explanation for any non-obvious directories.
 
 ## How we work
 
-- Docs live in the repo. See `cairn/` for the methodology we follow.
+- Feature work follows CAIRN: artifacts live on `cairn/<feature>` branches and never merge to main. See the CAIRN docs for the methodology we follow.
 - Features start with a Spec PR, then a Story PR, then Code PRs.
 - Stories live in `tasks/<platform>/`.
 

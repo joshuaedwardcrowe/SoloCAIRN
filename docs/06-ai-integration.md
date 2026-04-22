@@ -1,6 +1,6 @@
 # 06. How AI fits in
 
-CAIRN is designed so that any AI assistant (Claude, Cursor, Copilot, others) can plug in and be immediately useful, because the context it needs is already in the repo. This doc explains how to make that work in practice.
+CAIRN is designed so that any AI assistant (Claude, Cursor, Copilot, others) can plug in and be immediately useful, because the feature context it needs is on the `cairn/<feature>` branch in a known shape. This doc explains how to make that work in practice.
 
 ## The mental model
 
@@ -13,32 +13,40 @@ Given that model, two things follow:
 
 Everything else in this doc is a consequence of those two rules.
 
-## Set up the repo for AI
+## Set up for AI
 
-### The root AI context file
+### Project-level AI context (adjacent, not CAIRN)
 
-Most AI tools look for a well-known file at the repo root. Claude Code looks for `CLAUDE.md`. Cursor uses `.cursor/rules/`. Copilot uses `.github/copilot-instructions.md`. Pick whichever is relevant to your team and fill it with:
+Most AI tools look for a well-known file at the repo root: `CLAUDE.md`, `.cursor/rules/`, `.github/copilot-instructions.md`. This file describes the project's stack, conventions, and never-do rules.
 
-- **What this project is.** Two sentences.
-- **The tech stack.** Languages, frameworks, key libraries.
-- **The directory layout.** Where things live.
-- **The conventions.** Style, naming, testing expectations, commit message format.
-- **What to never do.** Don't touch the generated schema files. Don't modify vendored code. Don't run migrations locally.
-- **Where to find more context.** Pointers to `docs/` and `tasks/`.
+This is **not a CAIRN artifact.** It is project-level setup, owned by your team according to your conventions. CAIRN does not require you to have one and does not put one on the feature branch. If you do have one, it lives on `main` and benefits every AI session in the repo.
 
-Keep it short. Thousands of lines will be ignored or skimmed. Hundreds is the sweet spot.
+A starting point for one (if you want it) is in [templates/CLAUDE.md.example](../templates/CLAUDE.md.example), labelled clearly as adjacent to CAIRN, not part of it.
 
-See [templates/CLAUDE.md.example](../templates/CLAUDE.md.example) for a starting point.
+### Feature-level context (this is the CAIRN part)
 
-### Per-feature context
-
-When working on a feature, the AI should naturally encounter:
+When working on a CAIRN feature, the AI session needs access to the artifacts on the `cairn/<feature>` branch:
 
 - `docs/features/<feature>/problem-statement.md`
 - `docs/features/<feature>/architecture.md`
-- `tasks/<platform>/STORY-XX.md`
+- `tasks/<feature>/<platform>/STORY-XX.md`
+- `docs/features/<feature>/qa-checklist.md`
 
-These files teach it what is being built and why. You do not need to paste them into prompts, because they are in the repo and the tool can read them.
+Because code work happens on `feat/*` branches off `main`, the AI does not see these files automatically. Two simple ways to fix that:
+
+**Option A: git worktree.** Check out the feature branch in a sibling directory:
+```
+git worktree add ../my-repo-cairn cairn/<feature-slug>
+```
+Point the AI at the sibling directory, or include both directories in the AI's working context.
+
+**Option B: sparse fetch.** Fetch the feature branch and read files directly:
+```
+git fetch origin cairn/<feature-slug>
+git show origin/cairn/<feature-slug>:docs/features/<feature>/architecture.md
+```
+
+Pick what fits your tooling. The point is that feature artifacts are reachable from any developer's machine without ever touching `main`.
 
 ### Subagents and task-scoped context
 
@@ -56,9 +64,9 @@ Subagents give you context isolation without personas. They are the mechanism th
 
 **Weak.** "Build the login page."
 
-**Strong.** "Implement the login page per `tasks/frontend/AUTH-03-login-page.md`. Follow the design in `docs/features/auth/ux/login.png`. Use the conventions in `CLAUDE.md`."
+**Strong.** "Implement the login page per `tasks/auth/frontend/AUTH-03-login-page.md` on the feature branch worktree. Follow the design in `docs/features/auth/ux/login.png`."
 
-The strong prompt does no extra work that the repo cannot do. The AI reads the story, the design, and the conventions, and proceeds.
+The strong prompt does no extra work that the artifacts cannot do. The AI reads the story and the design, and proceeds.
 
 ### Good prompts ask for the plan first
 
@@ -72,7 +80,7 @@ Plans are cheap to review. Code is not. Make AI spend your time on the plan, not
 
 **Weak.** "Write a test."
 
-**Strong.** "Write an integration test that uses the real database, not a mock. See `CLAUDE.md` for why we avoid mocks here."
+**Strong.** "Write an integration test that uses the real database, not a mock. See the project's testing conventions for why we avoid mocks here."
 
 ### Good prompts end with "what did you skip"
 
@@ -100,7 +108,7 @@ If the AI proposes an acceptance criterion that was not in the story, either add
 
 ### One giant conversation
 
-Context windows are finite and even within the limit, quality degrades in very long sessions. Start fresh sessions for unrelated work. The artifacts in the repo are the continuity; the chat history is not.
+Context windows are finite and even within the limit, quality degrades in very long sessions. Start fresh sessions for unrelated work. The artifacts on the feature branch are the continuity; the chat history is not.
 
 ## What AI is genuinely great at
 
@@ -120,7 +128,7 @@ Context windows are finite and even within the limit, quality degrades in very l
 
 ## A simple check
 
-Before you hand AI a task, ask: "If a smart new hire walked into this repo today with no prior context, would they be able to do this task from the artifacts alone?"
+Before you hand AI a task, ask: "If a smart new hire walked into this feature branch today with no prior context, would they be able to do this task from the artifacts alone?"
 
 - If yes, AI will do well.
 - If no, write more context first. Then AI will do well.

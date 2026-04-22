@@ -1,8 +1,10 @@
 # 04. The artifact catalog
 
-Every stage in CAIRN produces at least one artifact. This is the catalog: what each artifact is for, who owns it, how long it should be, and when to retire it.
+Every stage in CAIRN produces at least one artifact. This is the catalog: what each artifact is for, who owns it, how long it should be, and how it ends.
 
 Templates for each artifact live in [templates/](../templates/).
+
+> All CAIRN artifacts live on the `cairn/<feature>` branch. None of them merge to `main`. They close with the long-lived Spec PR when the feature ships and stabilises. See [09-the-feature-branch-model.md](09-the-feature-branch-model.md).
 
 ## The short list
 
@@ -10,10 +12,9 @@ If you only produce these, you have CAIRN:
 
 1. **Problem statement**: what is wrong and for whom.
 2. **Scope**: what you will and will not build this round.
-3. **Architecture**: how the pieces fit.
+3. **Architecture**: how the new pieces fit, for this feature.
 4. **Story**: a single, implementable slice of work.
-5. **QA checklist**: how you will know it is done.
-6. **CLAUDE.md** (or equivalent): the AI context file.
+5. **QA checklist**: how the team verifies the feature is done.
 
 The others below are valuable but optional.
 
@@ -25,7 +26,7 @@ The others below are valuable but optional.
 - **Owner.** Business Analyst (or Team Lead if no BA).
 - **Size.** 200 to 500 words. If yours is longer, you are already solutioning.
 - **When to write.** As the very first artifact in Discovery.
-- **When to retire.** When the problem is solved and shipped. Archive, do not delete.
+- **End of life.** Closes with the Spec PR when the feature ships.
 - **Anti-patterns.** Starting with "Users want a feature that..." That is not a problem, it is a proposed solution.
 
 ### Stakeholder interviews
@@ -34,7 +35,7 @@ The others below are valuable but optional.
 - **Owner.** Business Analyst.
 - **Size.** One file per interview, structured but not polished.
 - **When to write.** During Discovery.
-- **When to retire.** Never. They are evidence. Compress into themes in `ux-research.md` but keep the originals.
+- **End of life.** Closes with the Spec PR. The closed PR remains as the historical record.
 
 ### UX research
 
@@ -42,7 +43,7 @@ The others below are valuable but optional.
 - **Owner.** UX Designer/Researcher.
 - **Size.** 1 to 3 pages.
 - **When to write.** After interviews, before scope.
-- **When to retire.** Archive after the feature ships.
+- **End of life.** Closes with the Spec PR.
 
 ### Scope
 
@@ -50,7 +51,7 @@ The others below are valuable but optional.
 - **Owner.** Team Lead + BA.
 - **Size.** One page. In-scope bullets, out-of-scope bullets, deferred bullets, rejected bullets.
 - **When to write.** After research, before design.
-- **When to retire.** Freeze when the Spec PR merges. Changes require a new Scope PR.
+- **End of life.** Closes with the Spec PR.
 - **Anti-patterns.** A scope doc that only lists in-scope items. The out-of-scope list is where the doc earns its keep.
 
 ### Open questions
@@ -59,23 +60,24 @@ The others below are valuable but optional.
 - **Owner.** Team Lead.
 - **Size.** A table. Question, owner, deadline, status.
 - **When to write.** Continuously, starting in Discovery.
-- **When to retire.** Each question retires when answered. The file itself lives as long as the feature is active.
+- **End of life.** Each question retires when answered. The file closes with the Spec PR.
 
 ### Architecture
 
-- **Purpose.** Describe how the pieces fit: services, boundaries, data flow, key decisions.
+- **Purpose.** Describe how the new pieces fit, for this feature: components, boundaries, data flow, key decisions.
 - **Owner.** Team Lead, with specialist input.
 - **Size.** 2 to 5 pages. With a diagram.
 - **When to write.** During Design.
-- **When to retire.** Update as the system evolves. Do not let it rot.
-- **Anti-patterns.** UML exhaustiveness. Nobody reads that. Show the shapes and the arrows and the decisions.
+- **End of life.** Closes with the Spec PR.
+- **Anti-patterns.** UML exhaustiveness. Nobody reads that. Show the shapes and the arrows and the decisions. Do not try to describe the whole system; describe what is changing.
 
-### Schema / data model
+### Data model notes (feature-scoped)
 
-- **Purpose.** Describe the data, its relationships, its lifecycle.
+- **Purpose.** Describe the data this feature introduces or changes.
 - **Owner.** Backend lead or database specialist.
-- **Size.** One page per aggregate. Diagrams help.
-- **When to retire.** Update in the same PR as any migration.
+- **Size.** Short. Tables, fields, relationships.
+- **When to write.** During Design, alongside architecture.
+- **End of life.** Closes with the Spec PR. The migration in the codebase is the durable record.
 
 ### Story
 
@@ -83,41 +85,39 @@ The others below are valuable but optional.
 - **Owner.** Team Lead writes, Dev refines.
 - **Size.** Half to one page. Context link, acceptance criteria, files likely touched, out-of-scope, notes.
 - **When to write.** During Breakdown.
-- **When to retire.** When the story is merged. Do not delete, leave it as an archive of what shipped and why.
+- **End of life.** Closes with the Spec PR. The shipped code is the durable record.
 - **Anti-patterns.** Stories that take more than three days. Stories that span platforms.
 
 ### QA checklist
 
-- **Purpose.** Define how the team verifies a story is actually done.
-- **Owner.** Team Lead, contributed to by everyone.
+- **Purpose.** Define how the team verifies the feature is actually done.
+- **Owner.** QA, contributed to by everyone.
 - **Size.** Short. Ten to fifteen items per feature is plenty.
 - **When to write.** During Breakdown or before Release.
-- **When to retire.** Feature-specific checklists archive with the feature. Repo-wide checklists (accessibility, security) live forever.
+- **End of life.** Closes with the Spec PR. The test suite in the codebase is the durable record.
 
-### Runbook
+### Spec PR description
 
-- **Purpose.** Tell an on-call engineer at 2am how to respond to an alert or recover from a failure.
-- **Owner.** Whoever owns the service.
-- **Size.** Per scenario, one page or less. Concrete commands.
-- **When to write.** Before Release.
-- **When to retire.** Update after every incident.
-
-### CLAUDE.md (or .cursor/rules, or equivalent)
-
-- **Purpose.** The top-level AI context file. Tells any AI session the repo's conventions, where to find things, and what it must never do.
+- **Purpose.** Anchor the long-lived PR with a summary of what is being built and what reviewers should focus on.
 - **Owner.** Team Lead.
-- **Size.** Short. Hundreds of lines, not thousands. If it is too long, AI will ignore parts of it.
-- **When to write.** Early in the project. Update when conventions change.
-- **When to retire.** Never.
-- **See.** [templates/CLAUDE.md.example](../templates/CLAUDE.md.example)
+- **Size.** Short. A few paragraphs and a checklist.
+- **When to write.** When the Spec PR opens.
+- **End of life.** The PR description remains forever on the closed PR.
 
-### Postmortem
+## What is not in this catalog
 
-- **Purpose.** After an incident, capture what happened, why, and what changes.
-- **Owner.** Incident commander or Team Lead.
-- **Size.** 1 to 3 pages.
-- **When to write.** Within a week of the incident.
-- **When to retire.** Never. They are corporate memory.
+CAIRN deliberately does not own:
+
+- **System architecture** (the codebase as it currently stands).
+- **Schema** as the live, deployed truth.
+- **Conventions and standards.**
+- **Runbooks.**
+- **Project-level AI context files** (CLAUDE.md, .cursor/rules, etc.).
+- **Postmortems and incident records.**
+
+These are valuable artifacts. They are not feature-scoped. Whether and how your team maintains them is decided by your team or your company, not by CAIRN. If you have them, they live wherever your team has decided. CAIRN does not put them on the feature branch and does not put them on `main` either; that is your call.
+
+If your team has none of these today, CAIRN does not require you to start. You can adopt CAIRN purely as feature-build scaffolding without changing anything else.
 
 ## The meta-rule
 
@@ -127,4 +127,4 @@ For any artifact you consider creating, ask:
 2. **What decision does this support?** If none, do not write it.
 3. **Could this be a paragraph in an existing artifact?** If yes, put it there instead of making a new file.
 
-Every file in the repo has a cost. Pay it on purpose.
+Every file on the feature branch has a cost. Pay it on purpose.

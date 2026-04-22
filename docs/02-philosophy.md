@@ -68,19 +68,24 @@ The [MANIFESTO](../MANIFESTO.md) gives you the one-page version. This is the dir
 
 **Where it bends.** Very short, well-defined role cues ("respond as a code reviewer focused on security") can be useful for single-turn tasks. The anti-pattern is building a whole workflow around maintained personas.
 
-## 6. One repo, one source of truth
+## 6. Artifacts are ephemeral and feature-scoped
 
-**The principle.** The code, the docs, the stories, and the conventions all live in the same repo. They are versioned together, reviewed together, and moved together.
+**The principle.** Every CAIRN artifact is born with a feature and dies with the feature. They live on a dedicated feature branch, are reviewed there, and are closed without merging once the feature ships and stabilises. The code is what survives. The artifacts were scaffolding for the build, not documentation for posterity.
 
-**Why it matters.** Drift is silent and corrosive. When docs live in Notion and code lives in Git, the docs will lie within three months and nobody will know when the lie started. When they live together, a PR that changes the behavior also changes the doc, and the diff makes the change visible.
+**Why it matters.** This is what keeps CAIRN sustainable at scale. If artifacts merged into `main`, every team's history would accumulate forever, and the repo would drown in old specs, dead stories, and rotting docs. By scoping artifacts to one feature branch that never merges, `main` stays clean indefinitely. The closed PR remains as a permanent record, addressable by URL.
 
 **How to apply it.**
-- Problem statements, scope, architecture: in the repo.
-- Stories: in the repo.
-- Conventions, checklists, onboarding notes: in the repo.
-- AI context files (CLAUDE.md, .cursor/rules, etc.): in the repo.
+- Open a `cairn/<feature-slug>` branch off `main` for each new feature.
+- Open a long-lived PR from that branch to `main` and never merge it.
+- Land all CAIRN artifacts on this branch.
+- Code merges to `main` through your team's normal flow, with code PRs linking to artifacts on the feature branch.
+- When the feature ships and stabilises, close the long-lived PR. The branch can be deleted; the closed PR remains as the historical record.
 
-**Where it bends.** Organisation-level strategy docs, HR policies, and legal artifacts belong elsewhere. The rule is for product and engineering artifacts that describe the system being built.
+See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the full mechanics.
+
+**What CAIRN does not own.** Project-level documentation: system-level architecture, current schema, runbooks, conventions, the project's AI context file. Whether and how a team maintains those is outside CAIRN's scope, decided by the team or the company. CAIRN is for one feature at a time, and ends with that feature.
+
+**Where it bends.** Compliance regimes that require persistent in-repo documentation will not accept "the closed PR is the record." If you operate in such a regime, merge the artifacts into `main` under a clearly-archived path and accept the bloat.
 
 ## 7. Small is beautiful
 
@@ -114,7 +119,7 @@ The [MANIFESTO](../MANIFESTO.md) gives you the one-page version. This is the dir
 3. Review is the real gate.
 4. Humans decide, AI drafts.
 5. Costumes do not help.
-6. Everything lives in the repo.
+6. Artifacts are ephemeral, scoped to one feature.
 7. Smaller is usually better.
 8. Roles are human.
 

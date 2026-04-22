@@ -61,7 +61,7 @@ The horizontal arrows are handoffs, always mediated by a reviewed artifact. The 
 
 **How AI helps.** Surfaces inconsistencies between scope and the research. Drafts the first cut of in/out lists from a conversation transcript.
 
-**Done when.** A **Spec PR** is opened containing problem, research, and scope. The PR is reviewed by the full team. Merge is the gate.
+**Done when.** A **Spec PR** is open on the `cairn/<feature>` branch containing problem, research, and scope. The PR is reviewed by the full team. Approval is the gate. The Spec PR is the long-lived PR; it accumulates artifacts as the feature progresses and is closed without merging at release. See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the mechanics.
 
 ### 4. Design
 
@@ -96,7 +96,7 @@ Each story follows the [story template](../templates/story.md).
 
 **How AI helps.** Expands a scope bullet into a full story file with acceptance criteria. Proposes a reasonable slicing. Spots missing stories by cross-checking scope and architecture.
 
-**Done when.** A **Story PR** is opened containing all the stories for this feature. Reviewed by the relevant devs and QA. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Merge is the gate.
+**Done when.** Stories are added to the `cairn/<feature>` branch (typically through a sub-PR against that branch) and reviewed by the relevant devs and QA. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Approval and landing on the feature branch is the gate.
 
 ### 6. Build
 
@@ -130,29 +130,27 @@ Each story follows the [story template](../templates/story.md).
 
 **Who leads.** Team Lead or whoever owns release management.
 
-**Artifacts produced.**
-- Release notes.
-- Runbook updates.
-- Monitoring and alert configurations, versioned with the code.
+**CAIRN artifacts produced.** Release notes drafted from the QA checklist and merged code PRs.
 
-**How AI helps.** Drafts release notes from merged PRs. Generates runbooks from architecture. Suggests metrics to watch.
+**Adjacent (not CAIRN) artifacts your team may also produce.** Runbook updates, monitoring and alert configurations, system architecture deltas. These are project-level concerns; how they are handled is up to your team.
+
+**How AI helps.** Drafts release notes from merged PRs and the QA checklist. Suggests metrics to watch.
 
 **Done when.** The feature is in front of users at the intended exposure level.
 
 ### 9. Operate
 
-**What happens.** The feature is live. It is being used, misused, and monitored. Bugs, edge cases, and surprising usage patterns surface. The team learns.
+**What happens.** The feature is live. It is being used, misused, and monitored. Bugs, edge cases, and surprising usage patterns surface. The team learns. Once the feature is stable, the long-lived Spec PR is closed without merging; the closed PR remains as the historical record.
 
 **Who leads.** The whole team, with the Team Lead coordinating.
 
-**Artifacts produced.**
-- Incident notes, postmortems.
-- Updates to the original problem statement, scope, or architecture where reality taught you something.
-- New stories in `tasks/` for follow-ups.
+**CAIRN artifacts produced.** Updates to the open questions and QA checklist on the feature branch as reality teaches you something. New stories on the feature branch for any follow-ups handled within the same feature scope.
 
-**How AI helps.** Summarises logs. Drafts postmortems. Searches the codebase for related code paths when debugging.
+**Adjacent (not CAIRN) artifacts your team may also produce.** Incident notes, postmortems, lessons-learned writeups. These belong wherever your team's project-level docs live.
 
-**Done when.** Never. This stage is ongoing. Feedback from here should feed the next Discovery cycle.
+**How AI helps.** Summarises logs. Searches the codebase for related code paths when debugging.
+
+**Done when.** Never for the operational work. For CAIRN: when the feature is stable, the Spec PR is closed without merging.
 
 ## Which stages for which work
 
@@ -167,10 +165,12 @@ Each story follows the [story template](../templates/story.md).
 
 ## The three PRs
 
-There are only three kinds of pull request in CAIRN. Everything else is a variation of one of these.
+CAIRN distinguishes three kinds of pull request. Everything else is a variation of one of these.
 
-1. **Spec PR**: contains problem, research, scope, design. Docs only. Reviewed by the whole team.
-2. **Story PR**: contains the story files for an upcoming feature. Reviewed by the devs who will implement.
-3. **Code PR**: the implementation of a single story. Reviewed against acceptance criteria.
+1. **Spec PR**: the long-lived PR from `cairn/<feature>` to `main`, containing all CAIRN artifacts (problem, research, scope, design, stories, QA checklist). Reviewed by the whole team. **Never merged.** Closed when the feature ships and stabilises.
+2. **Sub-PRs against the feature branch**: small, targeted PRs that land specific artifacts (a draft architecture, a batch of stories, a QA checklist update) into the `cairn/<feature>` branch. These do merge, but only into the feature branch, never into `main`.
+3. **Code PR**: a normal code PR from `feat/<story-id>` into `main`, the implementation of a single story. Reviewed against the story's acceptance criteria. Links to the story file on the feature branch by URL.
+
+See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the full mechanics.
 
 If you find yourself wanting a fourth kind, you probably want a bigger version of one of these three.

@@ -26,9 +26,9 @@ AI is an extremely capable assistant that has no stake in the outcome, no memory
 
 Assigning a persona to an AI ("you are a senior architect") is theatre. It adds stylistic noise and rarely improves reasoning. What looks like persona value in multi-agent frameworks is almost always context isolation and stage gates doing the real work. We keep those and drop the costumes.
 
-### 6. One repo, one source of truth.
+### 6. Artifacts are ephemeral, scoped to one feature.
 
-Docs, stories, conventions, and code live together. They move together. They are reviewed together. When something changes, the diff tells you. No drift between what the docs say and what the code does.
+Every CAIRN artifact is born with a feature and dies with it. They live on a dedicated `cairn/<feature>` branch, are reviewed there, and are closed without merging when the feature ships. The closed PR remains as the historical record. Code is what survives. `main` stays clean indefinitely. CAIRN does not own project-level documentation; that is your team's call.
 
 ### 7. Small is beautiful.
 
@@ -47,6 +47,6 @@ Business analysts, UX designers, team leads, developers, testers: these are real
 
 ## The shortest possible summary
 
-> Write clear docs. Review them. Keep them in the repo. Let AI read them. Let humans decide.
+> Write clear docs on a feature branch. Review them. Let AI read them. Let humans decide. Close the PR when the feature ships.
 
 That is CAIRN.

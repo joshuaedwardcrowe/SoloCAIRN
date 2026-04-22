@@ -10,7 +10,7 @@ Before adopting anything, answer honestly:
 
 - **Is AI already part of your team's daily work?** If not, CAIRN is overkill. Pick the individual pieces that help.
 - **Do you have a multi-role team?** (BA, UX, devs across platforms.) If it is all one role, the lifecycle doc is less relevant. Still, the three-PR model helps.
-- **Do you control the repo?** If you cannot put docs in the code repo, the "in-repo" premise collapses. Fix that first.
+- **Do you control the repo?** You need to be able to push branches and open PRs that never merge. Most teams have this; verify.
 - **Is there a real person willing to own the rollout?** Someone has to care. It does not have to be the most senior person, but it has to be a credible one.
 
 If you answered yes to most of those, continue.
@@ -19,17 +19,19 @@ If you answered yes to most of those, continue.
 
 Do not announce "we're adopting CAIRN." That guarantees resistance.
 
-Instead, pick the next non-trivial feature. Propose to the team: *"For this feature, let's try writing the problem, scope, and architecture as markdown in the repo first, then breaking it into stories, then building. I'll lead the writing. We'll retro afterwards."*
+Instead, pick the next non-trivial feature. Propose to the team: *"For this feature, let's create a `cairn/<feature>` branch, write the problem, scope, and architecture as markdown there, break it into stories, and build. The branch will not merge to main; we close the PR when the feature ships. I'll lead the writing. We'll retro afterwards."*
 
 **What to produce on the pilot.**
-- Spec PR (problem, scope, architecture). Short. Half a page each is fine.
-- Story PR (stories in `tasks/<platform>/`).
-- Code PRs linked to stories.
+- A `cairn/<feature>` branch and a long-lived Spec PR against `main`.
+- Problem, scope, architecture on that branch. Short. Half a page each is fine.
+- Stories on that branch under `tasks/<feature>/<platform>/`.
+- Normal Code PRs against `main`, linked to the stories on the feature branch.
+- The Spec PR closed without merge when the feature ships.
 
 **What to skip on the pilot.**
 - Elaborate templates.
 - UX research docs if UX is not involved in this feature.
-- Runbooks, unless the feature needs one.
+- Project-level documentation (CLAUDE.md, runbooks, etc.). Those are out of CAIRN's scope; address them separately if you want to.
 
 Keep it lean. The goal is to feel the shape, not to produce every possible artifact.
 
@@ -42,21 +44,15 @@ Write the answers down. That is your first method-retro artifact.
 
 ## Phase 2: Formalise the templates
 
-Once the pilot has shown value, copy the CAIRN templates into the repo and adapt them:
+Once the pilot has shown value, copy the CAIRN templates into a known location your team can find (a wiki, a shared folder, or a dedicated CAIRN reference branch) and adapt them:
 
 - Strip sections you did not use on the pilot.
 - Add sections you needed but the template lacked.
 - Rename things to match your team's language.
 
-The templates should feel like yours within a week.
+The templates should feel like yours within a week. Devs starting a new feature can copy them onto the new `cairn/<feature>` branch.
 
-**Also in Phase 2.** Write your team's `CLAUDE.md` (or equivalent). Include:
-- The project's stack and layout.
-- Where to find `docs/` and `tasks/`.
-- Your conventions.
-- The never-do list.
-
-This is the highest-leverage file in the repo. Spend time on it.
+**Optional in Phase 2.** If your team does not already have project-level AI context (`CLAUDE.md`, `.cursor/rules`, etc.), this is a good moment to consider adding one on `main`. It is not a CAIRN artifact; it is adjacent. Decide separately whether you want one.
 
 ## Phase 3: Scale to the whole team
 
@@ -112,18 +108,22 @@ Ask why. Usually the answer is "too heavy" or "the personas were confusing." CAI
 
 ### "Our organisation uses Jira/Confluence/etc."
 
-Fine. Keep Jira for tickets and Confluence for organisational content. But keep your specs, stories, architecture, and conventions in the code repo. The two can coexist; the repo is canonical for things about the code, and the other tools are views or pointers.
+Fine. Keep Jira for tickets and Confluence for organisational content. CAIRN artifacts live on the feature branch in markdown for the duration of the feature. They close with the feature. Your existing tools and CAIRN can coexist; CAIRN deliberately does not own anything outside the feature scope.
+
+### "Won't main get cluttered with all these artifacts?"
+
+No. CAIRN artifacts never merge to `main`. They live on the `cairn/<feature>` branch and close with the long-lived Spec PR when the feature ships. `main` stays clean indefinitely. See [09-the-feature-branch-model.md](09-the-feature-branch-model.md).
 
 ## The smallest viable adoption
 
 If you only do three things:
 
-1. **Start your next feature with a Spec PR.** Problem, scope, and a paragraph on approach. Merge it before any code.
-2. **Write a `CLAUDE.md`.** One page. Conventions and pointers.
-3. **Put stories in the repo.** One file per story, one story per PR.
+1. **Open a `cairn/<feature>` branch and a long-lived Spec PR for your next non-trivial feature.** Land problem, scope, and a paragraph on approach there before any code.
+2. **Put stories on that branch** under `tasks/<feature>/<platform>/`. One file per story.
+3. **Close the Spec PR without merging when the feature ships.** Do not merge.
 
 That is a 90%-value adoption with 10% of the effort. Everything else is refinement.
 
 ## Where it goes next
 
-Once CAIRN habits are real, you can start adding the optional pieces: runbooks, postmortems, per-feature retro docs, shared subagent prompts. But do not lead with those. Lead with specs, stories, and AI context. The rest compounds.
+Once CAIRN habits are real, you can layer in the fuller artifacts: stakeholder interviews, UX research, QA checklists, per-feature retro notes, shared subagent prompts. But do not lead with those. Lead with the Spec PR, the stories, and the discipline of closing without merging. The rest compounds.

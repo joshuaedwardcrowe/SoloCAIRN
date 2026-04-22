@@ -2,6 +2,8 @@
 
 This is a worked example of a feature going through CAIRN end to end. It shows what the artifacts actually look like, in realistic detail, so you can see the method applied rather than described.
 
+> All artifacts shown here would, in a real project, live on a `cairn/pub-quiz-live-scoring` branch with a long-lived Spec PR against `main`. None of them ever merge to `main`. When the feature ships and stabilises, the PR is closed without merging. See [docs/09-the-feature-branch-model.md](../../docs/09-the-feature-branch-model.md) for the mechanics.
+
 > This is example content. The product, the company, and the stakeholders are invented. Any resemblance to a real quiz platform is coincidental.
 
 ## The feature
@@ -14,15 +16,17 @@ A hosted pub-quiz experience for venues:
 
 ## What this example demonstrates
 
-- A **Spec PR** that covers problem, stakeholders, research, scope, architecture, and open questions.
-- A **Story PR** that breaks the feature into implementable slices across backend, frontend, mobile, and database.
+- A **long-lived Spec PR** on `cairn/pub-quiz-live-scoring` that accumulates problem, stakeholders, research, scope, architecture, open questions, stories, and the QA checklist as the work progresses.
+- The full set of feature-scoped artifacts a team would produce, sliced across backend, frontend, mobile, and database.
 - A **QA checklist** that ties every story's acceptance criteria to a feature-level verification gate.
 - Cross-role handoffs, with each artifact produced by the right role.
 - Pragmatic compromises and open questions kept visible instead of hidden.
 
-## The artifacts
+When the feature ships and stabilises, the team would close this PR without merging. The closed PR remains as the historical record. `main` never sees any of these files.
 
-### Spec PR contents
+## The artifacts (all on the feature branch)
+
+### Spec artifacts
 
 - [00-problem-statement.md](00-problem-statement.md)
 - [01-stakeholder-interviews.md](01-stakeholder-interviews.md)
@@ -35,7 +39,7 @@ A hosted pub-quiz experience for venues:
 
 - [06-qa-checklist.md](06-qa-checklist.md)
 
-### Story PR contents
+### Stories
 
 - [stories/backend/](stories/backend/)
   - [QUIZ-01-session-service.md](stories/backend/QUIZ-01-session-service.md)

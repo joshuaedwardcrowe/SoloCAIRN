@@ -2,64 +2,58 @@
 
 This is what a week inside CAIRN actually looks like. If the rest of the docs describe the shape, this one describes the motion.
 
-## The three PRs, in motion
+## The PRs, in motion
 
-CAIRN has only three kinds of pull request. Knowing which one you are in at any moment is most of the discipline.
+CAIRN distinguishes a long-lived Spec PR (which never merges) and the code PRs that ship the work (which do merge). Knowing which one you are in at any moment is most of the discipline. See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the full mechanics.
 
-### Spec PR
+### Spec PR (long-lived, never merged)
 
-**Branch name.** `spec/<feature-slug>`
+**Branch name.** `cairn/<feature-slug>`
 
-**Contains.** Problem, research, scope, and (usually) architecture. Docs only. No code.
+**Contains.** All CAIRN artifacts for this feature: problem, research, scope, architecture, stories, QA checklist, open questions. Docs only. No code.
 
-**Lifetime.** A few days. You open it early, iterate with reviewers, merge when the team is aligned.
+**Lifetime.** Weeks to months. Opened at the start of the feature, accumulates artifacts as the work progresses, **closed without merging** when the feature ships and stabilises.
 
 **Reviewers.** The full team. Everyone who will implement it has a say before implementation starts.
 
-**Merge criteria.** The team agrees this is what we are building and roughly how. Open questions are listed but not all resolved.
+**Approval criteria.** The team agrees this is what we are building and roughly how. Open questions are listed but not all resolved. The PR remains open and is iterated on.
 
 **What it looks like.**
 
 ```
-spec/pub-quiz-live-scoring
+cairn/pub-quiz-live-scoring (branch)
 ├── docs/features/pub-quiz/
 │   ├── problem-statement.md
 │   ├── stakeholder-interviews.md (sanitised)
 │   ├── ux-research.md
 │   ├── scope.md
 │   ├── architecture.md
-│   └── open-questions.md
+│   ├── open-questions.md
+│   └── qa-checklist.md
+└── tasks/pub-quiz/
+    ├── backend/
+    │   ├── QUIZ-01-session-service.md
+    │   └── QUIZ-02-live-scoring-worker.md
+    ├── frontend/
+    │   └── QUIZ-03-host-console.md
+    └── mobile/
+        └── QUIZ-04-player-app-join-flow.md
 ```
 
-### Story PR
+### Sub-PRs against the feature branch
 
-**Branch name.** `stories/<feature-slug>`
+Artifacts can be reviewed individually or in batches via small PRs that target the `cairn/<feature>` branch (not `main`). For example:
 
-**Contains.** The story files for the upcoming build phase. No code.
+- `spec/pub-quiz-architecture` → `cairn/pub-quiz-live-scoring`: lands the architecture doc.
+- `stories/pub-quiz-backend` → `cairn/pub-quiz-live-scoring`: lands the backend stories.
 
-**Lifetime.** Half a day to a day.
-
-**Reviewers.** The devs who will implement the stories. They are reading for clarity, size, dependencies.
-
-**Merge criteria.** Every story is clear enough that a competent dev can pick it up and work on it without asking clarifying questions to the author.
-
-**What it looks like.**
-
-```
-stories/pub-quiz-live-scoring
-├── tasks/
-│   ├── backend/
-│   │   ├── QUIZ-01-session-service.md
-│   │   └── QUIZ-02-live-scoring-worker.md
-│   ├── frontend/
-│   │   └── QUIZ-03-host-console.md
-│   └── mobile/
-│       └── QUIZ-04-player-app-join-flow.md
-```
+These do merge, but only into the feature branch. Use them when you want clean, focused review on one artifact at a time.
 
 ### Code PR
 
 **Branch name.** `feat/<story-id>-<short-description>`
+
+**Branched from.** `main`
 
 **Contains.** The implementation of exactly one story.
 
@@ -67,14 +61,16 @@ stories/pub-quiz-live-scoring
 
 **Reviewers.** One or two teammates. At least one should know the area.
 
-**Merge criteria.** Acceptance criteria met. Tests pass. Review approved. QA checklist ticked.
+**Merge criteria.** Acceptance criteria met. Tests pass. Review approved. The relevant QA checklist item ticked. **Merges into `main`.**
+
+**Linking.** PR description references the story file by URL on the `cairn/<feature>` branch. Devs needing the artifacts in their local workspace use a worktree or a sparse checkout of the feature branch (see [09-the-feature-branch-model.md](09-the-feature-branch-model.md)).
 
 ## A day in the life, by role
 
 ### Team Lead (Monday)
 
 - 09:00. Open the Spec PR for the new feature. Paste in the problem statement draft. Tag stakeholders for review.
-- 10:30. Review yesterday's Story PR. Approve two stories, request changes on one (too big, needs splitting).
+- 10:30. Review yesterday's sub-PR adding stories to the feature branch. Approve two stories, request changes on one (too big, needs splitting).
 - 13:00. Pair with the BA on stakeholder interview notes. Draft the themes section of `ux-research.md`.
 - 15:00. Review an open Code PR against its story. Acceptance criteria checked, two suggestions left, approve.
 - 17:00. Update `open-questions.md` with answers from today's stakeholder call.
@@ -97,7 +93,7 @@ stories/pub-quiz-live-scoring
 ### Backend Dev (Thursday)
 
 - 09:00. Pick up story `QUIZ-01-session-service.md`. Branch: `feat/quiz-01-session-service`.
-- 09:15. Start an AI session. The AI has automatic access to CLAUDE.md, the architecture doc, and the story. Prompt: "Implement QUIZ-01 per the story file. Show me the plan first."
+- 09:15. Start an AI session. The AI has access to the architecture doc and the story via a worktree of `cairn/<feature>`. Prompt: "Implement QUIZ-01 per the story file. Show me the plan first."
 - 09:30. Review the plan. Push back on one part (the retry strategy is wrong for this use case). AI re-plans.
 - 10:00. Implement, with tests, iteratively.
 - 14:00. Story's acceptance criteria checked. Open Code PR. Link to story in description.
@@ -108,7 +104,7 @@ stories/pub-quiz-live-scoring
 
 - 09:00. Story `QUIZ-04-player-app-join-flow.md`. Branch off main.
 - 09:30. AI session primed with the repo's mobile conventions, the relevant UX wireframe, and the story. Implement the QR scan + join screen.
-- 12:00. Hit an ambiguity: the story says "graceful failure" but does not specify retry behaviour. Add a comment to the story in-repo (the merged story file) as a note for future readers, then make a judgment call. Flag it in the PR description so the reviewer can weigh in.
+- 12:00. Hit an ambiguity: the story says "graceful failure" but does not specify retry behaviour. Push an update to the story file on the `cairn/<feature>` branch as a note for future readers, then make a judgment call. Flag it in the Code PR description so the reviewer can weigh in.
 - 15:00. PR open. Review requested from backend dev and UX.
 
 ### Frontend Dev (any day, similar shape)
@@ -117,7 +113,7 @@ The same pattern: pick a story, branch, AI-assisted implement, open Code PR, rev
 
 ### QA Engineer (across the week)
 
-- Monday morning. Review the open Story PR. Add acceptance criteria for two stories (an empty state, an offline behaviour). Comment with reasoning so devs see the why.
+- Monday morning. Review the open Spec PR (specifically the new stories that landed there). Add acceptance criteria for two stories (an empty state, an offline behaviour). Comment with reasoning so devs see the why.
 - Mid-week. Pair with backend dev on the test plan for a tricky story. Identify two edge cases the unit tests would miss; agree how to cover them.
 - Wednesday afternoon. Pull a Code PR branch locally. Test on real devices. File a structured bug for an iOS keyboard issue; link it to the PR.
 - Thursday. Run a 90-minute exploratory session against staging. Try the things the team did not predict. Write up findings.

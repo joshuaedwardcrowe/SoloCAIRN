@@ -40,9 +40,12 @@ It is probably not for you if you prefer heavy, certifying process frameworks, o
 | Find your role | [roles/](roles/) |
 | Copy a template | [templates/](templates/) |
 | See it applied to a real feature | [examples/pub-quiz/](examples/pub-quiz/) |
+| Set up a new CAIRN repo for your team | [examples/cairn-repo-starter/](examples/cairn-repo-starter/) |
 
 ## Status
 
 This is an opinionated, evolving methodology written by one person based on lived experience. It is not certified, audited, or owned by any company. Take what works, leave what does not.
 
 Author: [Abdullah Siddique](AUTHORS.md)
+
+License: [CC BY 4.0](LICENSE.md). Use it, adapt it, share it; please credit.

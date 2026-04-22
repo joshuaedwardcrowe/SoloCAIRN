@@ -104,6 +104,14 @@ The others below are valuable but optional.
 - **When to write.** When the Spec PR opens.
 - **End of life.** The PR description remains forever on the closed PR.
 
+### Retro
+
+- **Purpose.** Capture what worked, what did not, and what the team will change. Held within a week of the feature shipping.
+- **Owner.** Team Lead facilitates, whole team contributes.
+- **Size.** One page.
+- **When to write.** Just after the feature ships and the team has lived with the result for a few days.
+- **End of life.** Closes with the feature folder. Lessons that should outlive the feature get propagated into team-level templates and conventions.
+
 ## What is not in this catalog
 
 CAIRN deliberately does not own:

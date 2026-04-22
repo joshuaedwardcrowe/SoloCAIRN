@@ -16,6 +16,7 @@ A hosted pub-quiz experience for venues:
 
 - A **Spec PR** that covers problem, stakeholders, research, scope, architecture, and open questions.
 - A **Story PR** that breaks the feature into implementable slices across backend, frontend, mobile, and database.
+- A **QA checklist** that ties every story's acceptance criteria to a feature-level verification gate.
 - Cross-role handoffs, with each artifact produced by the right role.
 - Pragmatic compromises and open questions kept visible instead of hidden.
 
@@ -29,6 +30,10 @@ A hosted pub-quiz experience for venues:
 - [03-scope.md](03-scope.md)
 - [04-architecture.md](04-architecture.md)
 - [05-open-questions.md](05-open-questions.md)
+
+### QA artifacts
+
+- [06-qa-checklist.md](06-qa-checklist.md)
 
 ### Story PR contents
 
@@ -53,5 +58,6 @@ A hosted pub-quiz experience for venues:
 4. Read [03-scope.md](03-scope.md) to see the decisions.
 5. Read [04-architecture.md](04-architecture.md) to see the design.
 6. Skim the stories under `stories/` to see how a team would slice this into week-sized chunks.
+7. Read [06-qa-checklist.md](06-qa-checklist.md) to see how QA turns the design and stories into a verification gate.
 
 The point is not to admire the example. The point is to notice what each artifact is doing, and to be able to produce similar shapes for your own features.

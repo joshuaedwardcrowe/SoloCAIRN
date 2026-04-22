@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="106" height="24" viewBox="0 0 106 24">
+  <defs>
+    
+  </defs>
+  
+  <g transform="translate(0, 0)">
+    <polyline points="4.285714285714286,18.428571428571427 12,11.142857142857142 19.71428571428571,4.714285714285714" stroke="rgba(240,212,168,0.18)" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round" fill="none"></polyline>
+    <circle cx="4.285714285714286" cy="18.428571428571427" r="3.214285714285714" fill="#f0d4a8"></circle>
+    <circle cx="12" cy="11.142857142857142" r="2.357142857142857" fill="#e2ab65"></circle>
+    <circle cx="19.71428571428571" cy="4.714285714285714" r="1.6285714285714283" fill="#c17f3a"></circle>
+  </g>
+  <text x="32" y="16.68" font-family="Outfit, sans-serif" font-weight="600" font-size="13" fill="#faf6ef" letter-spacing="1.8200000000000003">CAIRN</text>
+</svg>

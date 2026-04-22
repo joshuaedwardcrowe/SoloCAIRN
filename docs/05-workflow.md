@@ -81,7 +81,7 @@ When the feature ships and stabilises, move the folder to `archive/` or delete i
 - 11:30. Feed transcripts to AI, get a themed summary. Clean it up into `stakeholder-interviews.md`.
 - 14:00. Spot a contradiction between two stakeholders. Add to `open-questions.md` with yourself as owner.
 - 15:30. Pair with UX to translate pain points into research themes.
-- 17:00. Push a commit to the Spec PR branch. Comment on what changed.
+- 17:00. Open a small CAIRN PR with the cleaned-up interview notes (or push to the long-lived branch in the branch model). Comment on what changed.
 
 ### UX Designer (Wednesday)
 

@@ -1,6 +1,6 @@
 # Open Questions: Pub Quiz Live Scoring
 
-Questions that are unresolved at the time of the Spec PR. Each has an owner. None of them block merge of the Spec PR, but all must be closed before the feature ships.
+Questions that are unresolved at the time of the initial Spec PR. Each has an owner. None of them block landing the artifact (in either deployment model), but all must be closed before the feature ships.
 
 | # | Question | Owner | Status | Due |
 |---|---|---|---|---|

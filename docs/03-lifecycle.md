@@ -150,7 +150,7 @@ Each story follows the [story template](../templates/story.md).
 
 **How AI helps.** Summarises logs. Searches the codebase for related code paths when debugging.
 
-**Done when.** Never for the operational work. For CAIRN: when the feature is stable, the Spec PR is closed without merging.
+**Done when.** Never for the operational work. For CAIRN: when the feature is stable, the artifacts end. In the separate-repo model that means the feature folder is archived or deleted. In the branch model that means the long-lived Spec PR is closed without merging.
 
 ## Which stages for which work
 
@@ -173,3 +173,12 @@ CAIRN distinguishes two kinds of work. The exact PR shapes depend on your chosen
 See [09-deployment-models.md](09-deployment-models.md) for the full mechanics under each model.
 
 If you find yourself wanting a third or fourth kind, you probably want a bigger version of one of these two.
+
+### A note on the term "Spec PR"
+
+Throughout these docs, **Spec PR** is shorthand for "the PR (or family of PRs) that lands a CAIRN artifact for review." It refers to two structurally different things depending on your deployment model:
+
+- **Separate-repo model (recommended)**: Spec PRs are normal short-lived PRs in the CAIRN repo that merge into the CAIRN repo's `main`. There can be many per feature, each landing one or a few artifacts.
+- **Branch model**: there is a single long-lived Spec PR from `cairn/<feature>` to the code repo's `main` that **never merges**, plus optional small sub-PRs targeting the feature branch. The long-lived PR is closed without merging at the end of the feature.
+
+When the docs say "the Spec PR closes" or "ends with the feature," translate accordingly: in the separate-repo model that means the feature folder is archived or deleted; in the branch model that means the long-lived PR is closed without merging.

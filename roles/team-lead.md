@@ -43,7 +43,7 @@ You are the person who holds the thread. In CAIRN, you are the connective tissue
 
 **Tuesday.** Pair with UX on the research doc. Update `open-questions.md` from the morning stakeholder call.
 
-**Wednesday.** Facilitate the design conversation. Take notes, turn them into `architecture.md`, commit to the Spec PR branch.
+**Wednesday.** Facilitate the design conversation. Take notes, turn them into `architecture.md`, open a CAIRN PR (or push to the long-lived branch in the branch model).
 
 **Thursday.** Break the feature into stories. Open a Story PR. Tag the devs for review.
 

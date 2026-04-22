@@ -48,7 +48,7 @@ You are the bridge between the people with the problem and the people building t
 
 **After the calls.** Feed transcripts to AI, ask for a themed summary. Read the summary. Edit it. Where the AI paraphrased something meaningful, replace it with the original quote.
 
-**Midday.** Push the interview notes to the Spec PR branch. Comment in the PR on anything the team should know.
+**Midday.** Open a CAIRN PR adding the interview notes to the feature folder (or push to the long-lived branch in the branch model). Comment in the PR on anything the team should know.
 
 **Afternoon.** Update `open-questions.md` with three new questions. Assign two to yourself; one to the Team Lead.
 

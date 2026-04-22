@@ -18,7 +18,7 @@ System-level architecture as it currently stands. Schema as it is currently depl
 
 How a new joiner gets up to speed on an unfamiliar system. How they learn the shape of the code, the team's conventions, the operational quirks.
 
-**Why we are silent.** Onboarding draws on durable artifacts (architecture docs, runbooks, conventions) more than on feature-scoped ones. A new joiner reading last quarter's spec for a shipped feature learns history; reading the current architecture learns the system. CAIRN provides the former, not the latter.
+**Why we are silent.** Onboarding draws on project-level artifacts (architecture docs, runbooks, conventions) more than on feature-scoped ones. A new joiner reading last quarter's spec for a shipped feature learns history; reading the current architecture learns the system. CAIRN provides the former, not the latter.
 
 **What to do instead.** Maintain a project-level onboarding doc. Pair new joiners with experienced ones. Keep your AI context file genuinely current.
 
@@ -79,13 +79,13 @@ CAIRN handles the feature build. That is genuinely useful and not nothing. But:
 - If your main pain is **deciding what to build**, CAIRN will help you think clearly once you have decided, but the decision itself is yours.
 - If your main pain is **getting new joiners productive**, CAIRN will help only at the edges. Project-level docs and pairing matter more.
 
-A skeptical reader is right to point out that the build phase is the part of software delivery teams already know how to do reasonably well, when they care to. CAIRN's claim is that AI changes the economics of doing it well consistently, and that the team-coordination wins compound. That is the claim. Take it for what it is.
+A skeptical reader will say: *the build phase is the part of software delivery teams already know how to do reasonably well, when they care to.* True. The phrase that matters is "when they care to." Most teams know what good build discipline looks like and skip it under pressure, because writing a spec used to cost a day and the deadline was tomorrow. AI collapses that cost: a draft spec is twenty minutes now. CAIRN's claim is that this changes which corner-cutting is rational. The discipline that was "too expensive to do consistently" is no longer expensive. The teams that internalise this ship more coherent work, and the coordination wins compound. That is the claim, and it is not a small one.
 
 ## Where this puts CAIRN in the toolbox
 
 Think of CAIRN as one tool, not the whole toolbox. The other tools you need:
 
-- A way to maintain durable project docs.
+- A way to maintain project-level docs.
 - A way to onboard new people.
 - A way to operate the system you have built.
 - A way to decide what to build next.

@@ -95,7 +95,7 @@ Good. CAIRN is compatible with most lightweight agile variants. You probably alr
 
 ### "This is just agile with extra steps."
 
-It is agile minus some steps (no story-point ceremony, no stand-up reporting, no sprint rituals if you do not want them) plus an emphasis on durable artifacts and AI context. Take what helps, ignore the rest.
+It is agile minus some steps (no story-point ceremony, no stand-up reporting, no sprint rituals if you do not want them) plus an emphasis on written, reviewed feature artifacts and AI context. Take what helps, ignore the rest.
 
 ### "We don't have time to write docs."
 

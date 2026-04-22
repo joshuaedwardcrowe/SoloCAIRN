@@ -39,7 +39,7 @@ So CAIRN inverts the usual question. Instead of asking *"how do we make the AI s
 
 > *"How do we make sure every AI session on our team starts from the same, reviewed, high-quality context?"*
 
-The answer turns out to be unglamorous: write things down on a feature branch, review them, close the branch when the feature ships.
+The answer turns out to be unglamorous: write things down in a place that is not your code repo's `main` (a separate CAIRN repo, recommended), review them like code, and end them when the feature ships.
 
 ## Why "CAIRN"
 

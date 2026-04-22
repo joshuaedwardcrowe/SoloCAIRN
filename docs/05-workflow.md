@@ -145,4 +145,4 @@ After every feature ships, spend 30 minutes in a retro:
 - Did AI outputs converge or diverge across team members?
 - What do we change about our CLAUDE.md, our templates, or our habits?
 
-Write the answers down. Ideally in `docs/retros/<date>.md`. The retro is itself an artifact.
+Write the answers down. Ideally in `features/<feature>/retro.md` in the CAIRN repo (closes with the feature) for feature-specific retros, or in your team's project-level docs for retros that produce lessons that should outlive the feature. The retro is itself an artifact.

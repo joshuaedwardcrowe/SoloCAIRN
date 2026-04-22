@@ -19,16 +19,11 @@ Most AI development methodologies try to solve the problem by adding more AI: mo
 
 That is the whole thing. Everything else in this repo is details, templates, and examples.
 
-## What CAIRN does and does not claim
+## What CAIRN claims
 
-CAIRN is **scaffolding for the build phase of one feature, in an AI-assisted team**. It is not a transformation programme. It does not fix:
+With AI as an accelerator, the cost of producing reviewed, shared context for a feature build has collapsed. The discipline that was "too expensive to do consistently" is no longer expensive. Teams that internalise this ship more coherent work, and the coordination wins compound. CAIRN is the small set of habits that captures most of that benefit.
 
-- **Project-level documentation** (system architecture, schema, runbooks): out of scope, your team's call.
-- **Production reliability and on-call**: not addressed.
-- **Prioritisation and what to build next**: not addressed.
-- **Onboarding and long-horizon institutional knowledge**: not directly addressed.
-
-What CAIRN does claim: with AI as an accelerator, the cost of producing reviewed, shared context for a feature build collapses, and a small set of habits captures most of the benefit. The teams that adopt it should expect a build phase that is more coherent and less wasteful, not a transformed organisation. See [docs/10-what-cairn-does-not-solve.md](docs/10-what-cairn-does-not-solve.md) for the honest boundary.
+CAIRN is scoped to the build phase of one feature in an AI-assisted team. It is not a transformation programme, and it deliberately does not own project-level docs, on-call, prioritisation, or long-horizon institutional knowledge. See [docs/10-what-cairn-does-not-solve.md](docs/10-what-cairn-does-not-solve.md) for the honest boundary.
 
 ## Who this is for
 
@@ -37,7 +32,7 @@ What CAIRN does claim: with AI as an accelerator, the cost of producing reviewed
 - A **company** adopting AI tooling and looking for a process that does not require everyone to use the same IDE.
 - **BAs, UX designers, and devs** who want clarity on what they produce and when.
 
-It is probably not for you if you prefer heavy, certifying process frameworks, or if you want the AI to drive the work instead of the humans.
+CAIRN is not for you if you want a heavy, certifying process framework, or if you want AI to drive the work instead of the humans. Pick something else.
 
 ## Where to start
 
@@ -54,10 +49,6 @@ It is probably not for you if you prefer heavy, certifying process frameworks, o
 | See it applied to a real feature | [examples/pub-quiz/](examples/pub-quiz/) |
 | Set up a new CAIRN repo for your team | [examples/cairn-repo-starter/](examples/cairn-repo-starter/) |
 
-## Status
+## Author and license
 
-This is an opinionated, evolving methodology written by one person based on lived experience. It is not certified, audited, or owned by any company. Take what works, leave what does not.
-
-Author: [Abdullah Siddique](AUTHORS.md)
-
-License: [CC BY 4.0](LICENSE.md). Use it, adapt it, share it; please credit.
+By [Abdullah Siddique](AUTHORS.md). Released under [CC BY 4.0](LICENSE.md): use it, adapt it, share it, credit the author.

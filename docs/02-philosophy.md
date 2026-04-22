@@ -17,9 +17,9 @@ The [MANIFESTO](../MANIFESTO.md) gives you the one-page version. This is the dir
 
 ## 2. Artifacts over ceremony
 
-**The principle.** Every part of your process should produce a durable, readable artifact. Process that produces nothing but meetings is suspect.
+**The principle.** Every part of your process should produce a written, readable artifact. Process that produces nothing but meetings is suspect.
 
-**Why it matters.** Artifacts survive. Meetings do not. If an architecture decision exists only in a call that three people attended, it will be re-litigated next month, probably badly. If it exists in a two-page markdown file in the repo, it can be read, challenged, and updated.
+**Why it matters.** Written artifacts can be read, challenged, and updated. Meetings cannot. If an architecture decision exists only in a call that three people attended, it will be re-litigated next month, probably badly. If it exists in a two-page markdown file in the CAIRN repo, the team and the AI can both work from it.
 
 **How to apply it.**
 - Every recurring meeting should produce a written output. If it consistently does not, the meeting probably should not exist.
@@ -74,7 +74,7 @@ We are not claiming this is a settled empirical result; published findings on ro
 
 **The principle.** A CAIRN artifact is in active use only for the duration of one feature build. It is the scaffolding the team and AI work from while building. Once the feature ships and stabilises, the artifact stops being load-bearing: the code is the operational truth from that point on.
 
-This is *operational* ephemerality, not deletion. The artifact may remain in the CAIRN repo's history or in a closed PR as a searchable record. The goal is to keep it out of the active workflow and out of the code repo's `main`, not to wipe every trace.
+This is *operational* ephemerality, not deletion. The artifact may remain in the CAIRN repo's history or in a closed PR as a historical record. The goal is to keep it out of the active workflow and out of the code repo's `main`, not to wipe every trace.
 
 **Why it matters.** If artifacts merged into the code repo's `main`, every team's history would accumulate there and `main` would drown in old specs, dead stories, and rotting docs that contradict the current code. By keeping artifacts off `main`, the code repo stays clean indefinitely. The historical record (if you want one) lives somewhere it cannot pollute the working tree.
 

@@ -12,7 +12,7 @@ A well-written problem statement is worth ten prompts. A reviewed architecture d
 
 ### 2. Artifacts over ceremony.
 
-A short, honest markdown file beats a persona prompt every time. We value durable artifacts that humans and AI can both read: problem statements, architectures, stories, checklists. We are suspicious of process that produces no artifacts.
+A short, honest markdown file beats a persona prompt every time. We value written artifacts that humans and AI can both read: problem statements, architectures, stories, checklists. We are suspicious of process that produces no artifacts.
 
 ### 3. Review is the stage gate.
 
@@ -22,15 +22,15 @@ The moment an idea, a design, or a piece of code meets another human for review 
 
 AI is an extremely capable assistant that has no stake in the outcome, no memory of last week, and no accountability to your users. Treat it accordingly. The person who owns the decision is a person. The person who owns the review is a person. AI drafts; humans decide.
 
-### 5. Be skeptical of costumes.
+### 5. Skip the costumes.
 
-Assigning a persona to an AI ("you are a senior architect") looks load-bearing and usually is not. The wins multi-agent frameworks attribute to personas can mostly be explained by the context isolation and stage gates those frameworks happen to also provide. The evidence is mixed and the field moves; we are not claiming proof. We are claiming the simpler thing first: prompt with context, isolate with subagents, gate with reviews. If a costume helps after that, fine. If you find yourself maintaining personas as core process, you have probably bought complexity for unclear return.
+Assigning a persona to an AI ("you are a senior architect") looks load-bearing and usually is not. The wins multi-agent frameworks attribute to personas are mostly the context isolation and stage gates those frameworks happen to also provide. Get those directly: prompt with context, isolate with subagents, gate with reviews. Build your workflow around real artifacts, not maintained costumes.
 
 ### 6. Artifacts are operationally ephemeral, scoped to one feature.
 
 Every CAIRN artifact is in active use only for the duration of the feature build. They live in a dedicated CAIRN repo or on a long-lived feature branch that never merges, are reviewed during the build, and stop being load-bearing the moment the feature ships. The code repo's `main` never sees them. Code is what survives as the operational truth.
 
-Artifacts may remain in git history (in the CAIRN repo, in the closed PR) as a searchable record. That is acceptable: the goal is to keep them out of the *active workflow* and out of the code repo's main, not to delete every trace. CAIRN does not own project-level documentation; that is your team's call.
+Artifacts may remain in git history (in the CAIRN repo, in the closed PR) as a historical record. That is acceptable: the goal is to keep them out of the *active workflow* and out of the code repo's main, not to delete every trace. CAIRN does not own project-level documentation; that is your team's call.
 
 ### 7. Small is beautiful.
 

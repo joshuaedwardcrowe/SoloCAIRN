@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="logos/cairn-logo-dark-sm.svg">
+    <img alt="CAIRN" src="logos/cairn-logo-light-sm.svg" width="106">
+  </picture>
+</p>
+
 # Authors
 
 ## Abdullah Siddique

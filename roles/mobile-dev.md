@@ -11,9 +11,9 @@ You build the apps users carry in their pockets. In CAIRN, mobile is treated as 
 
 ## Artifacts you own
 
-- Stories in `tasks/mobile/`. Stories can be platform-specific or cross-platform; name them clearly.
+- Stories in `features/<feature>/stories/mobile/`. Stories can be platform-specific or cross-platform; name them clearly.
 - Mobile-specific sections of `architecture.md` (navigation, state, offline behaviour, background tasks).
-- Platform-specific conventions in your repo's CLAUDE.md or a dedicated mobile section.
+- Platform-specific conventions live in your project's AI context file (CLAUDE.md or equivalent on the code repo's main), not in CAIRN.
 
 ## Artifacts you contribute to
 
@@ -26,13 +26,13 @@ You build the apps users carry in their pockets. In CAIRN, mobile is treated as 
 For non-trivial features, split stories per platform:
 
 ```
-tasks/mobile/
+features/pub-quiz/stories/mobile/
   QUIZ-04-player-join-android.md
   QUIZ-05-player-join-ios.md
   QUIZ-06-player-join-shared-contracts.md
 ```
 
-For simple features, or when you have a shared codebase (Flutter, React Native, Kotlin Multiplatform), a single `tasks/mobile/` story is fine. Be honest about what is shared and what is not.
+For simple features, or when you have a shared codebase (Flutter, React Native, Kotlin Multiplatform), a single story in `features/<feature>/stories/mobile/` is fine. Be honest about what is shared and what is not.
 
 ## How AI fits your work
 
@@ -62,7 +62,7 @@ For simple features, or when you have a shared codebase (Flutter, React Native, 
 
 **09:00.** Read the story, the linked UX flow, and the API contract.
 
-**09:30.** Branch. AI session primed with the story, `CLAUDE.md`, and the iOS architecture notes. Ask for the plan.
+**09:30.** Branch in the code repo. Open both repos in the IDE workspace. AI session primed with the story and the iOS-relevant architecture notes from the CAIRN repo. Ask for the plan.
 
 **10:00.** Implement the view, view-model, and networking. Handle error and loading states. Add offline cache.
 

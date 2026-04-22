@@ -1,6 +1,6 @@
 # Story: <STORY-ID> <short title>
 
-> Copy to `tasks/<platform>/<STORY-ID>-<slug>.md`.
+> Copy to `features/<feature>/stories/<platform>/<STORY-ID>-<slug>.md`.
 > Keep it to half a page or one page. If it grows, your story is too big.
 
 ## Context

@@ -22,13 +22,15 @@ The moment an idea, a design, or a piece of code meets another human for review 
 
 AI is an extremely capable assistant that has no stake in the outcome, no memory of last week, and no accountability to your users. Treat it accordingly. The person who owns the decision is a person. The person who owns the review is a person. AI drafts; humans decide.
 
-### 5. No costumes.
+### 5. Be skeptical of costumes.
 
-Assigning a persona to an AI ("you are a senior architect") is theatre. It adds stylistic noise and rarely improves reasoning. What looks like persona value in multi-agent frameworks is almost always context isolation and stage gates doing the real work. We keep those and drop the costumes.
+Assigning a persona to an AI ("you are a senior architect") looks load-bearing and usually is not. The wins multi-agent frameworks attribute to personas can mostly be explained by the context isolation and stage gates those frameworks happen to also provide. The evidence is mixed and the field moves; we are not claiming proof. We are claiming the simpler thing first: prompt with context, isolate with subagents, gate with reviews. If a costume helps after that, fine. If you find yourself maintaining personas as core process, you have probably bought complexity for unclear return.
 
-### 6. Artifacts are ephemeral, scoped to one feature.
+### 6. Artifacts are operationally ephemeral, scoped to one feature.
 
-Every CAIRN artifact is born with a feature and dies with it. They live in a dedicated CAIRN repo or on a long-lived feature branch that never merges, are reviewed during the build, and end when the feature ships. The code repo's `main` never sees them. Code is what survives. CAIRN does not own project-level documentation; that is your team's call.
+Every CAIRN artifact is in active use only for the duration of the feature build. They live in a dedicated CAIRN repo or on a long-lived feature branch that never merges, are reviewed during the build, and stop being load-bearing the moment the feature ships. The code repo's `main` never sees them. Code is what survives as the operational truth.
+
+Artifacts may remain in git history (in the CAIRN repo, in the closed PR) as a searchable record. That is acceptable: the goal is to keep them out of the *active workflow* and out of the code repo's main, not to delete every trace. CAIRN does not own project-level documentation; that is your team's call.
 
 ### 7. Small is beautiful.
 

@@ -11,10 +11,10 @@ You build the services, the APIs, the data flows. In CAIRN, you own the backend 
 
 ## Artifacts you own
 
-- Your assigned stories in `tasks/backend/`.
+- Your assigned stories in `features/<feature>/stories/backend/`.
 - Backend-specific sections of `architecture.md`.
-- `schema.md` or equivalent, if you are the database-facing dev on the team.
-- Backend runbooks for services you own.
+- Feature-scoped data model notes, if you are the database-facing dev on the team.
+- Backend runbooks for services you own (project-level, not CAIRN).
 
 ## Artifacts you contribute to
 
@@ -47,9 +47,9 @@ You build the services, the APIs, the data flows. In CAIRN, you own the backend 
 
 ## A day in the life
 
-**09:00.** Check the Story PR for today's work. Read it carefully.
+**09:00.** Check the CAIRN repo for today's story. Read it carefully.
 
-**09:15.** Branch off main. Start an AI session. Prompt: "Implement `tasks/backend/QUIZ-01-session-service.md` per the story. Show me the plan first, respecting the conventions in `CLAUDE.md` and the architecture in `docs/features/pub-quiz/architecture.md`."
+**09:15.** Branch off main in the code repo. Start an AI session with both the code repo and the CAIRN repo open in the IDE workspace. Prompt: "Implement `features/pub-quiz/stories/backend/QUIZ-01-session-service.md` from the CAIRN repo. Show me the plan first, respecting our project conventions and the architecture at `features/pub-quiz/architecture.md`."
 
 **09:30.** Review the plan. Push back on one aspect (the caching strategy does not fit this use case). AI re-plans.
 

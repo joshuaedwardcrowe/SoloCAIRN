@@ -11,7 +11,7 @@ You build what users actually see and touch on the web. In CAIRN, you own the fr
 
 ## Artifacts you own
 
-- Your assigned stories in `tasks/frontend/`.
+- Your assigned stories in `features/<feature>/stories/frontend/`.
 - Frontend-specific sections of `architecture.md` (state management, data fetching patterns, component structure).
 - Shared component and design system contributions, if your team has them.
 
@@ -49,7 +49,7 @@ You build what users actually see and touch on the web. In CAIRN, you own the fr
 
 **09:00.** Review your story, the linked UX wireframes, and the API contract for the endpoints you will hit.
 
-**09:30.** Branch. Start an AI session. "Implement `tasks/frontend/QUIZ-03-host-console.md` per the story. Follow the components in our design system (see `src/components/`). Show me the plan first."
+**09:30.** Branch in the code repo. Start an AI session with both the code repo and the CAIRN repo open in the IDE workspace. "Implement `features/pub-quiz/stories/frontend/QUIZ-03-host-console.md` from the CAIRN repo. Follow the components in our design system (see `src/components/` in the code repo). Show me the plan first."
 
 **10:00.** Implement the main component, with states for loading, empty, success, error. Wire up API calls.
 

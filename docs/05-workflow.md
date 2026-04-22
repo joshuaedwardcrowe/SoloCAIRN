@@ -122,7 +122,7 @@ The same pattern: pick a story, branch, AI-assisted implement, open Code PR, rev
 ## Git etiquette
 
 - **Small PRs.** One story per PR. If a story is too big, split the story first, not the PR.
-- **PR descriptions link to the story.** `Implements [QUIZ-01](tasks/backend/QUIZ-01-session-service.md).`
+- **PR descriptions link to the story.** `Implements [QUIZ-01](../my-team-cairn/features/pub-quiz/stories/backend/QUIZ-01-session-service.md).`
 - **Commits are cheap.** WIP commits are fine in-branch. Squash on merge if you like a clean history, or keep them if they tell a useful story.
 - **Draft PRs are welcome.** Open a draft as soon as the branch has meaningful work. This gives teammates visibility and lets AI reviewers run early.
 - **Rebase vs merge.** Team choice. Pick one and stick with it. Do not mix.

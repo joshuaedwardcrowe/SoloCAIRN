@@ -87,10 +87,10 @@ The horizontal arrows are handoffs, always mediated by a reviewed artifact. The 
 **Who leads.** Team Lead (in a scrum-master role).
 
 **Artifacts produced.**
-- `tasks/backend/STORY-XX.md`
-- `tasks/frontend/STORY-XX.md`
-- `tasks/mobile/STORY-XX.md`
-- `tasks/database/STORY-XX.md`
+- `features/<feature>/stories/backend/STORY-XX.md`
+- `features/<feature>/stories/frontend/STORY-XX.md`
+- `features/<feature>/stories/mobile/STORY-XX.md`
+- `features/<feature>/stories/database/STORY-XX.md`
 
 Each story follows the [story template](../templates/story.md).
 

@@ -27,7 +27,7 @@ Instead, pick the next non-trivial feature. Propose to the team: *"For this feat
 **What to produce on the pilot.**
 - A `features/<feature>/` folder in the CAIRN repo (or a `cairn/<feature>` branch in the code repo).
 - Problem, scope, architecture there. Short. Half a page each is fine.
-- Stories under `features/<feature>/stories/<platform>/` (or `tasks/<feature>/<platform>/` for the branch model).
+- Stories under `features/<feature>/stories/<platform>/` in either model.
 - Normal Code PRs against `main` in the code repo, linked to the stories.
 - Folder archived (or branch PR closed) when the feature ships.
 

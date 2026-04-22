@@ -37,6 +37,7 @@ It is probably not for you if you prefer heavy, certifying process frameworks, o
 | See the full lifecycle | [docs/03-lifecycle.md](docs/03-lifecycle.md) |
 | See a day in the life | [docs/05-workflow.md](docs/05-workflow.md) |
 | Choose where artifacts live | [docs/09-deployment-models.md](docs/09-deployment-models.md) |
+| Know what CAIRN does not solve | [docs/10-what-cairn-does-not-solve.md](docs/10-what-cairn-does-not-solve.md) |
 | Find your role | [roles/](roles/) |
 | Copy a template | [templates/](templates/) |
 | See it applied to a real feature | [examples/pub-quiz/](examples/pub-quiz/) |

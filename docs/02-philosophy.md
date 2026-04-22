@@ -55,35 +55,39 @@ The [MANIFESTO](../MANIFESTO.md) gives you the one-page version. This is the dir
 
 **Where it bends.** For highly bounded tasks with clear specifications (converting a format, generating boilerplate, writing a test for a known interface), AI can be trusted more directly. The pattern is: the more explicit the spec, the more latitude the AI gets.
 
-## 5. No costumes
+## 5. Be skeptical of costumes
 
-**The principle.** Do not prompt an AI to act as a persona. "You are a senior architect." "You are a product manager." This is theatre.
+**The principle.** Be skeptical of prompting an AI to maintain a persona ("You are a senior architect", "You are a product manager") as a load-bearing part of your workflow. The evidence we have suggests these role prompts mostly add stylistic noise without consistently improving reasoning, and the wins that multi-agent frameworks claim from "personas" can usually be explained more simply by the context isolation and stage gates those frameworks happen to also provide.
 
-**Why it matters.** Research on role-prompting is clear: it adds stylistic noise and rarely improves reasoning. What looks like persona value in multi-agent frameworks is almost always the benefit of context isolation and stage gates, which you can get without the costume.
+We are not claiming this is a settled empirical result; published findings on role-prompting are mixed and the field moves quickly. We are claiming that personas are at best a modest effect, often zero, and that building a methodology around them buys complexity for unclear return.
+
+**Why it matters.** If you build your process on persona agents, you commit to maintaining their prompts, debugging their interactions, and explaining them to new joiners. If the underlying value is context isolation and stage gates, you can get those for free with subagents and PR review, with none of the costume overhead.
 
 **How to apply it.**
 - Prompt with context and goals, not identities.
 - Get context isolation through separate conversations or subagents, not through personas.
 - If you want AI to behave like a specialist, give it specialist-grade context (the artifacts) instead of a specialist costume.
 
-**Where it bends.** Very short, well-defined role cues ("respond as a code reviewer focused on security") can be useful for single-turn tasks. The anti-pattern is building a whole workflow around maintained personas.
+**Where it bends.** Very short, single-turn role cues ("respond as a code reviewer focused on security") seem to land more reliably than maintained multi-turn personas. Use them when they help. The anti-pattern we want to avoid is building a whole workflow around maintained, named personas with their own configuration.
 
-## 6. Artifacts are ephemeral and feature-scoped
+## 6. Artifacts are operationally ephemeral and feature-scoped
 
-**The principle.** Every CAIRN artifact is born with a feature and dies with the feature. They are reviewed during the build and end when the feature ships and stabilises. The code is what survives. The artifacts were scaffolding for the build, not documentation for posterity.
+**The principle.** A CAIRN artifact is in active use only for the duration of one feature build. It is the scaffolding the team and AI work from while building. Once the feature ships and stabilises, the artifact stops being load-bearing: the code is the operational truth from that point on.
 
-**Why it matters.** This is what keeps CAIRN sustainable at scale. If artifacts merged into the code repo's `main`, every team's history would accumulate forever and the repo would drown in old specs, dead stories, and rotting docs. By keeping artifacts off `main`, the code repo stays clean indefinitely.
+This is *operational* ephemerality, not deletion. The artifact may remain in the CAIRN repo's history or in a closed PR as a searchable record. The goal is to keep it out of the active workflow and out of the code repo's `main`, not to wipe every trace.
+
+**Why it matters.** If artifacts merged into the code repo's `main`, every team's history would accumulate there and `main` would drown in old specs, dead stories, and rotting docs that contradict the current code. By keeping artifacts off `main`, the code repo stays clean indefinitely. The historical record (if you want one) lives somewhere it cannot pollute the working tree.
 
 **How to apply it.** Pick one of two deployment models:
 
-- **A separate CAIRN repo** (recommended for most teams): a dedicated repo holds your team's or company's CAIRN artifacts. Devs clone it alongside the code repo. The code repo is untouched. Old features are archived or deleted.
+- **A separate CAIRN repo** (recommended for most teams): a dedicated repo holds your team's or company's CAIRN artifacts. Devs clone it alongside the code repo. The code repo is untouched. Old features are archived to a folder or deleted from the working tree (git history preserves them either way).
 - **A long-lived branch in the code repo**: a `cairn/<feature>` branch holds the artifacts; a PR is opened against `main` and never merged. Closed at release.
 
-See [09-deployment-models.md](09-deployment-models.md) for the tradeoffs and how to choose.
+See [09-deployment-models.md](09-deployment-models.md) for the tradeoffs and how to choose. The separate repo model is structurally sound; the branch model is a fallback when you cannot create a new repo, and comes with real ergonomic costs documented there.
 
 In both cases: code merges to `main` through your team's normal flow, with code PRs linking to artifacts in the chosen location.
 
-**What CAIRN does not own.** Project-level documentation: system-level architecture, current schema, runbooks, conventions, the project's AI context file. Whether and how a team maintains those is outside CAIRN's scope, decided by the team or the company. CAIRN is for one feature at a time, and ends with that feature.
+**What CAIRN does not own.** Project-level documentation: system-level architecture, current schema, runbooks, conventions, the project's AI context file. Whether and how a team maintains those is outside CAIRN's scope, decided by the team or the company. CAIRN is for one feature at a time and ends with that feature. We are honest about this rather than pretending the problem does not exist; see [10-what-cairn-does-not-solve.md](10-what-cairn-does-not-solve.md) for what to do about the things we leave on the table.
 
 **Where it bends.** Compliance regimes that require persistent in-repo documentation will not accept the ephemeral model. If you operate in such a regime, merge the artifacts into the code repo's `main` under a clearly-archived path and accept the bloat.
 
@@ -118,8 +122,8 @@ In both cases: code merges to `main` through your team's normal flow, with code 
 2. Process should leave artifacts.
 3. Review is the real gate.
 4. Humans decide, AI drafts.
-5. Costumes do not help.
-6. Artifacts are ephemeral, scoped to one feature.
+5. Be skeptical of costumes.
+6. Artifacts are operationally ephemeral, scoped to one feature.
 7. Smaller is usually better.
 8. Roles are human.
 

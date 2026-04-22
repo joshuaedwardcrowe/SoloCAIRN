@@ -31,9 +31,9 @@ Full layout explanation for any non-obvious directories.
 
 ## How we work
 
-- Feature work follows CAIRN: artifacts live on `cairn/<feature>` branches and never merge to main. See the CAIRN docs for the methodology we follow.
-- Features start with a Spec PR, then a Story PR, then Code PRs.
-- Stories live in `tasks/<platform>/`.
+- Feature work follows CAIRN: artifacts live in [our team's CAIRN repo at <link> | a `cairn/<feature>` branch in this repo] and never merge to this repo's `main`. See the CAIRN docs for the methodology we follow.
+- Features start with a problem statement, then scope and architecture, then stories per platform, then code PRs against this repo.
+- Code PRs link to the relevant story in the CAIRN location.
 
 ## Conventions
 
@@ -41,7 +41,7 @@ Full layout explanation for any non-obvious directories.
 
 - Indentation: ... spaces
 - Commit messages: <convention reference>
-- Branch names: `feat/<story-id>-<slug>`, `spec/<feature>`, `stories/<feature>`
+- Branch names in this code repo: `feat/<story-id>-<slug>` (or `cairn/<feature>` if using the branch-based CAIRN model)
 
 ### Code style
 

@@ -11,11 +11,11 @@
 
 Most AI development methodologies try to solve the problem by adding more AI: more agents, more personas, more automated handoffs. CAIRN goes the other way. It says:
 
-1. **Write things down.** Problem, scope, architecture, stories. In markdown, on a dedicated `cairn/<feature>` branch.
+1. **Write things down.** Problem, scope, architecture, stories. In markdown, in a dedicated CAIRN location (a separate repo or a long-lived feature branch).
 2. **Review them like code.** Spec changes go through pull requests. Approvals are the real stage gate.
-3. **Let AI read what you already wrote.** It will be dramatically more useful once it has shared context.
+3. **Let AI read what you already wrote.** Open the CAIRN repo and the code repo together so the AI can cross-reference both.
 4. **Skip the personas.** You don't need "Architect Agent" when you have a real architect reviewing a real PR.
-5. **Close, don't merge.** When the feature ships and stabilises, the long-lived PR is closed without merging. The artifacts were scaffolding for the build; the code is the durable record. `main` stays clean indefinitely.
+5. **End them when the feature ships.** Artifacts were scaffolding for the build; the code is the durable record. Your code repo's `main` stays clean indefinitely.
 
 That is the whole thing. Everything else in this repo is details, templates, and examples.
 
@@ -36,7 +36,7 @@ It is probably not for you if you prefer heavy, certifying process frameworks, o
 | Know why this exists | [docs/01-why-cairn.md](docs/01-why-cairn.md) |
 | See the full lifecycle | [docs/03-lifecycle.md](docs/03-lifecycle.md) |
 | See a day in the life | [docs/05-workflow.md](docs/05-workflow.md) |
-| Understand the branch and PR mechanics | [docs/09-the-feature-branch-model.md](docs/09-the-feature-branch-model.md) |
+| Choose where artifacts live | [docs/09-deployment-models.md](docs/09-deployment-models.md) |
 | Find your role | [roles/](roles/) |
 | Copy a template | [templates/](templates/) |
 | See it applied to a real feature | [examples/pub-quiz/](examples/pub-quiz/) |

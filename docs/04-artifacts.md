@@ -4,7 +4,7 @@ Every stage in CAIRN produces at least one artifact. This is the catalog: what e
 
 Templates for each artifact live in [templates/](../templates/).
 
-> All CAIRN artifacts live on the `cairn/<feature>` branch. None of them merge to `main`. They close with the long-lived Spec PR when the feature ships and stabilises. See [09-the-feature-branch-model.md](09-the-feature-branch-model.md).
+> All CAIRN artifacts live in your chosen CAIRN location: a separate CAIRN repo (recommended) or a long-lived `cairn/<feature>` branch in your code repo. None of them ever land on the code repo's `main`. They end when the feature ships and stabilises. See [09-deployment-models.md](09-deployment-models.md).
 
 ## The short list
 

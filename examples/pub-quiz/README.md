@@ -2,7 +2,7 @@
 
 This is a worked example of a feature going through CAIRN end to end. It shows what the artifacts actually look like, in realistic detail, so you can see the method applied rather than described.
 
-> All artifacts shown here would, in a real project, live on a `cairn/pub-quiz-live-scoring` branch with a long-lived Spec PR against `main`. None of them ever merge to `main`. When the feature ships and stabilises, the PR is closed without merging. See [docs/09-the-feature-branch-model.md](../../docs/09-the-feature-branch-model.md) for the mechanics.
+> In a real project, all artifacts shown here would live in the team's CAIRN location: a separate CAIRN repo (recommended) under `features/pub-quiz-live-scoring/`, or a long-lived `cairn/pub-quiz-live-scoring` branch in the code repo. They never reach the code repo's `main`. When the feature ships and stabilises, the folder is archived (or the branch PR is closed without merging). See [docs/09-deployment-models.md](../../docs/09-deployment-models.md) for the mechanics and the choice between them.
 
 > This is example content. The product, the company, and the stakeholders are invented. Any resemblance to a real quiz platform is coincidental.
 
@@ -16,13 +16,12 @@ A hosted pub-quiz experience for venues:
 
 ## What this example demonstrates
 
-- A **long-lived Spec PR** on `cairn/pub-quiz-live-scoring` that accumulates problem, stakeholders, research, scope, architecture, open questions, stories, and the QA checklist as the work progresses.
 - The full set of feature-scoped artifacts a team would produce, sliced across backend, frontend, mobile, and database.
 - A **QA checklist** that ties every story's acceptance criteria to a feature-level verification gate.
 - Cross-role handoffs, with each artifact produced by the right role.
 - Pragmatic compromises and open questions kept visible instead of hidden.
 
-When the feature ships and stabilises, the team would close this PR without merging. The closed PR remains as the historical record. `main` never sees any of these files.
+When the feature ships and stabilises, the team would archive these artifacts (or close the long-lived branch PR, depending on the deployment model). The code repo's `main` never sees them.
 
 ## The artifacts (all on the feature branch)
 

@@ -59,23 +59,26 @@ Things that look like CAIRN but are not. If you see these happening on your team
 
 ## CAIRN artifacts outside git
 
-**What it looks like.** The team agrees to adopt CAIRN, then puts the problem statement in Confluence, the stories in Jira, the architecture in Miro. The `cairn/<feature>` branch is empty.
+**What it looks like.** The team agrees to adopt CAIRN, then puts the problem statement in Confluence, the stories in Jira, the architecture in Miro. The CAIRN repo (or feature branch) is empty.
 
-**Why it happens.** Organisational inertia, tool-per-role mindset, or the belief that "docs belong in our wiki, not in code."
+**Why it happens.** Organisational inertia, tool-per-role mindset, or the belief that "docs belong in our wiki, not in git."
 
-**Why it is dangerous.** AI sessions cannot easily reach those artifacts. Reviewers cannot use code-review tooling on them. Versioning is inconsistent. The whole point of CAIRN's branch model collapses if the artifacts are not in git.
+**Why it is dangerous.** AI sessions cannot easily reach those artifacts. Reviewers cannot use code-review tooling on them. Versioning is inconsistent. The whole point of CAIRN collapses if the artifacts are not in markdown in git.
 
-**How to fix it.** CAIRN artifacts live on the `cairn/<feature>` branch as markdown, full stop. They never merge to `main`, so the "but our repo is for code" objection does not apply. Other tools (Jira, Confluence) keep doing their other jobs (tickets, organisational content). They are not where CAIRN artifacts live during the build.
+**How to fix it.** CAIRN artifacts live in your chosen CAIRN location (separate repo or feature branch) as markdown, full stop. Other tools (Jira, Confluence) keep doing their other jobs (tickets, organisational content). They are not where CAIRN artifacts live during the build.
 
-## Merging the feature branch
+## Polluting the code repo's main
 
-**What it looks like.** Someone clicks merge on the long-lived Spec PR. Now `main` has all the CAIRN artifacts in it.
+**What it looks like.** Someone merges CAIRN artifacts into the code repo's `main`. Either by clicking merge on the long-lived branch PR, or by adding feature docs to a normal code PR.
 
-**Why it happens.** Habit. Long-lived PRs feel like they should eventually merge. Or someone is trying to "tidy up" by closing the open PR.
+**Why it happens.** Habit. Long-lived PRs feel like they should eventually merge. Or a dev thinks they are being helpful by adding the architecture doc next to the code.
 
 **Why it is dangerous.** Once artifacts are on `main`, you have started accumulating them per feature, per team. The clean-main property collapses. You now also have the doc-rot problem you were trying to avoid.
 
-**How to fix it.** Title the PR clearly: `[CAIRN] Pub Quiz Live Scoring (do not merge)`. Set branch protection on `main` if you can. When the feature ships, **close** the PR. Never merge.
+**How to fix it.**
+- In the branch model: title the long-lived PR clearly with `[CAIRN] <feature> (do not merge)`. Set branch protection if you can. **Close, do not merge.**
+- In the separate-repo model: there is no PR to merge in the wrong direction. The structural fact prevents this anti-pattern.
+- In either model: code PRs touching `main` should not contain CAIRN artifacts. Reviewers should call this out.
 
 ## Artifact theatre
 

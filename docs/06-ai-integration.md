@@ -1,6 +1,6 @@
 # 06. How AI fits in
 
-CAIRN is designed so that any AI assistant (Claude, Cursor, Copilot, others) can plug in and be immediately useful, because the feature context it needs is on the `cairn/<feature>` branch in a known shape. This doc explains how to make that work in practice.
+CAIRN is designed so that any AI assistant (Claude, Cursor, Copilot, others) can plug in and be immediately useful, because the feature context it needs is in a known location with a known shape. This doc explains how to make that work in practice.
 
 ## The mental model
 
@@ -25,28 +25,30 @@ A starting point for one (if you want it) is in [templates/CLAUDE.md.example](..
 
 ### Feature-level context (this is the CAIRN part)
 
-When working on a CAIRN feature, the AI session needs access to the artifacts on the `cairn/<feature>` branch:
+When working on a CAIRN feature, the AI session needs access to the artifacts:
 
-- `docs/features/<feature>/problem-statement.md`
-- `docs/features/<feature>/architecture.md`
-- `tasks/<feature>/<platform>/STORY-XX.md`
-- `docs/features/<feature>/qa-checklist.md`
+- `features/<feature>/problem-statement.md`
+- `features/<feature>/architecture.md`
+- `features/<feature>/stories/<platform>/STORY-XX.md`
+- `features/<feature>/qa-checklist.md`
 
-Because code work happens on `feat/*` branches off `main`, the AI does not see these files automatically. Two simple ways to fix that:
+How the AI reaches them depends on your deployment model (see [09-deployment-models.md](09-deployment-models.md)):
 
-**Option A: git worktree.** Check out the feature branch in a sibling directory:
+**If you use a separate CAIRN repo (recommended).** Clone the CAIRN repo alongside the code repo. Open both folders in your IDE workspace. The AI can read both as if they were one workspace, no auth required, no URLs to fetch.
+
 ```
-git worktree add ../my-repo-cairn cairn/<feature-slug>
-```
-Point the AI at the sibling directory, or include both directories in the AI's working context.
-
-**Option B: sparse fetch.** Fetch the feature branch and read files directly:
-```
-git fetch origin cairn/<feature-slug>
-git show origin/cairn/<feature-slug>:docs/features/<feature>/architecture.md
+~/work/
+├── my-product/         ← code repo
+└── my-team-cairn/      ← CAIRN repo, opened in same IDE workspace
 ```
 
-Pick what fits your tooling. The point is that feature artifacts are reachable from any developer's machine without ever touching `main`.
+**If you use the long-lived branch model.** Add a worktree of the CAIRN branch in a sibling directory:
+```
+git worktree add ../my-product-cairn cairn/<feature-slug>
+```
+Then open both directories in the IDE workspace.
+
+In both cases, AI sessions on a code branch can read the artifacts from the sibling location without going through any web API.
 
 ### Subagents and task-scoped context
 
@@ -64,7 +66,7 @@ Subagents give you context isolation without personas. They are the mechanism th
 
 **Weak.** "Build the login page."
 
-**Strong.** "Implement the login page per `tasks/auth/frontend/AUTH-03-login-page.md` on the feature branch worktree. Follow the design in `docs/features/auth/ux/login.png`."
+**Strong.** "Implement the login page per `features/auth/stories/frontend/AUTH-03-login-page.md` in the CAIRN repo (sibling folder in this workspace). Follow the design in `features/auth/ux/login.png`."
 
 The strong prompt does no extra work that the artifacts cannot do. The AI reads the story and the design, and proceeds.
 
@@ -108,7 +110,7 @@ If the AI proposes an acceptance criterion that was not in the story, either add
 
 ### One giant conversation
 
-Context windows are finite and even within the limit, quality degrades in very long sessions. Start fresh sessions for unrelated work. The artifacts on the feature branch are the continuity; the chat history is not.
+Context windows are finite and even within the limit, quality degrades in very long sessions. Start fresh sessions for unrelated work. The artifacts in the CAIRN location are the continuity; the chat history is not.
 
 ## What AI is genuinely great at
 
@@ -128,7 +130,7 @@ Context windows are finite and even within the limit, quality degrades in very l
 
 ## A simple check
 
-Before you hand AI a task, ask: "If a smart new hire walked into this feature branch today with no prior context, would they be able to do this task from the artifacts alone?"
+Before you hand AI a task, ask: "If a smart new hire walked into this feature folder today with no prior context, would they be able to do this task from the artifacts alone?"
 
 - If yes, AI will do well.
 - If no, write more context first. Then AI will do well.

@@ -70,22 +70,22 @@ The [MANIFESTO](../MANIFESTO.md) gives you the one-page version. This is the dir
 
 ## 6. Artifacts are ephemeral and feature-scoped
 
-**The principle.** Every CAIRN artifact is born with a feature and dies with the feature. They live on a dedicated feature branch, are reviewed there, and are closed without merging once the feature ships and stabilises. The code is what survives. The artifacts were scaffolding for the build, not documentation for posterity.
+**The principle.** Every CAIRN artifact is born with a feature and dies with the feature. They are reviewed during the build and end when the feature ships and stabilises. The code is what survives. The artifacts were scaffolding for the build, not documentation for posterity.
 
-**Why it matters.** This is what keeps CAIRN sustainable at scale. If artifacts merged into `main`, every team's history would accumulate forever, and the repo would drown in old specs, dead stories, and rotting docs. By scoping artifacts to one feature branch that never merges, `main` stays clean indefinitely. The closed PR remains as a permanent record, addressable by URL.
+**Why it matters.** This is what keeps CAIRN sustainable at scale. If artifacts merged into the code repo's `main`, every team's history would accumulate forever and the repo would drown in old specs, dead stories, and rotting docs. By keeping artifacts off `main`, the code repo stays clean indefinitely.
 
-**How to apply it.**
-- Open a `cairn/<feature-slug>` branch off `main` for each new feature.
-- Open a long-lived PR from that branch to `main` and never merge it.
-- Land all CAIRN artifacts on this branch.
-- Code merges to `main` through your team's normal flow, with code PRs linking to artifacts on the feature branch.
-- When the feature ships and stabilises, close the long-lived PR. The branch can be deleted; the closed PR remains as the historical record.
+**How to apply it.** Pick one of two deployment models:
 
-See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the full mechanics.
+- **A separate CAIRN repo** (recommended for most teams): a dedicated repo holds your team's or company's CAIRN artifacts. Devs clone it alongside the code repo. The code repo is untouched. Old features are archived or deleted.
+- **A long-lived branch in the code repo**: a `cairn/<feature>` branch holds the artifacts; a PR is opened against `main` and never merged. Closed at release.
+
+See [09-deployment-models.md](09-deployment-models.md) for the tradeoffs and how to choose.
+
+In both cases: code merges to `main` through your team's normal flow, with code PRs linking to artifacts in the chosen location.
 
 **What CAIRN does not own.** Project-level documentation: system-level architecture, current schema, runbooks, conventions, the project's AI context file. Whether and how a team maintains those is outside CAIRN's scope, decided by the team or the company. CAIRN is for one feature at a time, and ends with that feature.
 
-**Where it bends.** Compliance regimes that require persistent in-repo documentation will not accept "the closed PR is the record." If you operate in such a regime, merge the artifacts into `main` under a clearly-archived path and accept the bloat.
+**Where it bends.** Compliance regimes that require persistent in-repo documentation will not accept the ephemeral model. If you operate in such a regime, merge the artifacts into the code repo's `main` under a clearly-archived path and accept the bloat.
 
 ## 7. Small is beautiful
 

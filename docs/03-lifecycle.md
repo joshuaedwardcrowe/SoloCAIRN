@@ -61,7 +61,7 @@ The horizontal arrows are handoffs, always mediated by a reviewed artifact. The 
 
 **How AI helps.** Surfaces inconsistencies between scope and the research. Drafts the first cut of in/out lists from a conversation transcript.
 
-**Done when.** A **Spec PR** is open on the `cairn/<feature>` branch containing problem, research, and scope. The PR is reviewed by the full team. Approval is the gate. The Spec PR is the long-lived PR; it accumulates artifacts as the feature progresses and is closed without merging at release. See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the mechanics.
+**Done when.** A **Spec PR** is open in the chosen CAIRN location (a separate CAIRN repo or a long-lived branch in the code repo) containing problem, research, and scope. The PR is reviewed by the full team. Approval is the gate. See [09-deployment-models.md](09-deployment-models.md) for where the artifacts live.
 
 ### 4. Design
 
@@ -96,7 +96,7 @@ Each story follows the [story template](../templates/story.md).
 
 **How AI helps.** Expands a scope bullet into a full story file with acceptance criteria. Proposes a reasonable slicing. Spots missing stories by cross-checking scope and architecture.
 
-**Done when.** Stories are added to the `cairn/<feature>` branch (typically through a sub-PR against that branch) and reviewed by the relevant devs and QA. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Approval and landing on the feature branch is the gate.
+**Done when.** Stories are added to the chosen CAIRN location through a reviewed PR. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Approval is the gate.
 
 ### 6. Build
 
@@ -144,7 +144,7 @@ Each story follows the [story template](../templates/story.md).
 
 **Who leads.** The whole team, with the Team Lead coordinating.
 
-**CAIRN artifacts produced.** Updates to the open questions and QA checklist on the feature branch as reality teaches you something. New stories on the feature branch for any follow-ups handled within the same feature scope.
+**CAIRN artifacts produced.** Updates to the open questions and QA checklist as reality teaches you something. New stories for any follow-ups handled within the same feature scope.
 
 **Adjacent (not CAIRN) artifacts your team may also produce.** Incident notes, postmortems, lessons-learned writeups. These belong wherever your team's project-level docs live.
 
@@ -163,14 +163,13 @@ Each story follows the [story template](../templates/story.md).
 | Technical debt | Scope → Design → Breakdown → Build → Review (often no Release doc needed) |
 | Emergency hotfix | Build → Review → Release, then retrospectively write it up |
 
-## The three PRs
+## The kinds of PR
 
-CAIRN distinguishes three kinds of pull request. Everything else is a variation of one of these.
+CAIRN distinguishes two kinds of work. The exact PR shapes depend on your chosen deployment model.
 
-1. **Spec PR**: the long-lived PR from `cairn/<feature>` to `main`, containing all CAIRN artifacts (problem, research, scope, design, stories, QA checklist). Reviewed by the whole team. **Never merged.** Closed when the feature ships and stabilises.
-2. **Sub-PRs against the feature branch**: small, targeted PRs that land specific artifacts (a draft architecture, a batch of stories, a QA checklist update) into the `cairn/<feature>` branch. These do merge, but only into the feature branch, never into `main`.
-3. **Code PR**: a normal code PR from `feat/<story-id>` into `main`, the implementation of a single story. Reviewed against the story's acceptance criteria. Links to the story file on the feature branch by URL.
+1. **CAIRN PRs** land artifacts in your chosen CAIRN location (a separate repo or a feature branch). Reviewed by the people whose work depends on the artifact. In a separate CAIRN repo these merge to that repo's `main` normally. In the branch model they land on the feature branch via sub-PRs, and the long-lived branch PR against the code repo's `main` is never merged.
+2. **Code PRs** are normal code PRs in the code repo from `feat/<story-id>` into `main`, the implementation of a single story. Reviewed against the story's acceptance criteria. Link to the story file by path or URL.
 
-See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the full mechanics.
+See [09-deployment-models.md](09-deployment-models.md) for the full mechanics under each model.
 
-If you find yourself wanting a fourth kind, you probably want a bigger version of one of these three.
+If you find yourself wanting a third or fourth kind, you probably want a bigger version of one of these two.

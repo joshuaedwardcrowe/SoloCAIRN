@@ -4,52 +4,52 @@ This is what a week inside CAIRN actually looks like. If the rest of the docs de
 
 ## The PRs, in motion
 
-CAIRN distinguishes a long-lived Spec PR (which never merges) and the code PRs that ship the work (which do merge). Knowing which one you are in at any moment is most of the discipline. See [09-the-feature-branch-model.md](09-the-feature-branch-model.md) for the full mechanics.
+CAIRN distinguishes two kinds of work: PRs that land artifacts, and PRs that ship code. The exact shapes depend on your chosen deployment model (see [09-deployment-models.md](09-deployment-models.md)).
 
-### Spec PR (long-lived, never merged)
+The examples below use the separate-CAIRN-repo model (recommended). The branch model is similar in spirit; the difference is the artifacts live on a long-lived non-merging branch in the code repo instead.
 
-**Branch name.** `cairn/<feature-slug>`
+### CAIRN PRs (artifact PRs)
 
-**Contains.** All CAIRN artifacts for this feature: problem, research, scope, architecture, stories, QA checklist, open questions. Docs only. No code.
+**Where.** In the CAIRN repo (or, in the branch model, against the long-lived feature branch in the code repo).
 
-**Lifetime.** Weeks to months. Opened at the start of the feature, accumulates artifacts as the work progresses, **closed without merging** when the feature ships and stabilises.
+**Branch name in the CAIRN repo.** `feat/<feature-slug>` for the initial spec, `update/<feature-slug>-<what>` for follow-on changes.
 
-**Reviewers.** The full team. Everyone who will implement it has a say before implementation starts.
+**Contains.** Some or all CAIRN artifacts for this feature: problem, research, scope, architecture, stories, QA checklist, open questions. Markdown only. No code.
 
-**Approval criteria.** The team agrees this is what we are building and roughly how. Open questions are listed but not all resolved. The PR remains open and is iterated on.
+**Lifetime.** Each PR lives a few days. The feature folder accumulates artifacts across many PRs over weeks or months.
 
-**What it looks like.**
+**Reviewers.** The people whose work depends on the artifact. The full team for the initial spec; the implementing devs and QA for stories; UX for design intent.
+
+**Merge criteria (CAIRN repo).** The team agrees the artifact is good enough to act on. Open questions are listed but not all resolved.
+
+**What the CAIRN repo looks like.**
 
 ```
-cairn/pub-quiz-live-scoring (branch)
-├── docs/features/pub-quiz/
-│   ├── problem-statement.md
-│   ├── stakeholder-interviews.md (sanitised)
-│   ├── ux-research.md
-│   ├── scope.md
-│   ├── architecture.md
-│   ├── open-questions.md
-│   └── qa-checklist.md
-└── tasks/pub-quiz/
-    ├── backend/
-    │   ├── QUIZ-01-session-service.md
-    │   └── QUIZ-02-live-scoring-worker.md
-    ├── frontend/
-    │   └── QUIZ-03-host-console.md
-    └── mobile/
-        └── QUIZ-04-player-app-join-flow.md
+my-team-cairn (separate repo)
+└── features/
+    └── pub-quiz-live-scoring/
+        ├── problem-statement.md
+        ├── stakeholder-interviews.md (sanitised)
+        ├── ux-research.md
+        ├── scope.md
+        ├── architecture.md
+        ├── open-questions.md
+        ├── qa-checklist.md
+        └── stories/
+            ├── backend/
+            │   ├── QUIZ-01-session-service.md
+            │   └── QUIZ-02-live-scoring-worker.md
+            ├── frontend/
+            │   └── QUIZ-03-host-console.md
+            └── mobile/
+                └── QUIZ-04-player-app-join-flow.md
 ```
 
-### Sub-PRs against the feature branch
-
-Artifacts can be reviewed individually or in batches via small PRs that target the `cairn/<feature>` branch (not `main`). For example:
-
-- `spec/pub-quiz-architecture` → `cairn/pub-quiz-live-scoring`: lands the architecture doc.
-- `stories/pub-quiz-backend` → `cairn/pub-quiz-live-scoring`: lands the backend stories.
-
-These do merge, but only into the feature branch. Use them when you want clean, focused review on one artifact at a time.
+When the feature ships and stabilises, move the folder to `archive/` or delete it. The CAIRN repo's git history is the durable record.
 
 ### Code PR
+
+**Where.** In the code repo.
 
 **Branch name.** `feat/<story-id>-<short-description>`
 
@@ -63,14 +63,14 @@ These do merge, but only into the feature branch. Use them when you want clean, 
 
 **Merge criteria.** Acceptance criteria met. Tests pass. Review approved. The relevant QA checklist item ticked. **Merges into `main`.**
 
-**Linking.** PR description references the story file by URL on the `cairn/<feature>` branch. Devs needing the artifacts in their local workspace use a worktree or a sparse checkout of the feature branch (see [09-the-feature-branch-model.md](09-the-feature-branch-model.md)).
+**Linking.** PR description references the story file by path in the CAIRN repo, or by URL. Devs have both repos cloned side by side so AI sessions can read both.
 
 ## A day in the life, by role
 
 ### Team Lead (Monday)
 
-- 09:00. Open the Spec PR for the new feature. Paste in the problem statement draft. Tag stakeholders for review.
-- 10:30. Review yesterday's sub-PR adding stories to the feature branch. Approve two stories, request changes on one (too big, needs splitting).
+- 09:00. Open a CAIRN repo PR for the new feature, creating the `features/<feature>/` folder with a problem statement draft. Tag stakeholders for review.
+- 10:30. Review yesterday's CAIRN PR adding stories. Approve two stories, request changes on one (too big, needs splitting).
 - 13:00. Pair with the BA on stakeholder interview notes. Draft the themes section of `ux-research.md`.
 - 15:00. Review an open Code PR against its story. Acceptance criteria checked, two suggestions left, approve.
 - 17:00. Update `open-questions.md` with answers from today's stakeholder call.
@@ -93,7 +93,7 @@ These do merge, but only into the feature branch. Use them when you want clean, 
 ### Backend Dev (Thursday)
 
 - 09:00. Pick up story `QUIZ-01-session-service.md`. Branch: `feat/quiz-01-session-service`.
-- 09:15. Start an AI session. The AI has access to the architecture doc and the story via a worktree of `cairn/<feature>`. Prompt: "Implement QUIZ-01 per the story file. Show me the plan first."
+- 09:15. Start an AI session. Both the code repo and the CAIRN repo are open in the IDE workspace, so the AI can read the architecture doc and the story alongside the code. Prompt: "Implement QUIZ-01 per the story in the CAIRN repo. Show me the plan first."
 - 09:30. Review the plan. Push back on one part (the retry strategy is wrong for this use case). AI re-plans.
 - 10:00. Implement, with tests, iteratively.
 - 14:00. Story's acceptance criteria checked. Open Code PR. Link to story in description.
@@ -104,7 +104,7 @@ These do merge, but only into the feature branch. Use them when you want clean, 
 
 - 09:00. Story `QUIZ-04-player-app-join-flow.md`. Branch off main.
 - 09:30. AI session primed with the repo's mobile conventions, the relevant UX wireframe, and the story. Implement the QR scan + join screen.
-- 12:00. Hit an ambiguity: the story says "graceful failure" but does not specify retry behaviour. Push an update to the story file on the `cairn/<feature>` branch as a note for future readers, then make a judgment call. Flag it in the Code PR description so the reviewer can weigh in.
+- 12:00. Hit an ambiguity: the story says "graceful failure" but does not specify retry behaviour. Open a small CAIRN PR updating the story with a note, then make a judgment call. Flag it in the Code PR description so the reviewer can weigh in.
 - 15:00. PR open. Review requested from backend dev and UX.
 
 ### Frontend Dev (any day, similar shape)

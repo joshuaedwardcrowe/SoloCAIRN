@@ -28,7 +28,7 @@ Assigning a persona to an AI ("you are a senior architect") is theatre. It adds 
 
 ### 6. Artifacts are ephemeral, scoped to one feature.
 
-Every CAIRN artifact is born with a feature and dies with it. They live on a dedicated `cairn/<feature>` branch, are reviewed there, and are closed without merging when the feature ships. The closed PR remains as the historical record. Code is what survives. `main` stays clean indefinitely. CAIRN does not own project-level documentation; that is your team's call.
+Every CAIRN artifact is born with a feature and dies with it. They live in a dedicated CAIRN repo or on a long-lived feature branch that never merges, are reviewed during the build, and end when the feature ships. The code repo's `main` never sees them. Code is what survives. CAIRN does not own project-level documentation; that is your team's call.
 
 ### 7. Small is beautiful.
 
@@ -47,6 +47,6 @@ Business analysts, UX designers, team leads, developers, testers: these are real
 
 ## The shortest possible summary
 
-> Write clear docs on a feature branch. Review them. Let AI read them. Let humans decide. Close the PR when the feature ships.
+> Write clear docs in a place that is not your code repo's main. Review them. Let AI read them. Let humans decide. End them when the feature ships.
 
 That is CAIRN.

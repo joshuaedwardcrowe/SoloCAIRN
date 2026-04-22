@@ -1,10 +1,12 @@
-# [CAIRN] <feature name> (do not merge)
+# CAIRN: <feature name>
 
-> Copy this into the PR description when opening the long-lived Spec PR from `cairn/<feature-slug>` to `main`.
+> Copy this into the PR description when opening a CAIRN PR for a new feature.
 >
-> **This PR will not merge.** It is the review surface for the feature's CAIRN artifacts. It accumulates artifacts as the work progresses and is closed without merging when the feature ships and stabilises.
+> **In the separate-CAIRN-repo model:** this is the PR introducing the new `features/<feature-slug>/` folder in the CAIRN repo. It will merge into the CAIRN repo's `main` (not the code repo's). Follow-on artifacts come in subsequent PRs.
+>
+> **In the long-lived branch model:** rename the title to `[CAIRN] <feature> (do not merge)`. This is the long-lived PR from `cairn/<feature-slug>` to the code repo's `main`. It accumulates artifacts and is closed without merging when the feature ships.
 
-## What this PR contains (or will contain over time)
+## What this PR contains (or what the feature will contain over time)
 
 - [ ] Problem statement
 - [ ] Stakeholder interview notes (sanitised)

@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<p align="center"><em>A calm way to build software with AI, in a team.</em></p>
+<p align="center"><strong>AI as accelerator, not author.</strong></p>
 
 # CAIRN
 

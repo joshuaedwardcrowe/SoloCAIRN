@@ -70,6 +70,8 @@ We are not claiming this is a settled empirical result; published findings on ro
 
 **Where it bends.** Very short, single-turn role cues ("respond as a code reviewer focused on security") seem to land more reliably than maintained multi-turn personas. Use them when they help. The anti-pattern we want to avoid is building a whole workflow around maintained, named personas with their own configuration.
 
+**Field evidence.** We tested a maintained multi-agent team (a "developer", a "designer", a "content strategist") on a real build. The value that actually showed up was the separate contexts and a concrete review rubric held by one agent: the reviewer withheld sign-off on specific defects and caught real bugs. The "you are a senior designer" framing did almost none of the work; the checklist and the isolated context did it. Stripping the persona language and keeping what was load-bearing (scope, criteria, tool access) left a tool that was easier to reason about and just as useful. One data point, consistent with the principle: the costume was the disposable part.
+
 ## 6. Artifacts are operationally ephemeral and feature-scoped
 
 **The principle.** A CAIRN artifact is in active use only for the duration of one feature build. It is the scaffolding the team and AI work from while building. Once the feature ships and stabilises, the artifact stops being load-bearing: the code is the operational truth from that point on.

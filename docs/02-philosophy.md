@@ -116,6 +116,32 @@ In both cases: code merges to `main` through your team's normal flow, with code 
 
 **Where it bends.** For very small teams, one person may wear multiple hats. That is fine. The hats are still human.
 
+## 9. Gate mechanics with machines, decisions with humans
+
+**The principle.** Rules that must hold every single time should not depend on anyone remembering them. Human review is the gate for decisions. It is the wrong gate for mechanics.
+
+**Why it matters.** Principle 3 puts the stage gate on human judgment, and for decisions that is exactly right: is this the correct design, is the scope honest, is the tradeoff acceptable. But a second class of rule is non-negotiable and mechanical: the formatter must pass, the required check must be green, this change must stay inside the agreed scope. Those do not need judgment, they need to be true 100% of the time, and human judgment does not scale to 100%. The one time a tired reviewer waves through an unformatted diff or an out-of-scope edit, the rule failed silently. Intentions are not enforcement.
+
+**How to apply it.**
+- Split your gates in two. Humans gate decisions; deterministic checks gate mechanics.
+- Make the mechanical non-negotiables binary and automatic: required status checks, branch protection, merge-blocking linters, scope checks. If a rule is "always" or "never," it belongs in a machine, not in a reviewer's memory.
+- When a mechanical gate fails, it should fail loudly and block, not warn and continue. A gate that can be skipped without noticing is not a gate.
+
+**Where it bends.** Do not mechanize judgment. A check that tries to enforce "is this good architecture" or "is this the right abstraction" becomes ceremony and noise, and people learn to route around it. Only make deterministic what is genuinely binary. Everything else stays with the humans, under principle 3.
+
+## 10. The producer verifies first; review is the last guard
+
+**The principle.** Whoever produces the work is responsible for checking it before it reaches a reviewer. You do not hand over a first draft and outsource the verification. This applies to humans and to AI equally.
+
+**Why it matters.** Review is expensive and the reviewer starts cold: they have to reconstruct the context the producer already holds. If the producer hands over unverified work, the reviewer ends up doing the verification the producer should have done, at a much higher cost, and the actual purpose of review (catching what verification *missed*) never happens. The producer runs the acceptance criteria, exercises the change, and does an honest adversarial pass on their own output first. The reviewer is the last guard, not the first. This is doubly true when AI produced the work: AI should verify its own output aggressively (run the tests, check against the story, hunt its own diff for mistakes) and surface what it could not resolve, rather than handing back a plausible draft for a human to debug.
+
+**How to apply it.**
+- Before requesting review, the producer checks the work against the story's acceptance criteria and states plainly what was verified and what was not.
+- Distinguish "it compiles" from "I ran it and it does what the story asks." Only the second counts as verified.
+- When AI is the producer, the same bar applies: verified output with uncertainties surfaced, not a first draft with the checking left for the human.
+
+**Where it bends.** Genuinely exploratory or spike work is handed over rough on purpose, to get direction before investing in polish. That is fine, but say so explicitly. The anti-pattern is handing over work that is *presented* as done while quietly relying on the reviewer to find the holes.
+
 ## The principles in one sentence each
 
 1. Context is the product.
@@ -126,5 +152,7 @@ In both cases: code merges to `main` through your team's normal flow, with code 
 6. Artifacts are operationally ephemeral, scoped to one feature.
 7. Smaller is usually better.
 8. Roles are human.
+9. Machines gate mechanics, humans gate decisions.
+10. The producer verifies first; review is the last guard.
 
-If you remember nothing else, remember these eight sentences.
+If you remember nothing else, remember these ten sentences.

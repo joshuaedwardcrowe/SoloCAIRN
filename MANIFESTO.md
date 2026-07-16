@@ -47,6 +47,14 @@ A 200-word problem statement beats a 10-page PRD. A one-page architecture doc be
 
 Business analysts, UX designers, team leads, developers, testers: these are real jobs done by real people with real judgment. CAIRN gives each of them clearer artifacts and clearer handoffs. It does not replace them with a prompt.
 
+### 9. Machines gate mechanics, humans gate decisions.
+
+Human review is the gate for decisions: the design, the scope, the tradeoff. It is the wrong gate for rules that must hold every single time. The formatter passing, the required check being green, a change staying inside its agreed scope: these are non-negotiable and mechanical, and human memory does not enforce them at 100%. Put the binary, always-or-never rules in a machine that fails loudly. Keep the judgment with the humans.
+
+### 10. The producer verifies first; review is the last guard.
+
+Whoever makes the work checks it before a reviewer sees it. You do not hand over a first draft and outsource the checking. The reviewer's job is to catch what verification missed, not to do the verification. This holds for humans and for AI: AI should run the tests, check its output against the story, and surface what it could not resolve, rather than handing back something plausible for a human to debug.
+
 ## What we are not saying
 
 - We are not saying AI is bad. We use it daily and it makes us faster.

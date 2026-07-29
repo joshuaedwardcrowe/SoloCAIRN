@@ -1,10 +1,10 @@
-# ACAIRN: <feature name>
+# SoloCAIRN: <feature name>
 
-> Copy this into the PR description when opening an ACAIRN PR for a new feature.
+> Copy this into the PR description when opening an SoloCAIRN PR for a new feature.
 >
-> **In the separate-ACAIRN-repo model:** this is the PR introducing the new `features/<feature-slug>/` folder in the ACAIRN repo. It will merge into the ACAIRN repo's `main` (not the code repo's). Follow-on artifacts come in subsequent PRs.
+> **In the separate-SoloCAIRN-repo model:** this is the PR introducing the new `features/<feature-slug>/` folder in the SoloCAIRN repo. It will merge into the SoloCAIRN repo's `main` (not the code repo's). Follow-on artifacts come in subsequent PRs.
 >
-> **In the long-lived branch model:** rename the title to `[ACAIRN] <feature> (do not merge)`. This is the long-lived PR from `cairn/<feature-slug>` to the code repo's `main`. It accumulates artifacts and is closed without merging when the feature ships.
+> **In the long-lived branch model:** rename the title to `[SoloCAIRN] <feature> (do not merge)`. This is the long-lived PR from `cairn/<feature-slug>` to the code repo's `main`. It accumulates artifacts and is closed without merging when the feature ships.
 
 ## What this PR contains (or what the feature will contain over time)
 

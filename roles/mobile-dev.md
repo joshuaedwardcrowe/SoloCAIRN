@@ -1,6 +1,6 @@
 # Role: Mobile Developer (Android + iOS)
 
-You build the apps users carry in their pockets. In ACAIRN, mobile is treated as a single role covering both platforms, because the ACAIRN flow (spec, story, review) is the same regardless of which platform the code runs on. Platform-specific concerns live inside the stories and the architecture.
+You build the apps users carry in their pockets. In SoloCAIRN, mobile is treated as a single role covering both platforms, because the SoloCAIRN flow (spec, story, review) is the same regardless of which platform the code runs on. Platform-specific concerns live inside the stories and the architecture.
 
 ## Who you are
 
@@ -13,7 +13,7 @@ You build the apps users carry in their pockets. In ACAIRN, mobile is treated as
 
 - Stories in `features/<feature>/stories/mobile/`. Stories can be platform-specific or cross-platform; name them clearly.
 - Mobile-specific sections of `architecture.md` (navigation, state, offline behaviour, background tasks).
-- Platform-specific conventions live in your project's AI context file (CLAUDE.md or equivalent on the code repo's main), not in ACAIRN.
+- Platform-specific conventions live in your project's AI context file (CLAUDE.md or equivalent on the code repo's main), not in SoloCAIRN.
 
 ## Artifacts you contribute to
 
@@ -62,7 +62,7 @@ For simple features, or when you have a shared codebase (Flutter, React Native, 
 
 **09:00.** Read the story, the linked UX flow, and the API contract.
 
-**09:30.** Branch in the code repo. Open both repos in the IDE workspace. AI session primed with the story and the iOS-relevant architecture notes from the ACAIRN repo. Ask for the plan.
+**09:30.** Branch in the code repo. Open both repos in the IDE workspace. AI session primed with the story and the iOS-relevant architecture notes from the SoloCAIRN repo. Ask for the plan.
 
 **10:00.** Implement the view, view-model, and networking. Handle error and loading states. Add offline cache.
 

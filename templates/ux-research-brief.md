@@ -1,6 +1,6 @@
 # UX Research: <feature name>
 
-> Copy this file to `features/<feature-slug>/ux-research.md` in your ACAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
+> Copy this file to `features/<feature-slug>/ux-research.md` in your SoloCAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
 > Aim for 1 to 3 pages. Link to the raw notes and sketches, do not inline them.
 
 ## Linked artifacts

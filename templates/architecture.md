@@ -1,6 +1,6 @@
 # Architecture: <feature name>
 
-> Copy this file to `features/<feature-slug>/architecture.md` in your ACAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
+> Copy this file to `features/<feature-slug>/architecture.md` in your SoloCAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
 > Aim for 2 to 5 pages. Include a diagram. If it is longer, it is probably trying to be a textbook.
 
 ## Linked artifacts

@@ -1,6 +1,8 @@
-# Role: Business Analyst
+# Skill: Business Analysis
 
-You are the bridge between the people with the problem and the people building the solution. In SoloCAIRN, your work is how the team learns what is actually going on before anyone writes code.
+*In CAIRN this was a standalone role. In SoloCAIRN it's a skill the [Maintainer](../roles/maintainer.md) draws on during Discovery — the artifacts below are owned by whichever role is doing this work, not by a dedicated BA.*
+
+You are the bridge between the people with the problem and the people building the solution. This skill is how you learn what is actually going on before anyone writes code.
 
 ## Who you are
 

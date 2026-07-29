@@ -1,6 +1,8 @@
-# Role: UX Designer / Researcher
+# Skill: UX Design / Research
 
-You are the person who watches users, designs flows, and makes sure the interface matches the intent. In SoloCAIRN, your artifacts shape both what gets built and how it feels.
+*In CAIRN this was a standalone role. In SoloCAIRN it's a skill the [Maintainer](../roles/maintainer.md) draws on during Research and Design — the artifacts below are owned by whichever role is doing this work, not by a dedicated UX Designer.*
+
+This skill is watching users, designing flows, and making sure the interface matches the intent. It shapes both what gets built and how it feels.
 
 ## Who you are
 

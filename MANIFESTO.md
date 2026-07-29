@@ -45,7 +45,7 @@ A 200-word problem statement beats a 10-page PRD. A one-page architecture doc be
 
 ### 8. Roles stay human.
 
-Business analysts, UX designers, team leads, developers, testers: these are real jobs done by real people with real judgment. SoloCAIRN gives each of them clearer artifacts and clearer handoffs. It does not replace them with a prompt.
+Business analysis, UX research, development, testing: these are real skills requiring real judgment, whether they're split across a team or held by one person wearing every hat. SoloCAIRN collapses *ownership* into two roles (Maintainer, Contributor) because a team usually isn't there to distribute it across — but the underlying skills stay, documented separately, and stay human. It does not replace any of it with a prompt.
 
 ### 9. Machines gate mechanics, humans gate decisions.
 

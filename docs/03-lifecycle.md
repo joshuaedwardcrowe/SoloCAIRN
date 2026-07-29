@@ -32,7 +32,7 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 **What happens.** Somebody (a customer, a stakeholder, a support ticket, a pattern in the data) surfaces a problem worth solving. You do not yet know what the solution looks like, or even whether it is worth building.
 
-**Who leads.** Team Lead + Business Analyst.
+**Who leads.** The [Maintainer](../roles/maintainer.md), drawing on the [Business Analysis](../skills/business-analyst.md) skill.
 
 **Artifacts produced.**
 - `problem-statement.md`: what is wrong today, who is affected, what good looks like.
@@ -48,7 +48,7 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 **What happens.** You dig into how the problem shows up in real life. Users, flows, existing behaviour, competitive landscape. This is where UX and BA earn their keep.
 
-**Who leads.** UX Designer/Researcher + Business Analyst.
+**Who leads.** The [Maintainer](../roles/maintainer.md), drawing on the [UX Design / Research](../skills/ux-designer.md) and [Business Analysis](../skills/business-analyst.md) skills.
 
 **Artifacts produced.**
 - `ux-research.md`: observations, themes, opportunities.
@@ -64,7 +64,7 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 **What happens.** You decide what you are actually going to build in this round. In-scope, out-of-scope, deferred, rejected. This is the moment where ambition meets reality.
 
-**Who leads.** Team Lead + Business Analyst. Stakeholders approve.
+**Who leads.** The [Maintainer](../roles/maintainer.md). Stakeholders (if any) approve.
 
 **Artifacts produced.**
 - `scope.md`: the decisions.
@@ -78,7 +78,7 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 **What happens.** The team decides how the system will work. Architecture, data model, API shapes, major UX patterns. This is a multi-role activity: UX, backend, frontend, mobile, and database thinking all converge.
 
-**Who leads.** Team Lead facilitates. Each specialist contributes to their area.
+**Who leads.** The [Maintainer](../roles/maintainer.md), drawing on [UX Design / Research](../skills/ux-designer.md) for UX patterns and whichever [Build skills](../skills/) the work will need.
 
 **Artifacts produced.**
 - `architecture.md`: how the pieces fit, with a diagram.
@@ -97,7 +97,7 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 **Sizing.** CAIRN sizes stories in time (ideally one to three days). SoloCAIRN treats that as one valid option, not the only one — **Fibonacci story points** are equally valid, and often the better fit for irregular/intermittent contribution: a time estimate silently assumes something like continuous engagement, and stops meaning anything if contribution is a scattered hour a week. A point captures effort, complexity, and risk together rather than just duration, and pairs with **velocity** — points completed per work session/cycle, tracked empirically rather than assumed — to absorb an irregular pace without needing every estimate redone. Pick whichever fits your actual contribution pattern; don't mix both within one project.
 
-**Who leads.** Team Lead (in a scrum-master role).
+**Who leads.** The [Maintainer](../roles/maintainer.md).
 
 **Artifacts produced.**
 - `features/<feature>/stories/backend/STORY-XX.md`
@@ -115,7 +115,7 @@ Each story follows the [story template](../templates/story.md).
 
 **What happens.** Devs pick up stories and implement them. Each dev works in a branch, with AI as an accelerator. Because the story and all upstream artifacts are in the repo, every AI session starts with full context.
 
-**Who leads.** The individual developer owns their story.
+**Who leads.** The [Contributor](../roles/contributor.md) who picked up the story.
 
 **Artifacts produced.** Code. Tests. Updated docs if the implementation revealed something the design missed.
 
@@ -127,7 +127,7 @@ Each story follows the [story template](../templates/story.md).
 
 **What happens.** A teammate reviews the code PR against the story's acceptance criteria, the repo conventions, and general quality. QA verifies the feature against the QA checklist, often by running it. UX reviews for visual and interaction fidelity. These can happen in parallel.
 
-**Who leads.** The code reviewer owns the code review. QA owns the verification against the checklist. The author owns the fixes.
+**Who leads.** Whoever reviews (another [Contributor](../roles/contributor.md), or the [Maintainer](../roles/maintainer.md) self-reviewing after a real gap — see [Contributor: on review, honestly](../roles/contributor.md#on-review-honestly)) owns the review, drawing on the [QA](../skills/qa.md) skill for verification. The author owns the fixes.
 
 **Artifacts produced.** Comments, suggestions, approvals. Bug reports for issues found. Occasionally a new story if scope leaked.
 
@@ -141,7 +141,7 @@ Each story follows the [story template](../templates/story.md).
 
 **What happens.** The feature ships, gradually or fully. Feature flags, canary rollouts, phased releases. The team watches for regressions.
 
-**Who leads.** Team Lead or whoever owns release management.
+**Who leads.** The [Maintainer](../roles/maintainer.md).
 
 **SoloCAIRN artifacts produced.** Release notes drafted from the QA checklist and merged code PRs.
 
@@ -155,7 +155,7 @@ Each story follows the [story template](../templates/story.md).
 
 **What happens.** The feature is live. It is being used, misused, and monitored. Bugs, edge cases, and surprising usage patterns surface. The team learns. Once the feature is stable, the SoloCAIRN artifacts are ended: the feature folder is archived (separate-repo model) or the long-lived branch PR is closed without merging (branch model). Either way, the code on `main` is the operational truth from now on; the SoloCAIRN history is the historical record.
 
-**Who leads.** The whole team, with the Team Lead coordinating.
+**Who leads.** The [Maintainer](../roles/maintainer.md), with any active [Contributors](../roles/contributor.md) flagging what they hit.
 
 **SoloCAIRN artifacts produced.** Updates to the open questions and QA checklist as reality teaches you something. New stories for any follow-ups handled within the same feature scope.
 

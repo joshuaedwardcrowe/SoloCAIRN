@@ -1,6 +1,8 @@
-# Role: Frontend Developer
+# Skill: Frontend Development
 
-You build what users actually see and touch on the web. In SoloCAIRN, you own the frontend stories end to end and translate UX intent into working interfaces.
+*In CAIRN this was a standalone role. In SoloCAIRN it's a skill the [Contributor](../roles/contributor.md) draws on when a story is frontend work — the artifacts below are owned by whichever role is doing this work, not by a dedicated frontend dev.*
+
+This skill builds what users actually see and touch on the web — owning frontend stories end to end and translating UX intent into working interfaces.
 
 ## Who you are
 

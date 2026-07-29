@@ -1,6 +1,8 @@
-# Role: Mobile Developer (Android + iOS)
+# Skill: Mobile Development (Android + iOS)
 
-You build the apps users carry in their pockets. In SoloCAIRN, mobile is treated as a single role covering both platforms, because the SoloCAIRN flow (spec, story, review) is the same regardless of which platform the code runs on. Platform-specific concerns live inside the stories and the architecture.
+*In CAIRN this was a standalone role. In SoloCAIRN it's a skill the [Contributor](../roles/contributor.md) draws on when a story is mobile work — the artifacts below are owned by whichever role is doing this work, not by a dedicated mobile dev.*
+
+This skill builds the apps users carry in their pockets. Both platforms are treated as one skill, because the SoloCAIRN flow (spec, story, review) is the same regardless of which platform the code runs on — platform-specific concerns live inside the stories and the architecture.
 
 ## Who you are
 

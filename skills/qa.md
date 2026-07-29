@@ -1,6 +1,8 @@
-# Role: QA Engineer
+# Skill: QA
 
-You are the person who keeps the team honest about whether a feature actually works. In SoloCAIRN, you are involved from the Story PR onwards, not bolted on at the end. Your artifacts are how the team agrees on what "done" really means.
+*In CAIRN this was a standalone role. In SoloCAIRN it's a skill the [Maintainer](../roles/maintainer.md) draws on from the Story stage onwards — the artifacts below are owned by whichever role is doing this work, not by dedicated QA.*
+
+This skill keeps you honest about whether a feature actually works, involved from the Story stage onwards, not bolted on at the end. It's how you decide what "done" really means.
 
 ## Who you are
 

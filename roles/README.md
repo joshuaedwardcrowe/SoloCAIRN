@@ -1,18 +1,13 @@
 # Roles in SoloCAIRN
 
-SoloCAIRN does not invent new roles. It maps the ones you already have to a shared set of artifacts and handoffs. Every role on a typical product team has a home in the method.
+CAIRN maps roles from a staffed team (Team Lead, Business Analyst, UX Designer, Backend/Frontend/Mobile Dev, QA) onto a shared set of artifacts. SoloCAIRN collapses *ownership* into two roles, because a staffed team usually isn't there to distribute it across — but keeps the domain knowledge from those specialist roles as [skills](../skills/) either role draws on depending on what they're actually doing.
 
 ## The roles covered here
 
 | Role | Main SoloCAIRN responsibility |
 |---|---|
-| [Team Lead / Delivery Manager](team-lead.md) | Owns the lifecycle, facilitates the Spec PR, writes stories |
-| [Business Analyst](business-analyst.md) | Owns discovery, interviews, problem statements, scope clarity |
-| [UX Designer / Researcher](ux-designer.md) | Owns user research, flows, design artifacts |
-| [Backend Dev](backend-dev.md) | Owns backend stories, architecture contributions |
-| [Frontend Dev](frontend-dev.md) | Owns frontend stories, UX implementation |
-| [Mobile Dev (Android + iOS)](mobile-dev.md) | Owns mobile stories, platform-specific patterns |
-| [QA Engineer](qa.md) | Owns checklists, verifies done, leads exploratory testing |
+| [Maintainer](maintainer.md) | Owns Discovery through Operate except Build — everything a Team Lead, BA, UX Designer, and QA used to split between them |
+| [Contributor](contributor.md) | Owns the Build stage for a story they picked up — the Maintainer switching hats, or an intermittent outside contributor |
 
 ## How to read these
 
@@ -25,11 +20,9 @@ Each role guide is structured the same way:
 5. **Anti-patterns.** Things to avoid.
 6. **A day in the life.** A realistic rhythm.
 
-## Roles not covered
+## If you actually have a staffed team
 
-SoloCAIRN is flexible about roles. If your team has a DevOps engineer, a data engineer, a product manager, or a security specialist, they fit the method without needing their own dedicated guide. The shape is the same: they own the artifacts in their domain, they review PRs that touch their concerns, and they use AI as an accelerator.
-
-If you want a guide for a role that is not here, write one. The template is above.
+You don't need SoloCAIRN — use [upstream CAIRN](https://github.com/SiddiqueAbdullah/cairn) directly, and its own `roles/` guides (Team Lead, Business Analyst, UX Designer, Backend/Frontend/Mobile Dev, QA) will fit better than the two collapsed ones here.
 
 ## The one rule that applies to every role
 

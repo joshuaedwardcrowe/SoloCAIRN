@@ -1,6 +1,8 @@
-# Role: Backend Developer
+# Skill: Backend Development
 
-You build the services, the APIs, the data flows. In SoloCAIRN, you own the backend stories end to end, and you contribute to architecture decisions as a specialist.
+*In CAIRN this was a standalone role. In SoloCAIRN it's a skill the [Contributor](../roles/contributor.md) draws on when a story is backend work — the artifacts below are owned by whichever role is doing this work, not by a dedicated backend dev.*
+
+This skill builds the services, the APIs, the data flows — owning backend stories end to end, and contributing to architecture decisions as a specialist.
 
 ## Who you are
 

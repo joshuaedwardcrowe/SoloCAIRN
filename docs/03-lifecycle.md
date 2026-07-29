@@ -86,6 +86,8 @@ The horizontal arrows are handoffs, always mediated by a reviewed artifact. The 
 
 **Sizing.** Size each story in time (ideally one to three days) or in **Fibonacci story points** — either is valid; pick whichever fits your team, and don't mix both within one project. Time-based sizing assumes something close to continuous engagement; if that assumption doesn't hold (irregular contribution, people picking up stories between other commitments), points age better: a point captures effort, complexity, and risk together rather than just duration, and pairs with velocity (points completed per cycle, tracked empirically) to absorb an irregular pace without needing every estimate redone.
 
+**Re-estimating.** Re-estimate a story when its understood scope genuinely changes — you learn mid-build it's bigger or smaller than thought, so you revise the estimate or split it. Don't re-estimate after the fact based on how long it actually took — that feeds velocity, an aggregate, forward-looking calibration, not a rewrite of one story's history. Stale, not-yet-started stories can be re-sized during backlog grooming as the team's calibration matures; that's different from touching something already in flight or done.
+
 **Who leads.** Team Lead (in a scrum-master role).
 
 **Artifacts produced.**

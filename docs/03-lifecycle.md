@@ -107,6 +107,8 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 Each story follows the [story template](../templates/story.md).
 
+**Artifact form.** The files above assume a dedicated SoloCAIRN location (see [09-deployment-models.md](09-deployment-models.md)). For a solo maintainer working GitHub-natively, a well-scoped **GitHub Issue** can be the story artifact directly instead — same content (what/why, acceptance criteria), no separate file or location required. An issue is already written down, reviewable via comments, and tracked through GitHub's own history. This is a SoloCAIRN-specific option, not something to expect from upstream CAIRN — a staffed team gets more out of a dedicated location and Spec-PR review (several roles reviewing different artifacts) than a solo/GitHub-native setup does.
+
 **How AI helps.** Expands a scope bullet into a full story file with acceptance criteria. Proposes a reasonable slicing. Spots missing stories by cross-checking scope and architecture.
 
 **Done when.** Stories are added to the chosen SoloCAIRN location through a reviewed PR. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Approval means these stories are ready to pick up — not that the breakdown is final; splitting, re-ordering, or rewriting a story mid-Build is a normal small PR, not a process violation.

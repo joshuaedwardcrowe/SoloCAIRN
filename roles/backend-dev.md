@@ -1,6 +1,6 @@
 # Role: Backend Developer
 
-You build the services, the APIs, the data flows. In CAIRN, you own the backend stories end to end, and you contribute to architecture decisions as a specialist.
+You build the services, the APIs, the data flows. In ACAIRN, you own the backend stories end to end, and you contribute to architecture decisions as a specialist.
 
 ## Who you are
 
@@ -14,7 +14,7 @@ You build the services, the APIs, the data flows. In CAIRN, you own the backend 
 - Your assigned stories in `features/<feature>/stories/backend/`.
 - Backend-specific sections of `architecture.md`.
 - Feature-scoped data model notes, if you are the database-facing dev on the team.
-- Backend runbooks for services you own (project-level, not CAIRN).
+- Backend runbooks for services you own (project-level, not ACAIRN).
 
 ## Artifacts you contribute to
 
@@ -47,9 +47,9 @@ You build the services, the APIs, the data flows. In CAIRN, you own the backend 
 
 ## A day in the life
 
-**09:00.** Check the CAIRN repo for today's story. Read it carefully.
+**09:00.** Check the ACAIRN repo for today's story. Read it carefully.
 
-**09:15.** Branch off main in the code repo. Start an AI session with both the code repo and the CAIRN repo open in the IDE workspace. Prompt: "Implement `features/pub-quiz/stories/backend/QUIZ-01-session-service.md` from the CAIRN repo. Show me the plan first, respecting our project conventions and the architecture at `features/pub-quiz/architecture.md`."
+**09:15.** Branch off main in the code repo. Start an AI session with both the code repo and the ACAIRN repo open in the IDE workspace. Prompt: "Implement `features/pub-quiz/stories/backend/QUIZ-01-session-service.md` from the ACAIRN repo. Show me the plan first, respecting our project conventions and the architecture at `features/pub-quiz/architecture.md`."
 
 **09:30.** Review the plan. Push back on one aspect (the caching strategy does not fit this use case). AI re-plans.
 

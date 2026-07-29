@@ -1,10 +1,10 @@
-# Roles in CAIRN
+# Roles in ACAIRN
 
-CAIRN does not invent new roles. It maps the ones you already have to a shared set of artifacts and handoffs. Every role on a typical product team has a home in the method.
+ACAIRN does not invent new roles. It maps the ones you already have to a shared set of artifacts and handoffs. Every role on a typical product team has a home in the method.
 
 ## The roles covered here
 
-| Role | Main CAIRN responsibility |
+| Role | Main ACAIRN responsibility |
 |---|---|
 | [Team Lead / Delivery Manager](team-lead.md) | Owns the lifecycle, facilitates the Spec PR, writes stories |
 | [Business Analyst](business-analyst.md) | Owns discovery, interviews, problem statements, scope clarity |
@@ -27,7 +27,7 @@ Each role guide is structured the same way:
 
 ## Roles not covered
 
-CAIRN is flexible about roles. If your team has a DevOps engineer, a data engineer, a product manager, or a security specialist, they fit the method without needing their own dedicated guide. The shape is the same: they own the artifacts in their domain, they review PRs that touch their concerns, and they use AI as an accelerator.
+ACAIRN is flexible about roles. If your team has a DevOps engineer, a data engineer, a product manager, or a security specialist, they fit the method without needing their own dedicated guide. The shape is the same: they own the artifacts in their domain, they review PRs that touch their concerns, and they use AI as an accelerator.
 
 If you want a guide for a role that is not here, write one. The template is above.
 

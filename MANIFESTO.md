@@ -1,11 +1,11 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="logos/cairn-logo-dark-md.svg">
-    <img alt="CAIRN" src="logos/cairn-logo-light-md.svg" width="176">
+    <img alt="ACAIRN" src="logos/cairn-logo-light-md.svg" width="176">
   </picture>
 </p>
 
-# The CAIRN Manifesto
+# The ACAIRN Manifesto
 
 We are building software with AI in our hands. This changes a lot, but not everything. The craft of shipping good product still depends on clear thinking, shared understanding, and honest feedback.
 
@@ -23,7 +23,7 @@ A short, honest markdown file beats a persona prompt every time. We value writte
 
 ### 3. Review is the stage gate.
 
-The moment an idea, a design, or a piece of code meets another human for review is the moment quality actually happens. Pull requests are not just for code. Spec PRs and story PRs are how decisions get made. If the work is worth doing, it is worth reviewing.
+The moment an idea, a design, or a piece of code meets another human for review is the moment quality actually happens. Pull requests are not just for code. Spec PRs and story PRs are how decisions get made. If the work is worth doing, it is worth reviewing. A gate is not a one-way door, though — see principle 11.
 
 ### 4. Humans lead, AI accelerates.
 
@@ -35,9 +35,9 @@ Assigning a persona to an AI ("you are a senior architect") looks load-bearing a
 
 ### 6. Artifacts are operationally ephemeral, scoped to one feature.
 
-Every CAIRN artifact is in active use only for the duration of the feature build. They live in a dedicated CAIRN repo or on a long-lived feature branch that never merges, are reviewed during the build, and stop being load-bearing the moment the feature ships. The code repo's `main` never sees them. Code is what survives as the operational truth.
+Every ACAIRN artifact is in active use only for the duration of the feature build. They live in a dedicated ACAIRN repo or on a long-lived feature branch that never merges, are reviewed during the build, and stop being load-bearing the moment the feature ships. The code repo's `main` never sees them. Code is what survives as the operational truth.
 
-Artifacts may remain in git history (in the CAIRN repo, in the closed PR) as a historical record. That is acceptable: the goal is to keep them out of the *active workflow* and out of the code repo's main, not to delete every trace. CAIRN does not own project-level documentation; that is your team's call.
+Artifacts may remain in git history (in the ACAIRN repo, in the closed PR) as a historical record. That is acceptable: the goal is to keep them out of the *active workflow* and out of the code repo's main, not to delete every trace. ACAIRN does not own project-level documentation; that is your team's call.
 
 ### 7. Small is beautiful.
 
@@ -45,7 +45,7 @@ A 200-word problem statement beats a 10-page PRD. A one-page architecture doc be
 
 ### 8. Roles stay human.
 
-Business analysts, UX designers, team leads, developers, testers: these are real jobs done by real people with real judgment. CAIRN gives each of them clearer artifacts and clearer handoffs. It does not replace them with a prompt.
+Business analysts, UX designers, team leads, developers, testers: these are real jobs done by real people with real judgment. ACAIRN gives each of them clearer artifacts and clearer handoffs. It does not replace them with a prompt.
 
 ### 9. Machines gate mechanics, humans gate decisions.
 
@@ -55,11 +55,15 @@ Human review is the gate for decisions: the design, the scope, the tradeoff. It 
 
 Whoever makes the work checks it before a reviewer sees it. You do not hand over a first draft and outsource the checking. The reviewer's job is to catch what verification missed, not to do the verification. This holds for humans and for AI: AI should run the tests, check its output against the story, and surface what it could not resolve, rather than handing back something plausible for a human to debug.
 
+### 11. Loops beat gates.
+
+A stage gate that never gets revisited is a promise made before you had enough information to keep it. That is the one place upstream CAIRN leans Waterfall: Design fully decided before Breakdown, Breakdown fully decided before Build, and only one feedback loop drawn — Operate back to the *next* feature's Discovery. ACAIRN keeps CAIRN's stage-gated shape but insists every gate stays open to revision within the same feature: Design can be revised mid-Build, Scope can be revised mid-Breakdown, a story can be rewritten mid-implementation — as a small, fast PR against the artifact that was wrong, not a note for the next feature's retro. Approval means "enough to act on," never "correct forever."
+
 ## What we are not saying
 
 - We are not saying AI is bad. We use it daily and it makes us faster.
 - We are not saying process is bad. We are saying ceremony is bad.
-- We are not saying every team should adopt CAIRN. If what you have works, keep it.
+- We are not saying every team should adopt ACAIRN. If what you have works, keep it.
 - We are not promising a silver bullet. This is a set of habits for the build phase of a feature. The habits compound, but they do not replace runbooks, prioritisation, onboarding, or the thousand other things real teams need.
 - We are not solving project-level documentation. That is a different problem; we leave it to your team.
 
@@ -67,4 +71,4 @@ Whoever makes the work checks it before a reviewer sees it. You do not hand over
 
 > Keep your code repo's `main` for code. Keep feature scaffolding (problem, scope, architecture, stories) somewhere else, reviewed like code. Let AI read it. Let humans decide. End it when the feature ships.
 
-That is CAIRN.
+That is ACAIRN.

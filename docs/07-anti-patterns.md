@@ -1,10 +1,10 @@
 # 07. Anti-patterns
 
-Things that look like CAIRN but are not. If you see these happening on your team, you have drifted. This doc exists to make the drift easy to name.
+Things that look like ACAIRN but are not. If you see these happening on your team, you have drifted. This doc exists to make the drift easy to name.
 
 ## Ceremony bloat
 
-**What it looks like.** Stories with twelve mandatory sections. Problem statements that require three sign-offs. A weekly "CAIRN ritual" meeting that produces no artifact.
+**What it looks like.** Stories with twelve mandatory sections. Problem statements that require three sign-offs. A weekly "ACAIRN ritual" meeting that produces no artifact.
 
 **Why it happens.** Well-meaning people add structure to prevent past failures. Every addition makes sense in isolation. The cumulative weight is what kills you.
 
@@ -57,28 +57,28 @@ Things that look like CAIRN but are not. If you see these happening on your team
 
 **How to fix it.** Enforce a size limit: if a story cannot fit in half a page and be done in three days, it is not a story, it is a feature. Break it down further.
 
-## CAIRN artifacts outside git
+## ACAIRN artifacts outside git
 
-**What it looks like.** The team agrees to adopt CAIRN, then puts the problem statement in Confluence, the stories in Jira, the architecture in Miro. The CAIRN repo (or feature branch) is empty.
+**What it looks like.** The team agrees to adopt ACAIRN, then puts the problem statement in Confluence, the stories in Jira, the architecture in Miro. The ACAIRN repo (or feature branch) is empty.
 
 **Why it happens.** Organisational inertia, tool-per-role mindset, or the belief that "docs belong in our wiki, not in git."
 
-**Why it is dangerous.** AI sessions cannot easily reach those artifacts. Reviewers cannot use code-review tooling on them. Versioning is inconsistent. The whole point of CAIRN collapses if the artifacts are not in markdown in git.
+**Why it is dangerous.** AI sessions cannot easily reach those artifacts. Reviewers cannot use code-review tooling on them. Versioning is inconsistent. The whole point of ACAIRN collapses if the artifacts are not in markdown in git.
 
-**How to fix it.** CAIRN artifacts live in your chosen CAIRN location (separate repo or feature branch) as markdown, full stop. Other tools (Jira, Confluence) keep doing their other jobs (tickets, organisational content). They are not where CAIRN artifacts live during the build.
+**How to fix it.** ACAIRN artifacts live in your chosen ACAIRN location (separate repo or feature branch) as markdown, full stop. Other tools (Jira, Confluence) keep doing their other jobs (tickets, organisational content). They are not where ACAIRN artifacts live during the build.
 
 ## Polluting the code repo's main
 
-**What it looks like.** Someone merges CAIRN artifacts into the code repo's `main`. Either by clicking merge on the long-lived branch PR, or by adding feature docs to a normal code PR.
+**What it looks like.** Someone merges ACAIRN artifacts into the code repo's `main`. Either by clicking merge on the long-lived branch PR, or by adding feature docs to a normal code PR.
 
 **Why it happens.** Habit. Long-lived PRs feel like they should eventually merge. Or a dev thinks they are being helpful by adding the architecture doc next to the code.
 
 **Why it is dangerous.** Once artifacts are on `main`, you have started accumulating them per feature, per team. The clean-main property collapses. You now also have the doc-rot problem you were trying to avoid.
 
 **How to fix it.**
-- In the branch model: title the long-lived PR clearly with `[CAIRN] <feature> (do not merge)`. Set branch protection if you can. **Close, do not merge.**
+- In the branch model: title the long-lived PR clearly with `[ACAIRN] <feature> (do not merge)`. Set branch protection if you can. **Close, do not merge.**
 - In the separate-repo model: there is no PR to merge in the wrong direction. The structural fact prevents this anti-pattern.
-- In either model: code PRs touching `main` should not contain CAIRN artifacts. Reviewers should call this out.
+- In either model: code PRs touching `main` should not contain ACAIRN artifacts. Reviewers should call this out.
 
 ## Artifact theatre
 
@@ -108,23 +108,23 @@ Things that look like CAIRN but are not. If you see these happening on your team
 
 **How to fix it.** Keep the discipline. Spec PRs, story PRs, real human review. The AI makes those steps faster, not optional.
 
-## CAIRN repo rot
+## ACAIRN repo rot
 
-**What it looks like.** A search in your team's archived CAIRN features turns up a 2024 architecture for an area of the system that has been substantially rewritten since. A new joiner reads it as if it were current. AI is fed it as context and produces stale-shaped suggestions.
+**What it looks like.** A search in your team's archived ACAIRN features turns up a 2024 architecture for an area of the system that has been substantially rewritten since. A new joiner reads it as if it were current. AI is fed it as context and produces stale-shaped suggestions.
 
-**Why it happens.** CAIRN deliberately keeps artifacts out of the code repo's `main`, but the CAIRN repo's history accumulates indefinitely. Old features live there long after their code has been refactored or replaced. Without a convention, they look as authoritative as new ones.
+**Why it happens.** ACAIRN deliberately keeps artifacts out of the code repo's `main`, but the ACAIRN repo's history accumulates indefinitely. Old features live there long after their code has been refactored or replaced. Without a convention, they look as authoritative as new ones.
 
-**Why it is dangerous.** This is the same problem CAIRN was trying to avoid by keeping `main` clean. Moving the rot next door does not eliminate it; it just hides it.
+**Why it is dangerous.** This is the same problem ACAIRN was trying to avoid by keeping `main` clean. Moving the rot next door does not eliminate it; it just hides it.
 
 **How to fix it.**
-- Treat the code on `main` as the operational truth, always. Treat archived CAIRN artifacts as historical record, never as current truth.
+- Treat the code on `main` as the operational truth, always. Treat archived ACAIRN artifacts as historical record, never as current truth.
 - Date-stamp archive folder names (e.g. `archive/2026-Q2-pub-quiz/`) so age is visible at a glance.
 - When AI references an archived feature, prompt it to verify against current code before acting.
 - Periodically (every 6 to 12 months) sweep the archive: delete anything that no longer reflects how the system works, or annotate it with "superseded by <new feature>" links.
-- If a recurring stakeholder question keeps returning to the same archived spec, that is a signal the information should be promoted into project-level documentation, not left in CAIRN history.
+- If a recurring stakeholder question keeps returning to the same archived spec, that is a signal the information should be promoted into project-level documentation, not left in ACAIRN history.
 
 ## The meta-anti-pattern
 
 If you find yourself doing the method because the method says so, rather than because the artifact is about to support a real decision, you have lost the plot.
 
-Every CAIRN artifact should feel like it is earning its keep right now. The moment it stops, change the artifact or cut it.
+Every ACAIRN artifact should feel like it is earning its keep right now. The moment it stops, change the artifact or cut it.

@@ -1,6 +1,6 @@
 # Role: QA Engineer
 
-You are the person who keeps the team honest about whether a feature actually works. In CAIRN, you are involved from the Story PR onwards, not bolted on at the end. Your artifacts are how the team agrees on what "done" really means.
+You are the person who keeps the team honest about whether a feature actually works. In ACAIRN, you are involved from the Story PR onwards, not bolted on at the end. Your artifacts are how the team agrees on what "done" really means.
 
 ## Who you are
 
@@ -11,13 +11,13 @@ You are the person who keeps the team honest about whether a feature actually wo
 
 ## Artifacts you own
 
-- `qa-checklist.md` per feature: the verified-by-a-human list. Lives in `features/<feature>/` in the CAIRN repo.
+- `qa-checklist.md` per feature: the verified-by-a-human list. Lives in `features/<feature>/` in the ACAIRN repo.
 - Test plans for the feature, where they exist as separate documents.
 - Bug reports, structured and reproducible.
 
 You also contribute to but do not own:
 
-- Project-wide checklists (accessibility, security baseline, performance baseline). These are project-level documentation, not CAIRN; they live wherever your team keeps such things (typically `docs/checklists/` in the code repo).
+- Project-wide checklists (accessibility, security baseline, performance baseline). These are project-level documentation, not ACAIRN; they live wherever your team keeps such things (typically `docs/checklists/` in the code repo).
 
 ## Artifacts you contribute to
 
@@ -59,7 +59,7 @@ You also contribute to but do not own:
 
 **11:30.** Review a Code PR for QUIZ-06. Pull the branch locally. Test on a real Android phone and an iPhone. Notice that the team-name input has a misaligned keyboard on iOS. File a structured bug; link it to the PR.
 
-**14:00.** Update `features/pub-quiz/qa-checklist.md` in the CAIRN repo with the items the team agreed during the Story PR review.
+**14:00.** Update `features/pub-quiz/qa-checklist.md` in the ACAIRN repo with the items the team agreed during the Story PR review.
 
 **15:00.** Run an exploratory test session against the staging environment. Try things the team did not predict: rapid join-leave-join, joining a session that has already ended, scanning a stale QR code. Document what breaks.
 

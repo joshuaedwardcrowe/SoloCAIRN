@@ -1,28 +1,28 @@
 # 05. The workflow
 
-This is what a week inside CAIRN actually looks like. If the rest of the docs describe the shape, this one describes the motion.
+This is what a week inside ACAIRN actually looks like. If the rest of the docs describe the shape, this one describes the motion.
 
 ## The PRs, in motion
 
-CAIRN distinguishes two kinds of work: PRs that land artifacts, and PRs that ship code. The exact shapes depend on your chosen deployment model (see [09-deployment-models.md](09-deployment-models.md)).
+ACAIRN distinguishes two kinds of work: PRs that land artifacts, and PRs that ship code. The exact shapes depend on your chosen deployment model (see [09-deployment-models.md](09-deployment-models.md)).
 
-The examples below use the separate-CAIRN-repo model (recommended). The branch model is similar in spirit; the difference is the artifacts live on a long-lived non-merging branch in the code repo instead.
+The examples below use the separate-ACAIRN-repo model (recommended). The branch model is similar in spirit; the difference is the artifacts live on a long-lived non-merging branch in the code repo instead.
 
-### CAIRN PRs (artifact PRs)
+### ACAIRN PRs (artifact PRs)
 
-**Where.** In the CAIRN repo (or, in the branch model, against the long-lived feature branch in the code repo).
+**Where.** In the ACAIRN repo (or, in the branch model, against the long-lived feature branch in the code repo).
 
-**Branch name in the CAIRN repo.** `feat/<feature-slug>` for the initial spec, `update/<feature-slug>-<what>` for follow-on changes.
+**Branch name in the ACAIRN repo.** `feat/<feature-slug>` for the initial spec, `update/<feature-slug>-<what>` for follow-on changes.
 
-**Contains.** Some or all CAIRN artifacts for this feature: problem, research, scope, architecture, stories, QA checklist, open questions. Markdown only. No code.
+**Contains.** Some or all ACAIRN artifacts for this feature: problem, research, scope, architecture, stories, QA checklist, open questions. Markdown only. No code.
 
 **Lifetime.** Each PR lives a few days. The feature folder accumulates artifacts across many PRs over weeks or months.
 
 **Reviewers.** The people whose work depends on the artifact. The full team for the initial spec; the implementing devs and QA for stories; UX for design intent.
 
-**Merge criteria (CAIRN repo).** The team agrees the artifact is good enough to act on. Open questions are listed but not all resolved.
+**Merge criteria (ACAIRN repo).** The team agrees the artifact is good enough to act on. Open questions are listed but not all resolved.
 
-**What the CAIRN repo looks like.**
+**What the ACAIRN repo looks like.**
 
 ```
 my-team-cairn (separate repo)
@@ -45,7 +45,7 @@ my-team-cairn (separate repo)
                 └── QUIZ-04-player-app-join-flow.md
 ```
 
-When the feature ships and stabilises, move the folder to `archive/` or delete it. The CAIRN repo's git history remains as the historical record (the code is the operational truth from this point on).
+When the feature ships and stabilises, move the folder to `archive/` or delete it. The ACAIRN repo's git history remains as the historical record (the code is the operational truth from this point on).
 
 ### Code PR
 
@@ -64,7 +64,7 @@ When the feature ships and stabilises, move the folder to `archive/` or delete i
 **Merge criteria.** Acceptance criteria met. Tests pass. Review approved. The relevant QA checklist item ticked. **Merges into `main`.**
 
 **Linking.** Two consumers, two link forms:
-- **Reviewers in the web UI (GitHub, GitLab, Bitbucket)**: use an **absolute URL** to the file in the CAIRN repo (e.g. `https://github.com/<org>/my-team-cairn/blob/main/features/<feature>/stories/<platform>/STORY-XX.md`). Relative filesystem paths do not resolve across repos in any common git host's web UI.
+- **Reviewers in the web UI (GitHub, GitLab, Bitbucket)**: use an **absolute URL** to the file in the ACAIRN repo (e.g. `https://github.com/<org>/my-team-cairn/blob/main/features/<feature>/stories/<platform>/STORY-XX.md`). Relative filesystem paths do not resolve across repos in any common git host's web UI.
 - **AI sessions in the IDE**: filesystem paths work because devs have both repos cloned side by side. The AI reads from the sibling folder.
 
 In the branch model the artifacts are in the same repo as the code, so a normal in-repo URL or a tree-relative link works for both consumers.
@@ -73,8 +73,8 @@ In the branch model the artifacts are in the same repo as the code, so a normal 
 
 ### Team Lead (Monday)
 
-- 09:00. Open a CAIRN repo PR for the new feature, creating the `features/<feature>/` folder with a problem statement draft. Tag stakeholders for review.
-- 10:30. Review yesterday's CAIRN PR adding stories. Approve two stories, request changes on one (too big, needs splitting).
+- 09:00. Open an ACAIRN repo PR for the new feature, creating the `features/<feature>/` folder with a problem statement draft. Tag stakeholders for review.
+- 10:30. Review yesterday's ACAIRN PR adding stories. Approve two stories, request changes on one (too big, needs splitting).
 - 13:00. Pair with the BA on stakeholder interview notes. Draft the themes section of `ux-research.md`.
 - 15:00. Review an open Code PR against its story. Acceptance criteria checked, two suggestions left, approve.
 - 17:00. Update `open-questions.md` with answers from today's stakeholder call.
@@ -85,19 +85,19 @@ In the branch model the artifacts are in the same repo as the code, so a normal 
 - 11:30. Feed transcripts to AI, get a themed summary. Clean it up into `stakeholder-interviews.md`.
 - 14:00. Spot a contradiction between two stakeholders. Add to `open-questions.md` with yourself as owner.
 - 15:30. Pair with UX to translate pain points into research themes.
-- 17:00. Open a small CAIRN PR with the cleaned-up interview notes (or push to the long-lived branch in the branch model). Comment on what changed.
+- 17:00. Open a small ACAIRN PR with the cleaned-up interview notes (or push to the long-lived branch in the branch model). Comment on what changed.
 
 ### UX Designer (Wednesday)
 
 - 09:00. Sketch the two key flows on paper.
-- 11:00. Convert to wireframes in the design tool. Export as images under `features/<feature>/ux/` in the CAIRN repo.
+- 11:00. Convert to wireframes in the design tool. Export as images under `features/<feature>/ux/` in the ACAIRN repo.
 - 13:00. Write a short `ux-research.md` that links to the wireframes and explains the design intent.
 - 15:00. Review the mobile team's story drafts for interaction fidelity. Suggest two missing acceptance criteria.
 
 ### Backend Dev (Thursday)
 
 - 09:00. Pick up story `QUIZ-01-session-service.md`. Branch: `feat/quiz-01-session-service`.
-- 09:15. Start an AI session. Both the code repo and the CAIRN repo are open in the IDE workspace, so the AI can read the architecture doc and the story alongside the code. Prompt: "Implement QUIZ-01 per the story in the CAIRN repo. Show me the plan first."
+- 09:15. Start an AI session. Both the code repo and the ACAIRN repo are open in the IDE workspace, so the AI can read the architecture doc and the story alongside the code. Prompt: "Implement QUIZ-01 per the story in the ACAIRN repo. Show me the plan first."
 - 09:30. Review the plan. Push back on one part (the retry strategy is wrong for this use case). AI re-plans.
 - 10:00. Implement, with tests, iteratively.
 - 14:00. Story's acceptance criteria checked. Open Code PR. Link to story in description.
@@ -108,7 +108,7 @@ In the branch model the artifacts are in the same repo as the code, so a normal 
 
 - 09:00. Story `QUIZ-04-player-app-join-flow.md`. Branch off main.
 - 09:30. AI session primed with the repo's mobile conventions, the relevant UX wireframe, and the story. Implement the QR scan + join screen.
-- 12:00. Hit an ambiguity: the story says "graceful failure" but does not specify retry behaviour. Open a small CAIRN PR updating the story with a note, then make a judgment call. Flag it in the Code PR description so the reviewer can weigh in.
+- 12:00. Hit an ambiguity: the story says "graceful failure" but does not specify retry behaviour. Open a small ACAIRN PR updating the story with a note, then make a judgment call. Flag it in the Code PR description so the reviewer can weigh in.
 - 15:00. PR open. Review requested from backend dev and UX.
 
 ### Frontend Dev (any day, similar shape)
@@ -126,7 +126,7 @@ The same pattern: pick a story, branch, AI-assisted implement, open Code PR, rev
 ## Git etiquette
 
 - **Small PRs.** One story per PR. If a story is too big, split the story first, not the PR.
-- **PR descriptions link to the story with an absolute URL.** Filesystem-relative paths render correctly in your IDE but break in GitHub, GitLab, and Bitbucket PR views, because the CAIRN repo is a different repository. Use the full URL to the file in the CAIRN repo. Example: `Implements [QUIZ-01](https://github.com/<org>/my-team-cairn/blob/main/features/pub-quiz/stories/backend/QUIZ-01-session-service.md).` (In the branch model, the artifact is in the same repo and either a normal in-repo URL or a tree-relative link works.)
+- **PR descriptions link to the story with an absolute URL.** Filesystem-relative paths render correctly in your IDE but break in GitHub, GitLab, and Bitbucket PR views, because the ACAIRN repo is a different repository. Use the full URL to the file in the ACAIRN repo. Example: `Implements [QUIZ-01](https://github.com/<org>/my-team-cairn/blob/main/features/pub-quiz/stories/backend/QUIZ-01-session-service.md).` (In the branch model, the artifact is in the same repo and either a normal in-repo URL or a tree-relative link works.)
 - **Commits are cheap.** WIP commits are fine in-branch. Squash on merge if you like a clean history, or keep them if they tell a useful story.
 - **Draft PRs are welcome.** Open a draft as soon as the branch has meaningful work. This gives teammates visibility and lets AI reviewers run early.
 - **Rebase vs merge.** Team choice. Pick one and stick with it. Do not mix.
@@ -141,6 +141,8 @@ The same pattern: pick a story, branch, AI-assisted implement, open Code PR, rev
 
 ## The feedback loop
 
+This is the *end-of-feature* loop. There is also a faster, *mid-feature* loop for when Build or Review reveals that Scope or Design was wrong — see [Revising mid-flight](03-lifecycle.md#revising-mid-flight). Don't save that kind of finding for the retro below; fix the artifact now, with a small PR, while it is still in flight. The Friday mobile-dev example earlier in this doc (updating a story mid-build over an ambiguity) is exactly that loop in action, not a one-off improvisation.
+
 After every feature ships, spend 30 minutes in a retro:
 
 - Did the artifacts help?
@@ -149,4 +151,4 @@ After every feature ships, spend 30 minutes in a retro:
 - Did AI outputs converge or diverge across team members?
 - What do we change about our CLAUDE.md, our templates, or our habits?
 
-Write the answers down. Ideally in `features/<feature>/retro.md` in the CAIRN repo (closes with the feature) for feature-specific retros, or in your team's project-level docs for retros that produce lessons that should outlive the feature. The retro is itself an artifact.
+Write the answers down. Ideally in `features/<feature>/retro.md` in the ACAIRN repo (closes with the feature) for feature-specific retros, or in your team's project-level docs for retros that produce lessons that should outlive the feature. The retro is itself an artifact.

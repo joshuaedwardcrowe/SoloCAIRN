@@ -1,6 +1,6 @@
 # QA Checklist: <feature name>
 
-> Copy to `features/<feature-slug>/qa-checklist.md` in your CAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
+> Copy to `features/<feature-slug>/qa-checklist.md` in your ACAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
 > Keep it short. Ten to fifteen items is plenty for most features.
 
 A feature-specific checklist. Repo-wide concerns (security, accessibility baselines) belong in a shared checklist at `docs/checklists/`.

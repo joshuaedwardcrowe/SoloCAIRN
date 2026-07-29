@@ -1,6 +1,6 @@
 # Problem Statement: <feature name>
 
-> Copy this file to `features/<feature-slug>/problem-statement.md` in your CAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
+> Copy this file to `features/<feature-slug>/problem-statement.md` in your ACAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
 > Aim for 200 to 500 words. If it grows longer, you are already proposing a solution.
 
 ## What is wrong today
@@ -44,7 +44,7 @@ Questions that affect the problem itself, not yet the solution.
 
 ## Not yet decided
 
-If the team has not yet agreed this problem is worth solving, say so. Problem statements can land in the CAIRN location without commitment to build. The Scope artifact is where the commitment lives.
+If the team has not yet agreed this problem is worth solving, say so. Problem statements can land in the ACAIRN location without commitment to build. The Scope artifact is where the commitment lives.
 
 ---
 

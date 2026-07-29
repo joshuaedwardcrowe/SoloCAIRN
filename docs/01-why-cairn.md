@@ -1,4 +1,4 @@
-# 01. Why CAIRN exists
+# 01. Why ACAIRN exists
 
 ## The current landscape
 
@@ -13,7 +13,7 @@ Someone discovers a methodology that promises an "AI-driven" lifecycle: agents w
 **Pattern C: Ban it entirely.**
 Leadership is spooked. AI is off-limits. The best engineers use it anyway on personal machines, but cannot tell anyone, so the knowledge does not spread. You lose the productivity gains *and* the shared learning.
 
-CAIRN is what happens when you refuse all three options and ask what teams actually need.
+ACAIRN is what happens when you refuse all three options and ask what teams actually need.
 
 ## What teams actually need
 
@@ -35,22 +35,22 @@ Here is the thing most AI methodologies miss:
 
 If you give an AI a vague prompt and a messy repo, you get vague, messy output at high speed. If you give it a clear problem, a reviewed architecture, and a well-scoped story, you get surprisingly good work in minutes. The difference is context, and context is a human-produced artifact.
 
-So CAIRN inverts the usual question. Instead of asking *"how do we make the AI smarter?"* it asks:
+So ACAIRN inverts the usual question. Instead of asking *"how do we make the AI smarter?"* it asks:
 
 > *"How do we make sure every AI session on our team starts from the same, reviewed, high-quality context?"*
 
-The answer turns out to be unglamorous: write things down in a place that is not your code repo's `main` (a separate CAIRN repo, recommended), review them like code, and end them when the feature ships.
+The answer turns out to be unglamorous: write things down in a place that is not your code repo's `main` (a separate ACAIRN repo, recommended), review them like code, and end them when the feature ships.
 
-## Why "CAIRN"
+## Why "ACAIRN"
 
 A cairn is a small pile of stones that hikers leave on a trail to mark the way for those who come next. It is not a signpost installed by an authority. It is a modest, hand-built marker that says *someone has been here, this is the path, keep going*.
 
 That is the spirit of the method. Every artifact you write is a stone on the trail. For your teammates, for the AI, for future you. None of them replaces the walk. But together they turn "which way do I go?" into "I see the cairn, I know where to step next."
 
-## What CAIRN is not
+## What ACAIRN is not
 
 - **Not a framework.** There is no CLI to install, no config file, no runtime.
-- **Not a certification.** There are no certified CAIRN practitioners. Please do not invent them.
+- **Not a certification.** There are no certified ACAIRN practitioners. Please do not invent them.
 - **Not a replacement for judgment.** It tells you what artifacts to produce and when. It does not tell you what to put in them.
 - **Not universally right.** It works best for teams of 3 to 15 on product-shaped work. Regulated environments, research spikes, and ten-person monoliths probably need different things.
 

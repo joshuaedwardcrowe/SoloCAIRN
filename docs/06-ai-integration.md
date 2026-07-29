@@ -1,6 +1,6 @@
 # 06. How AI fits in
 
-CAIRN is designed so that any AI assistant (Claude, Cursor, Copilot, others) can plug in and be immediately useful, because the feature context it needs is in a known location with a known shape. This doc explains how to make that work in practice.
+ACAIRN is designed so that any AI assistant (Claude, Cursor, Copilot, others) can plug in and be immediately useful, because the feature context it needs is in a known location with a known shape. This doc explains how to make that work in practice.
 
 ## The mental model
 
@@ -15,17 +15,17 @@ Everything else in this doc is a consequence of those two rules.
 
 ## Set up for AI
 
-### Project-level AI context (adjacent, not CAIRN)
+### Project-level AI context (adjacent, not ACAIRN)
 
 Most AI tools look for a well-known file at the repo root: `CLAUDE.md`, `.cursor/rules/`, `.github/copilot-instructions.md`. This file describes the project's stack, conventions, and never-do rules.
 
-This is **not a CAIRN artifact.** It is project-level setup, owned by your team according to your conventions. CAIRN does not require you to have one and does not put one in the CAIRN location. If you do have one, it lives on the code repo's `main` and benefits every AI session in the repo.
+This is **not an ACAIRN artifact.** It is project-level setup, owned by your team according to your conventions. ACAIRN does not require you to have one and does not put one in the ACAIRN location. If you do have one, it lives on the code repo's `main` and benefits every AI session in the repo.
 
-A starting point for one (if you want it) is in [templates/CLAUDE.md.example](../templates/CLAUDE.md.example), labelled clearly as adjacent to CAIRN, not part of it.
+A starting point for one (if you want it) is in [templates/CLAUDE.md.example](../templates/CLAUDE.md.example), labelled clearly as adjacent to ACAIRN, not part of it.
 
-### Feature-level context (this is the CAIRN part)
+### Feature-level context (this is the ACAIRN part)
 
-When working on a CAIRN feature, the AI session needs access to the artifacts:
+When working on an ACAIRN feature, the AI session needs access to the artifacts:
 
 - `features/<feature>/problem-statement.md`
 - `features/<feature>/architecture.md`
@@ -34,15 +34,15 @@ When working on a CAIRN feature, the AI session needs access to the artifacts:
 
 How the AI reaches them depends on your deployment model (see [09-deployment-models.md](09-deployment-models.md)):
 
-**If you use a separate CAIRN repo (recommended).** Clone the CAIRN repo alongside the code repo. Open both folders in your IDE workspace. The AI can read both as if they were one workspace, no auth required, no URLs to fetch.
+**If you use a separate ACAIRN repo (recommended).** Clone the ACAIRN repo alongside the code repo. Open both folders in your IDE workspace. The AI can read both as if they were one workspace, no auth required, no URLs to fetch.
 
 ```
 ~/work/
 ├── my-product/         ← code repo
-└── my-team-cairn/      ← CAIRN repo, opened in same IDE workspace
+└── my-team-cairn/      ← ACAIRN repo, opened in same IDE workspace
 ```
 
-**If you use the long-lived branch model.** Add a worktree of the CAIRN branch in a sibling directory:
+**If you use the long-lived branch model.** Add a worktree of the ACAIRN branch in a sibling directory:
 ```
 git worktree add ../my-product-cairn cairn/<feature-slug>
 ```
@@ -66,7 +66,7 @@ Subagents give you context isolation without personas. They are the mechanism th
 
 **Weak.** "Build the login page."
 
-**Strong.** "Implement the login page per `features/auth/stories/frontend/AUTH-03-login-page.md` in the CAIRN repo (sibling folder in this workspace). Follow the design in `features/auth/ux/login.png`."
+**Strong.** "Implement the login page per `features/auth/stories/frontend/AUTH-03-login-page.md` in the ACAIRN repo (sibling folder in this workspace). Follow the design in `features/auth/ux/login.png`."
 
 The strong prompt does no extra work that the artifacts cannot do. The AI reads the story and the design, and proceeds.
 
@@ -110,7 +110,7 @@ If the AI proposes an acceptance criterion that was not in the story, either add
 
 ### One giant conversation
 
-Context windows are finite and even within the limit, quality degrades in very long sessions. Start fresh sessions for unrelated work. The artifacts in the CAIRN location are the continuity; the chat history is not.
+Context windows are finite and even within the limit, quality degrades in very long sessions. Start fresh sessions for unrelated work. The artifacts in the ACAIRN location are the continuity; the chat history is not.
 
 ## What AI is genuinely great at
 

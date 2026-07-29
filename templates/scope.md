@@ -1,6 +1,6 @@
 # Scope: <feature name>
 
-> Copy this file to `features/<feature-slug>/scope.md` in your CAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
+> Copy this file to `features/<feature-slug>/scope.md` in your ACAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
 > Keep it on one page. The out-of-scope section is where this doc earns its keep.
 
 ## Linked artifacts

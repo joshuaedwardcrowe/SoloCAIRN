@@ -1,16 +1,16 @@
 # 04. The artifact catalog
 
-Every stage in CAIRN produces at least one artifact. This is the catalog: what each artifact is for, who owns it, how long it should be, and how it ends.
+Every stage in ACAIRN produces at least one artifact. This is the catalog: what each artifact is for, who owns it, how long it should be, and how it ends.
 
 Templates for each artifact live in [templates/](../templates/).
 
-> All CAIRN artifacts live in your chosen CAIRN location: a separate CAIRN repo (recommended) or a long-lived `cairn/<feature>` branch in your code repo. None of them ever land on the code repo's `main`. They end when the feature ships and stabilises. See [09-deployment-models.md](09-deployment-models.md).
+> All ACAIRN artifacts live in your chosen ACAIRN location: a separate ACAIRN repo (recommended) or a long-lived `cairn/<feature>` branch in your code repo. None of them ever land on the code repo's `main`. They end when the feature ships and stabilises. See [09-deployment-models.md](09-deployment-models.md).
 >
-> Throughout this catalog, **"ends with the feature"** is shorthand for: in the separate-repo model the feature folder is archived or deleted; in the branch model the long-lived branch PR is closed without merging. Either way, the git history of the chosen CAIRN location remains as a historical record.
+> Throughout this catalog, **"ends with the feature"** is shorthand for: in the separate-repo model the feature folder is archived or deleted; in the branch model the long-lived branch PR is closed without merging. Either way, the git history of the chosen ACAIRN location remains as a historical record.
 
 ## The short list
 
-If you only produce these, you have CAIRN:
+If you only produce these, you have ACAIRN:
 
 1. **Problem statement**: what is wrong and for whom.
 2. **Scope**: what you will and will not build this round.
@@ -37,7 +37,7 @@ The others below are valuable but optional.
 - **Owner.** Business Analyst.
 - **Size.** One file per interview, structured but not polished.
 - **When to write.** During Discovery.
-- **End of life.** Ends with the feature. The historical record remains in the CAIRN location's git history.
+- **End of life.** Ends with the feature. The historical record remains in the ACAIRN location's git history.
 
 ### UX research
 
@@ -116,7 +116,7 @@ The others below are valuable but optional.
 
 ## What is not in this catalog
 
-CAIRN deliberately does not own:
+ACAIRN deliberately does not own:
 
 - **System architecture** (the codebase as it currently stands).
 - **Schema** as the live, deployed truth.
@@ -125,9 +125,9 @@ CAIRN deliberately does not own:
 - **Project-level AI context files** (CLAUDE.md, .cursor/rules, etc.).
 - **Postmortems and incident records.**
 
-These are valuable artifacts. They are not feature-scoped. Whether and how your team maintains them is decided by your team or your company, not by CAIRN. If you have them, they live wherever your team has decided. CAIRN does not put them in the CAIRN location and does not put them on `main` either; that is your call.
+These are valuable artifacts. They are not feature-scoped. Whether and how your team maintains them is decided by your team or your company, not by ACAIRN. If you have them, they live wherever your team has decided. ACAIRN does not put them in the ACAIRN location and does not put them on `main` either; that is your call.
 
-If your team has none of these today, CAIRN does not require you to start. You can adopt CAIRN purely as feature-build scaffolding without changing anything else.
+If your team has none of these today, ACAIRN does not require you to start. You can adopt ACAIRN purely as feature-build scaffolding without changing anything else.
 
 ## The meta-rule
 
@@ -137,4 +137,4 @@ For any artifact you consider creating, ask:
 2. **What decision does this support?** If none, do not write it.
 3. **Could this be a paragraph in an existing artifact?** If yes, put it there instead of making a new file.
 
-Every file in your CAIRN location has a cost. Pay it on purpose.
+Every file in your ACAIRN location has a cost. Pay it on purpose.

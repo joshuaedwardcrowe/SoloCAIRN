@@ -50,6 +50,7 @@ SoloCAIRN is **not** for a staffed team with distinct BA/UX/QA/Team-Lead roles â
 | See a day in the life | [docs/05-workflow.md](docs/05-workflow.md) |
 | Choose where artifacts live | [docs/09-deployment-models.md](docs/09-deployment-models.md) |
 | Know what SoloCAIRN does not solve | [docs/10-what-cairn-does-not-solve.md](docs/10-what-cairn-does-not-solve.md) |
+| Decide where a rule/convention belongs | [docs/11-the-four-homes.md](docs/11-the-four-homes.md) |
 | Find your role | [roles/](roles/) |
 | Copy a template | [templates/](templates/) |
 | See it applied to a real feature | [examples/pub-quiz/](examples/pub-quiz/) |

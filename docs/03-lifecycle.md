@@ -93,7 +93,9 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 ### 5. Breakdown
 
-**What happens.** The work gets sliced into stories. Each story is small enough to be built and reviewed in one go (ideally one to three days of work), and belongs to a single platform (backend, frontend, mobile, database).
+**What happens.** The work gets sliced into stories. Each story is small enough to be built and reviewed in one go, and belongs to a single platform (backend, frontend, mobile, database).
+
+**Sizing.** CAIRN sizes stories in time (ideally one to three days). SoloCAIRN treats that as one valid option, not the only one — **Fibonacci story points** are equally valid, and often the better fit for irregular/intermittent contribution: a time estimate silently assumes something like continuous engagement, and stops meaning anything if contribution is a scattered hour a week. A point captures effort, complexity, and risk together rather than just duration, and pairs with **velocity** — points completed per work session/cycle, tracked empirically rather than assumed — to absorb an irregular pace without needing every estimate redone. Pick whichever fits your actual contribution pattern; don't mix both within one project.
 
 **Who leads.** Team Lead (in a scrum-master role).
 

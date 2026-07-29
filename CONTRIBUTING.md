@@ -10,7 +10,21 @@ SoloCAIRN is a methodology repo (a fork of [CAIRN](https://github.com/SiddiqueAb
 ## Branching & PRs
 
 - Branch off `main`, one branch per change. No long-running branches.
-- **PR titles are plain, descriptive English — not Conventional Commits.** SoloCAIRN doesn't publish a versioned package, so there's no changelog-generation or semver pipeline for a `type(scope):` prefix to drive here (unlike KitCli or YnabSharp, where PR titles become the `CHANGELOG.md` line). Whether a *repo that adopts SoloCAIRN* uses Conventional Commits for its own PRs is that repo's own decision — SoloCAIRN does not prescribe it either way.
+- **PR titles use [Conventional Commits](https://www.conventionalcommits.org/):**
+  `<type>(scope): <description>` — `type` is one of `feat` `fix` `docs`
+  `chore` `refactor` `test` `ci`; `scope` (optional) is typically `docs`,
+  since this is a docs-only repo. `description` is lowercase, imperative,
+  no trailing period (proper nouns/acronyms like `CAIRN` keep their
+  casing). For a breaking change, add `!` right before the colon — e.g.
+  `chore(docs)!: restructure the lifecycle stage names` — since a
+  methodology change can break every repo that adopted it, the same way
+  a breaking code change breaks its consumers. Example: `chore(docs):
+  add contribution rules`. Unlike KitCli or YnabSharp, there's no
+  changelog-generation or semver pipeline consuming this here — it's for
+  consistency and quick scanning across the ecosystem, not tooling.
+  Whether a *repo that adopts SoloCAIRN* uses Conventional Commits for
+  its own PRs is still that repo's own decision — SoloCAIRN prescribes
+  this for its own PRs only, not for adopters.
 - No enforced CI — there's nothing to build or test, it's markdown.
 - Docs-only fixes can be reviewed quickly. Changes to the methodology itself (not just wording) deserve more scrutiny, since they change what every adopting repo is told to do.
 

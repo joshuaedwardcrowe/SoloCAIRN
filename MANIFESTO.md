@@ -59,6 +59,10 @@ Whoever makes the work checks it before a reviewer sees it. You do not hand over
 
 A stage gate that never gets revisited is a promise made before you had enough information to keep it. That is the one place upstream CAIRN leans Waterfall: Design fully decided before Breakdown, Breakdown fully decided before Build, and only one feedback loop drawn — Operate back to the *next* feature's Discovery. SoloCAIRN keeps CAIRN's stage-gated shape but insists every gate stays open to revision within the same feature: Design can be revised mid-Build, Scope can be revised mid-Breakdown, a story can be rewritten mid-implementation — as a small, fast PR against the artifact that was wrong, not a note for the next feature's retro. Approval means "enough to act on," never "correct forever."
 
+### 12. Written for the next person, not just the last.
+
+The measure of whether an artifact is good enough is not whether the person who wrote it understands it — it is whether a completely different human, with no conversation history and no memory of how the decision was made, could read the repo and pick up exactly where things left off. This applies equally to AI-authored planning: a WAG, a spike's findings, a scope decision worked out in conversation. If it only lives in a chat transcript or an AI's private context, it is not written down yet, no matter how thorough the conversation was.
+
 ## What we are not saying
 
 - We are not saying AI is bad. We use it daily and it makes us faster.

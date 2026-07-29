@@ -63,6 +63,8 @@ A stage gate that never gets revisited is a promise made before you had enough i
 
 The measure of whether an artifact is good enough is not whether the person who wrote it understands it — it is whether a completely different human, with no conversation history and no memory of how the decision was made, could read the repo and pick up exactly where things left off. This applies equally to AI-authored planning: a WAG, a spike's findings, a scope decision worked out in conversation. If it only lives in a chat transcript or an AI's private context, it is not written down yet, no matter how thorough the conversation was.
 
+This is where SoloCAIRN and Abdullah Siddique's [MyBrain](https://abdullah-compendium.vercel.app/mybrain) concept interlink directly. Repo artifacts (issues, PRs, ADRs) are one way the next person picks up where things left off; a maintainer's own MyBrain-style externalized context store (plain markdown, in git — see [github.com/joshuaedwardcrowe/JoshuaBrain](https://github.com/joshuaedwardcrowe/JoshuaBrain) for a working example) is a second, complementary one. Point a fresh AI session at both — the repo *and* the context store — and it starts warm, not cold.
+
 ## What we are not saying
 
 - We are not saying AI is bad. We use it daily and it makes us faster.

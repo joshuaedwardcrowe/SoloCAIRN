@@ -97,6 +97,8 @@ This is the same discipline as any other SoloCAIRN artifact (written down, revie
 
 **Sizing.** CAIRN sizes stories in time (ideally one to three days). SoloCAIRN treats that as one valid option, not the only one — **Fibonacci story points** are equally valid, and often the better fit for irregular/intermittent contribution: a time estimate silently assumes something like continuous engagement, and stops meaning anything if contribution is a scattered hour a week. A point captures effort, complexity, and risk together rather than just duration, and pairs with **velocity** — points completed per work session/cycle, tracked empirically rather than assumed — to absorb an irregular pace without needing every estimate redone. Pick whichever fits your actual contribution pattern; don't mix both within one project.
 
+**Re-estimating.** Re-estimate a story when its understood scope genuinely changes — you learn mid-build it's bigger or smaller than thought, so you revise the point value or split it (see [Revising mid-flight](#revising-mid-flight)). Don't re-estimate after the fact based on how long it actually took — that feeds velocity, an aggregate, forward-looking calibration, not a rewrite of one ticket's history. Stale, not-yet-started items can be re-sized during backlog grooming as your calibration matures; that's different from touching something already in flight or done.
+
 **Who leads.** The [Maintainer](../roles/maintainer.md).
 
 **Artifacts produced.**

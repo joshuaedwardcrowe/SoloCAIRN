@@ -82,7 +82,9 @@ The horizontal arrows are handoffs, always mediated by a reviewed artifact. The 
 
 ### 5. Breakdown
 
-**What happens.** The work gets sliced into stories. Each story is small enough to be built and reviewed in one go (ideally one to three days of work), and belongs to a single platform (backend, frontend, mobile, database).
+**What happens.** The work gets sliced into stories. Each story is small enough to be built and reviewed in one go, and belongs to a single platform (backend, frontend, mobile, database).
+
+**Sizing.** Size each story in time (ideally one to three days) or in **Fibonacci story points** — either is valid; pick whichever fits your team, and don't mix both within one project. Time-based sizing assumes something close to continuous engagement; if that assumption doesn't hold (irregular contribution, people picking up stories between other commitments), points age better: a point captures effort, complexity, and risk together rather than just duration, and pairs with velocity (points completed per cycle, tracked empirically) to absorb an irregular pace without needing every estimate redone.
 
 **Who leads.** Team Lead (in a scrum-master role).
 

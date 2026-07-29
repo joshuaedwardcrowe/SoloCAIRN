@@ -1,6 +1,6 @@
 # Role: Frontend Developer
 
-You build what users actually see and touch on the web. In ACAIRN, you own the frontend stories end to end and translate UX intent into working interfaces.
+You build what users actually see and touch on the web. In SoloCAIRN, you own the frontend stories end to end and translate UX intent into working interfaces.
 
 ## Who you are
 
@@ -49,7 +49,7 @@ You build what users actually see and touch on the web. In ACAIRN, you own the f
 
 **09:00.** Review your story, the linked UX wireframes, and the API contract for the endpoints you will hit.
 
-**09:30.** Branch in the code repo. Start an AI session with both the code repo and the ACAIRN repo open in the IDE workspace. "Implement `features/pub-quiz/stories/frontend/QUIZ-03-host-console.md` from the ACAIRN repo. Follow the components in our design system (see `src/components/` in the code repo). Show me the plan first."
+**09:30.** Branch in the code repo. Start an AI session with both the code repo and the SoloCAIRN repo open in the IDE workspace. "Implement `features/pub-quiz/stories/frontend/QUIZ-03-host-console.md` from the SoloCAIRN repo. Follow the components in our design system (see `src/components/` in the code repo). Show me the plan first."
 
 **10:00.** Implement the main component, with states for loading, empty, success, error. Wire up API calls.
 

@@ -19,7 +19,7 @@ The [MANIFESTO](../MANIFESTO.md) gives you the one-page version. This is the dir
 
 **The principle.** Every part of your process should produce a written, readable artifact. Process that produces nothing but meetings is suspect.
 
-**Why it matters.** Written artifacts can be read, challenged, and updated. Meetings cannot. If an architecture decision exists only in a call that three people attended, it will be re-litigated next month, probably badly. If it exists in a two-page markdown file in the ACAIRN repo, the team and the AI can both work from it.
+**Why it matters.** Written artifacts can be read, challenged, and updated. Meetings cannot. If an architecture decision exists only in a call that three people attended, it will be re-litigated next month, probably badly. If it exists in a two-page markdown file in the SoloCAIRN repo, the team and the AI can both work from it.
 
 **How to apply it.**
 - Every recurring meeting should produce a written output. If it consistently does not, the meeting probably should not exist.
@@ -74,20 +74,20 @@ We are not claiming this is a settled empirical result; published findings on ro
 
 ## 6. Artifacts are operationally ephemeral and feature-scoped
 
-**The principle.** A ACAIRN artifact is in active use only for the duration of one feature build. It is the scaffolding the team and AI work from while building. Once the feature ships and stabilises, the artifact stops being load-bearing: the code is the operational truth from that point on.
+**The principle.** A SoloCAIRN artifact is in active use only for the duration of one feature build. It is the scaffolding the team and AI work from while building. Once the feature ships and stabilises, the artifact stops being load-bearing: the code is the operational truth from that point on.
 
-This is *operational* ephemerality, not deletion. The artifact may remain in the ACAIRN repo's history or in a closed PR as a historical record. The goal is to keep it out of the active workflow and out of the code repo's `main`, not to wipe every trace.
+This is *operational* ephemerality, not deletion. The artifact may remain in the SoloCAIRN repo's history or in a closed PR as a historical record. The goal is to keep it out of the active workflow and out of the code repo's `main`, not to wipe every trace.
 
 **Why it matters.** If artifacts merged into the code repo's `main`, every team's history would accumulate there and `main` would drown in old specs, dead stories, and rotting docs that contradict the current code. By keeping artifacts off `main`, the code repo stays clean indefinitely. The historical record (if you want one) lives somewhere it cannot pollute the working tree.
 
 **How to apply it.** Pick one of two deployment models. They are not equally strong:
 
-- **A separate ACAIRN repo (recommended)**: a dedicated repo holds your team's or company's ACAIRN artifacts. Devs clone it alongside the code repo. The code repo is untouched. Old features are archived to a folder or deleted from the working tree (git history preserves them either way). Structurally sound, no git anti-patterns, recommended for most teams.
+- **A separate SoloCAIRN repo (recommended)**: a dedicated repo holds your team's or company's SoloCAIRN artifacts. Devs clone it alongside the code repo. The code repo is untouched. Old features are archived to a folder or deleted from the working tree (git history preserves them either way). Structurally sound, no git anti-patterns, recommended for most teams.
 - **A long-lived branch in the code repo (fallback only)**: a `cairn/<feature>` branch holds the artifacts; a PR is opened against `main` and never merged. Closed at release. Use this only when you genuinely cannot create a separate repo. Comes with real ergonomic and audit-tool costs documented in [09-deployment-models.md](09-deployment-models.md).
 
 In both cases: code merges to `main` through your team's normal flow, with code PRs linking to artifacts in the chosen location.
 
-**What ACAIRN does not own.** Project-level documentation: system-level architecture, current schema, runbooks, conventions, the project's AI context file. Whether and how a team maintains those is outside ACAIRN's scope, decided by the team or the company. ACAIRN is for one feature at a time and ends with that feature. We are honest about this rather than pretending the problem does not exist; see [10-what-cairn-does-not-solve.md](10-what-cairn-does-not-solve.md) for what to do about the things we leave on the table.
+**What SoloCAIRN does not own.** Project-level documentation: system-level architecture, current schema, runbooks, conventions, the project's AI context file. Whether and how a team maintains those is outside SoloCAIRN's scope, decided by the team or the company. SoloCAIRN is for one feature at a time and ends with that feature. We are honest about this rather than pretending the problem does not exist; see [10-what-cairn-does-not-solve.md](10-what-cairn-does-not-solve.md) for what to do about the things we leave on the table.
 
 **Where it bends.** Compliance regimes that require persistent in-repo documentation will not accept the ephemeral model. If you operate in such a regime, merge the artifacts into the code repo's `main` under a clearly-archived path and accept the bloat.
 
@@ -106,7 +106,7 @@ In both cases: code merges to `main` through your team's normal flow, with code 
 
 ## 8. Roles stay human
 
-**The principle.** ACAIRN is a methodology for teams of humans who use AI. It does not pretend that a prompt is a business analyst. It does not pretend that a subagent is a UX researcher.
+**The principle.** SoloCAIRN is a methodology for teams of humans who use AI. It does not pretend that a prompt is a business analyst. It does not pretend that a subagent is a UX researcher.
 
 **Why it matters.** The work of a good BA is not producing a document. It is sitting in a room with a stakeholder, noticing what they did not say, and asking the follow-up question. The work of a good UX researcher is not drawing wireframes. It is watching a user fail a task and understanding why. These are human activities. AI can speed up the writing-up afterwards, but it cannot do the interviews, the noticing, or the judging.
 

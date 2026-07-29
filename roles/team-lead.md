@@ -1,6 +1,6 @@
 # Role: Team Lead / Delivery Manager
 
-You are the person who holds the thread. In ACAIRN, you are the connective tissue between stakeholders, BAs, UX, and devs. You do not write every artifact, but you make sure they get written, reviewed, and merged.
+You are the person who holds the thread. In SoloCAIRN, you are the connective tissue between stakeholders, BAs, UX, and devs. You do not write every artifact, but you make sure they get written, reviewed, and merged.
 
 ## Who you are
 
@@ -43,7 +43,7 @@ You are the person who holds the thread. In ACAIRN, you are the connective tissu
 
 **Tuesday.** Pair with UX on the research doc. Update `open-questions.md` from the morning stakeholder call.
 
-**Wednesday.** Facilitate the design conversation. Take notes, turn them into `architecture.md`, open an ACAIRN PR (or push to the long-lived branch in the branch model).
+**Wednesday.** Facilitate the design conversation. Take notes, turn them into `architecture.md`, open an SoloCAIRN PR (or push to the long-lived branch in the branch model).
 
 **Thursday.** Break the feature into stories. Open a Story PR. Tag the devs for review.
 
@@ -51,4 +51,4 @@ You are the person who holds the thread. In ACAIRN, you are the connective tissu
 
 ## The hidden job
 
-The hidden job of the team lead in ACAIRN is to notice when the method is not serving the team, and to change it. The templates in this repo are a starting point. Your job is to evolve them until they fit your team, and to protect the team from adopting ceremony that does not earn its keep.
+The hidden job of the team lead in SoloCAIRN is to notice when the method is not serving the team, and to change it. The templates in this repo are a starting point. Your job is to evolve them until they fit your team, and to protect the team from adopting ceremony that does not earn its keep.

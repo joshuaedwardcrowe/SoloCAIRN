@@ -1,15 +1,15 @@
-# ACAIRN repo starter
+# SoloCAIRN repo starter
 
-This folder shows what a brand-new **ACAIRN repo** should look like on day one if you choose the separate-repo deployment model (see [docs/09-deployment-models.md](../../docs/09-deployment-models.md)).
+This folder shows what a brand-new **SoloCAIRN repo** should look like on day one if you choose the separate-repo deployment model (see [docs/09-deployment-models.md](../../docs/09-deployment-models.md)).
 
 It is a starting shape, not a strict structure. Adapt freely.
 
 ## What is in here
 
-- [example-repo-readme.md](example-repo-readme.md): the file you would copy into your new ACAIRN repo as its top-level `README.md`.
+- [example-repo-readme.md](example-repo-readme.md): the file you would copy into your new SoloCAIRN repo as its top-level `README.md`.
 - This `README.md`: meta-explanation, do not copy.
 
-## How to set up your team's ACAIRN repo
+## How to set up your team's SoloCAIRN repo
 
 1. **Create a new git repo** on your platform of choice. Name it something like `<team>-cairn` or `<product>-cairn`.
 2. **Add a top-level README.** Use [example-repo-readme.md](example-repo-readme.md) as a starting point, fill in your team's specifics.
@@ -22,7 +22,7 @@ It is a starting shape, not a strict structure. Adapt freely.
    ```
 4. **Set permissions.** Decide who can read, who can write, who can review PRs. Stakeholders, BAs, UX, and devs typically all need at least read.
 5. **Tell your team.** Share the URL. Add a pointer from the code repo's `CLAUDE.md` (or equivalent) so AI sessions know where the artifacts live.
-6. **Start your first feature.** Create `features/<first-feature-slug>/` and open an ACAIRN PR with the problem statement.
+6. **Start your first feature.** Create `features/<first-feature-slug>/` and open an SoloCAIRN PR with the problem statement.
 
 ## When to archive vs delete
 

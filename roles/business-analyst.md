@@ -1,6 +1,6 @@
 # Role: Business Analyst
 
-You are the bridge between the people with the problem and the people building the solution. In ACAIRN, your work is how the team learns what is actually going on before anyone writes code.
+You are the bridge between the people with the problem and the people building the solution. In SoloCAIRN, your work is how the team learns what is actually going on before anyone writes code.
 
 ## Who you are
 
@@ -48,7 +48,7 @@ You are the bridge between the people with the problem and the people building t
 
 **After the calls.** Feed transcripts to AI, ask for a themed summary. Read the summary. Edit it. Where the AI paraphrased something meaningful, replace it with the original quote.
 
-**Midday.** Open an ACAIRN PR adding the interview notes to the feature folder (or push to the long-lived branch in the branch model). Comment in the PR on anything the team should know.
+**Midday.** Open an SoloCAIRN PR adding the interview notes to the feature folder (or push to the long-lived branch in the branch model). Comment in the PR on anything the team should know.
 
 **Afternoon.** Update `open-questions.md` with three new questions. Assign two to yourself; one to the Team Lead.
 

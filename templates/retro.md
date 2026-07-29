@@ -1,6 +1,6 @@
 # Retro: <feature name>
 
-> Copy to `features/<feature-slug>/retro.md` in your ACAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
+> Copy to `features/<feature-slug>/retro.md` in your SoloCAIRN repo (or, in the branch model, the same path on the `cairn/<feature-slug>` branch).
 > Aim for one page. Held within a week of the feature shipping. Closes with the feature.
 
 ## When
@@ -44,7 +44,7 @@ Concrete commitments, with owners. If there is no owner and no deadline, it will
 |---|---|---|
 | ... | ... | ... |
 
-## What we learned about ACAIRN itself
+## What we learned about SoloCAIRN itself
 
 Anything that should feed back into our team's templates, conventions, or process.
 
@@ -64,5 +64,5 @@ Optional. Small set of measurements that tell a story.
 ## Reviewer checklist (for the PR adding this retro)
 
 - [ ] Action items have owners and dates
-- [ ] Lessons about ACAIRN itself are captured for the team templates
+- [ ] Lessons about SoloCAIRN itself are captured for the team templates
 - [ ] No blame language; focus on the system

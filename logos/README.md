@@ -1,6 +1,6 @@
-# ACAIRN logo assets
+# SoloCAIRN logo assets
 
-Visual identity for the ACAIRN methodology: three stones in increasing size along a faint trail line, evoking the cairn metaphor (a stack of stones marking the path for the next traveller).
+Visual identity for the SoloCAIRN methodology: three stones in increasing size along a faint trail line, evoking the cairn metaphor (a stack of stones marking the path for the next traveller).
 
 ## Files
 
@@ -22,7 +22,7 @@ GitHub, GitLab, and most modern markdown renderers honour the `<picture>` elemen
 ```html
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="logos/cairn-logo-dark.svg">
-  <img alt="ACAIRN" src="logos/cairn-logo-light.svg" width="340">
+  <img alt="SoloCAIRN" src="logos/cairn-logo-light.svg" width="340">
 </picture>
 ```
 
@@ -42,4 +42,4 @@ The progression from earthen brown to warm sand mirrors the trail-marker idea: g
 
 ## Attribution
 
-The logos are released under the same [CC BY 4.0](../LICENSE.md) licence as the methodology. If you adapt ACAIRN for your team and want to use the mark, please credit Abdullah Siddique (original CAIRN mark) and Joshua Crowe (ACAIRN adaptation).
+The logos are released under the same [CC BY 4.0](../LICENSE.md) licence as the methodology. If you adapt SoloCAIRN for your team and want to use the mark, please credit Abdullah Siddique (original CAIRN mark) and Joshua Crowe (SoloCAIRN adaptation).

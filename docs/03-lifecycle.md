@@ -1,6 +1,6 @@
-# 03. The ACAIRN lifecycle
+# 03. The SoloCAIRN lifecycle
 
-A feature in ACAIRN moves through nine stages. Not every feature needs every stage. A bug fix might start at Build. A research spike might never leave Discovery. The lifecycle is a map, not a track you have to run.
+A feature in SoloCAIRN moves through nine stages. Not every feature needs every stage. A bug fix might start at Build. A research spike might never leave Discovery. The lifecycle is a map, not a track you have to run.
 
 ```
 Discovery → Research → Scope → Design → Breakdown → Build → Review → Release → Operate
@@ -14,17 +14,17 @@ Discovery → Research → Scope → Design → Breakdown → Build → Review �
                         (learnings feed the *next* feature's Discovery)
 ```
 
-The horizontal arrows are handoffs, always mediated by a reviewed artifact — but **ACAIRN treats these two loops as equally real, not just the outer one.** CAIRN (the methodology ACAIRN forks from) draws only the Operate→Discovery loop, which means learning only ever informs the *next* feature. That is too slow for a team trying to stay Agile: if Build or Review reveals that Scope or Design was wrong, the fix is a small, fast artifact-revision PR against *this* feature's Scope/Design, not a note for next time. See "Revising mid-flight," below.
+The horizontal arrows are handoffs, always mediated by a reviewed artifact — but **SoloCAIRN treats these two loops as equally real, not just the outer one.** CAIRN (the methodology SoloCAIRN forks from) draws only the Operate→Discovery loop, which means learning only ever informs the *next* feature. That is too slow for a team trying to stay Agile: if Build or Review reveals that Scope or Design was wrong, the fix is a small, fast artifact-revision PR against *this* feature's Scope/Design, not a note for next time. See "Revising mid-flight," below.
 
 ### Revising mid-flight
 
 Scope and Design being reviewed and merged does not freeze them. Approval means "good enough to act on now," not "correct forever." If Breakdown, Build, or Review surfaces something the earlier artifact got wrong or missed:
 
-1. Open a small, fast PR against the affected artifact (`scope.md`, `architecture.md`, or the specific story) in the chosen ACAIRN location — same mechanics as any other ACAIRN PR, just smaller and faster than the original.
+1. Open a small, fast PR against the affected artifact (`scope.md`, `architecture.md`, or the specific story) in the chosen SoloCAIRN location — same mechanics as any other SoloCAIRN PR, just smaller and faster than the original.
 2. Get it reviewed by whoever owns that artifact's area (the same people who'd review it in its home stage — no need to re-run the whole stage).
 3. Continue Build/Breakdown once it lands. Don't block on a full re-approval of everything downstream of the change unless the change actually invalidates other in-flight stories too.
 
-This is the same discipline as any other ACAIRN artifact (written down, reviewed, in-repo) — it just runs on the timescale of "I hit this an hour ago," not "we'll note it for the retro."
+This is the same discipline as any other SoloCAIRN artifact (written down, reviewed, in-repo) — it just runs on the timescale of "I hit this an hour ago," not "we'll note it for the retro."
 
 ## The nine stages
 
@@ -72,7 +72,7 @@ This is the same discipline as any other ACAIRN artifact (written down, reviewed
 
 **How AI helps.** Surfaces inconsistencies between scope and the research. Drafts the first cut of in/out lists from a conversation transcript.
 
-**Done when.** A **Spec PR** is open in the chosen ACAIRN location (a separate ACAIRN repo or a long-lived branch in the code repo) containing problem, research, and scope. The PR is reviewed by the full team. Approval means "good enough to act on now" — not a freeze; see [Revising mid-flight](#revising-mid-flight) above. See [09-deployment-models.md](09-deployment-models.md) for where the artifacts live.
+**Done when.** A **Spec PR** is open in the chosen SoloCAIRN location (a separate SoloCAIRN repo or a long-lived branch in the code repo) containing problem, research, and scope. The PR is reviewed by the full team. Approval means "good enough to act on now" — not a freeze; see [Revising mid-flight](#revising-mid-flight) above. See [09-deployment-models.md](09-deployment-models.md) for where the artifacts live.
 
 ### 4. Design
 
@@ -107,7 +107,7 @@ Each story follows the [story template](../templates/story.md).
 
 **How AI helps.** Expands a scope bullet into a full story file with acceptance criteria. Proposes a reasonable slicing. Spots missing stories by cross-checking scope and architecture.
 
-**Done when.** Stories are added to the chosen ACAIRN location through a reviewed PR. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Approval means these stories are ready to pick up — not that the breakdown is final; splitting, re-ordering, or rewriting a story mid-Build is a normal small PR, not a process violation.
+**Done when.** Stories are added to the chosen SoloCAIRN location through a reviewed PR. Devs push back on anything unclear; QA pushes back on missing edge cases, error states, and non-functional concerns. Approval means these stories are ready to pick up — not that the breakdown is final; splitting, re-ordering, or rewriting a story mid-Build is a normal small PR, not a process violation.
 
 ### 6. Build
 
@@ -141,9 +141,9 @@ Each story follows the [story template](../templates/story.md).
 
 **Who leads.** Team Lead or whoever owns release management.
 
-**ACAIRN artifacts produced.** Release notes drafted from the QA checklist and merged code PRs.
+**SoloCAIRN artifacts produced.** Release notes drafted from the QA checklist and merged code PRs.
 
-**Adjacent (not ACAIRN) artifacts your team may also produce.** Runbook updates, monitoring and alert configurations, system architecture deltas. These are project-level concerns; how they are handled is up to your team.
+**Adjacent (not SoloCAIRN) artifacts your team may also produce.** Runbook updates, monitoring and alert configurations, system architecture deltas. These are project-level concerns; how they are handled is up to your team.
 
 **How AI helps.** Drafts release notes from merged PRs and the QA checklist. Suggests metrics to watch.
 
@@ -151,17 +151,17 @@ Each story follows the [story template](../templates/story.md).
 
 ### 9. Operate
 
-**What happens.** The feature is live. It is being used, misused, and monitored. Bugs, edge cases, and surprising usage patterns surface. The team learns. Once the feature is stable, the ACAIRN artifacts are ended: the feature folder is archived (separate-repo model) or the long-lived branch PR is closed without merging (branch model). Either way, the code on `main` is the operational truth from now on; the ACAIRN history is the historical record.
+**What happens.** The feature is live. It is being used, misused, and monitored. Bugs, edge cases, and surprising usage patterns surface. The team learns. Once the feature is stable, the SoloCAIRN artifacts are ended: the feature folder is archived (separate-repo model) or the long-lived branch PR is closed without merging (branch model). Either way, the code on `main` is the operational truth from now on; the SoloCAIRN history is the historical record.
 
 **Who leads.** The whole team, with the Team Lead coordinating.
 
-**ACAIRN artifacts produced.** Updates to the open questions and QA checklist as reality teaches you something. New stories for any follow-ups handled within the same feature scope.
+**SoloCAIRN artifacts produced.** Updates to the open questions and QA checklist as reality teaches you something. New stories for any follow-ups handled within the same feature scope.
 
-**Adjacent (not ACAIRN) artifacts your team may also produce.** Incident notes, postmortems, lessons-learned writeups. These belong wherever your team's project-level docs live.
+**Adjacent (not SoloCAIRN) artifacts your team may also produce.** Incident notes, postmortems, lessons-learned writeups. These belong wherever your team's project-level docs live.
 
 **How AI helps.** Summarises logs. Searches the codebase for related code paths when debugging.
 
-**Done when.** Never for the operational work. For ACAIRN: when the feature is stable, the artifacts end. In the separate-repo model that means the feature folder is archived or deleted. In the branch model that means the long-lived Spec PR is closed without merging.
+**Done when.** Never for the operational work. For SoloCAIRN: when the feature is stable, the artifacts end. In the separate-repo model that means the feature folder is archived or deleted. In the branch model that means the long-lived Spec PR is closed without merging.
 
 ## Which stages for which work
 
@@ -176,10 +176,10 @@ Each story follows the [story template](../templates/story.md).
 
 ## The kinds of PR
 
-ACAIRN distinguishes two kinds of work. The exact PR shapes depend on your chosen deployment model.
+SoloCAIRN distinguishes two kinds of work. The exact PR shapes depend on your chosen deployment model.
 
-1. **ACAIRN PRs** land artifacts in your chosen ACAIRN location (a separate repo or a feature branch). Reviewed by the people whose work depends on the artifact. In a separate ACAIRN repo these merge to that repo's `main` normally. In the branch model they land on the feature branch via sub-PRs, and the long-lived branch PR against the code repo's `main` is never merged.
-2. **Code PRs** are normal code PRs in the code repo from `feat/<story-id>` into `main`, the implementation of a single story. Reviewed against the story's acceptance criteria. The PR description links to the story file using an absolute URL when the artifacts live in a separate ACAIRN repo (filesystem-relative paths do not resolve cross-repo in web review UIs), or a normal in-repo URL when the artifacts live on a branch in the same repo.
+1. **SoloCAIRN PRs** land artifacts in your chosen SoloCAIRN location (a separate repo or a feature branch). Reviewed by the people whose work depends on the artifact. In a separate SoloCAIRN repo these merge to that repo's `main` normally. In the branch model they land on the feature branch via sub-PRs, and the long-lived branch PR against the code repo's `main` is never merged.
+2. **Code PRs** are normal code PRs in the code repo from `feat/<story-id>` into `main`, the implementation of a single story. Reviewed against the story's acceptance criteria. The PR description links to the story file using an absolute URL when the artifacts live in a separate SoloCAIRN repo (filesystem-relative paths do not resolve cross-repo in web review UIs), or a normal in-repo URL when the artifacts live on a branch in the same repo.
 
 See [09-deployment-models.md](09-deployment-models.md) for the full mechanics under each model.
 
@@ -187,9 +187,9 @@ If you find yourself wanting a third or fourth kind, you probably want a bigger 
 
 ### A note on the term "Spec PR"
 
-Throughout these docs, **Spec PR** is shorthand for "the PR (or family of PRs) that lands an ACAIRN artifact for review." It refers to two structurally different things depending on your deployment model:
+Throughout these docs, **Spec PR** is shorthand for "the PR (or family of PRs) that lands an SoloCAIRN artifact for review." It refers to two structurally different things depending on your deployment model:
 
-- **Separate-repo model (recommended)**: Spec PRs are normal short-lived PRs in the ACAIRN repo that merge into the ACAIRN repo's `main`. There can be many per feature, each landing one or a few artifacts.
+- **Separate-repo model (recommended)**: Spec PRs are normal short-lived PRs in the SoloCAIRN repo that merge into the SoloCAIRN repo's `main`. There can be many per feature, each landing one or a few artifacts.
 - **Branch model**: there is a single long-lived Spec PR from `cairn/<feature>` to the code repo's `main` that **never merges**, plus optional small sub-PRs targeting the feature branch. The long-lived PR is closed without merging at the end of the feature.
 
 When the docs say "the Spec PR closes" or "ends with the feature," translate accordingly: in the separate-repo model that means the feature folder is archived or deleted; in the branch model that means the long-lived PR is closed without merging.

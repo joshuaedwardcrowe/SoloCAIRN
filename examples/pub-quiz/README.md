@@ -1,8 +1,8 @@
 # Example: Pub Quiz Live Scoring
 
-This is a worked example of a feature going through ACAIRN end to end. It shows what the artifacts actually look like, in realistic detail, so you can see the method applied rather than described.
+This is a worked example of a feature going through SoloCAIRN end to end. It shows what the artifacts actually look like, in realistic detail, so you can see the method applied rather than described.
 
-> In a real project, all artifacts shown here would live in the team's ACAIRN location: a separate ACAIRN repo (recommended) under `features/pub-quiz-live-scoring/`, or a long-lived `cairn/pub-quiz-live-scoring` branch in the code repo. They never reach the code repo's `main`. When the feature ships and stabilises, the folder is archived (or the branch PR is closed without merging). See [docs/09-deployment-models.md](../../docs/09-deployment-models.md) for the mechanics and the choice between them.
+> In a real project, all artifacts shown here would live in the team's SoloCAIRN location: a separate SoloCAIRN repo (recommended) under `features/pub-quiz-live-scoring/`, or a long-lived `cairn/pub-quiz-live-scoring` branch in the code repo. They never reach the code repo's `main`. When the feature ships and stabilises, the folder is archived (or the branch PR is closed without merging). See [docs/09-deployment-models.md](../../docs/09-deployment-models.md) for the mechanics and the choice between them.
 
 > This is example content. The product, the company, and the stakeholders are invented. Any resemblance to a real quiz platform is coincidental.
 
@@ -23,7 +23,7 @@ A hosted pub-quiz experience for venues:
 
 When the feature ships and stabilises, the team would archive these artifacts (or close the long-lived branch PR, depending on the deployment model). The code repo's `main` never sees them.
 
-## The artifacts (all in the ACAIRN location)
+## The artifacts (all in the SoloCAIRN location)
 
 ### Spec artifacts
 

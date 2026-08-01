@@ -160,8 +160,19 @@ Each story follows the [story template](../templates/story.md).
 | Small enhancement | Scope → Design → Breakdown → Build → Review → Release |
 | Bug fix | Story (optional) → Build → Review → Release |
 | Research spike | Discovery → Research, then stop and decide |
+| Technical spike | Design → Build (throwaway), then stop and decide |
 | Technical debt | Scope → Design → Breakdown → Build → Review (often no Release doc needed) |
 | Emergency hotfix | Build → Review → Release, then retrospectively write it up |
+
+### The two kinds of spike
+
+A **research spike** asks *what do people actually need?* It lives in Discovery and Research, and its evidence is users.
+
+A **technical spike** asks *can this be built, and at what cost?* It writes deliberately throwaway code to find out. The term originates here: Kent Beck coined it while pairing with Ward Cunningham, who framed the question as "what is the simplest thing we can program that will convince us we are on the right track?" The pattern is to "write the smallest possible code that could be said to perform a function independent of existing mechanism" — and, in Beck's words, "spikes are good when you are knowledge-limited, not time-limited." ([c2 wiki](https://c2.com/xp/SpikeSolution.html))
+
+Both stop before commitment, which is what makes them spikes — and that is exactly why the second one has nowhere obvious to sit. Discovery and Research are about people. Scope and Design are about a system you have already decided to build: their artifacts (`scope.md`, `architecture.md`, `schema.md`) describe commitments, not experiments.
+
+So a technical spike borrows the *activities* of Design and Build without producing either stage's artifacts — hence "throwaway" in the row above. The code is discarded and the finding is the only thing that outlives it. Its natural place in the sequence is before Scope, since what it produces is an input to deciding whether to build at all.
 
 ## The kinds of PR
 

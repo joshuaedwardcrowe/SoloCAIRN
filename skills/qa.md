@@ -51,7 +51,7 @@ You also contribute to but do not own:
 - **Test theatre.** A green dashboard does not mean the feature works. A passing checklist with no real exploration is theatre.
 - **Bug bouncing.** "Could not reproduce, closing." Reproduce or escalate; do not silently close.
 - **Owning quality alone.** Quality is a team responsibility. Your role is to lead and verify, not to be the only person who cares.
-- **Letting AI sign off.** A test pass from AI is input to your decision, not the decision.
+- **Letting AI sign off.** A test pass from AI is input to your decision, not the decision. This isn't limited to PR approval — moving a status-pipeline card past a human-verification gate (e.g. into "In QA" or "Done") is the same sign-off, just via a board field instead of an approve button. The AI implementing a story must not move its own status past that gate; it drafts/attaches the verification artifact (test table, checklist) and asks a human to move the card.
 
 ## A day in the life
 

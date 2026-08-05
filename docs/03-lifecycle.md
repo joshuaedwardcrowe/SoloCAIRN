@@ -180,6 +180,8 @@ Each story follows the [story template](../templates/story.md).
 | Technical debt | Scope → Design → Breakdown → Build → Review (often no Release doc needed) |
 | Emergency hotfix | Build → Review → Release, then retrospectively write it up |
 
+**Spikes: write the finding down.** In XP, the pair carries a spike's result forward by memory; solo, nothing does. The deliverable is the finding, not the code — decision-first, with the evidence underneath. Where it lives is the adopting repo's call, not SoloCAIRN's.
+
 ## The kinds of PR
 
 SoloCAIRN distinguishes two kinds of work. The exact PR shapes depend on your chosen deployment model.

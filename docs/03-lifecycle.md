@@ -184,7 +184,7 @@ Each story follows the [story template](../templates/story.md).
 
 Solo, that mechanism doesn't exist. There's no pair, no standup, and nobody carrying context between sessions — and contribution here is intermittent by design (see **Sizing**, above). A spike whose output was never written down leaves nothing at all, and the same question gets re-derived from scratch weeks later. So SoloCAIRN makes explicit what CAIRN and XP can both afford to leave implicit: **the deliverable of a spike is the written finding, not the code.**
 
-Keep it decision-first — what you concluded and what should happen next, with the concrete result underneath: the actual interface or constraint you found, not a restatement of the conclusion. Where that document lives, and what it's called, is the adopting repo's decision, not SoloCAIRN's.
+Keep it decision-first — what you concluded and what should happen next, with the concrete result underneath, not just the verdict. Where that document lives, and what it's called, is the adopting repo's decision, not SoloCAIRN's.
 
 ## The kinds of PR
 

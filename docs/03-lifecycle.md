@@ -180,11 +180,7 @@ Each story follows the [story template](../templates/story.md).
 | Technical debt | Scope → Design → Breakdown → Build → Review (often no Release doc needed) |
 | Emergency hotfix | Build → Review → Release, then retrospectively write it up |
 
-**Spikes: write the finding down.** A spike stops before commitment — that's what makes it a spike — so the only thing it leaves behind is what you learned. In XP, where the practice originates, the throwaway code is genuinely thrown away and *the team* is the retention mechanism: the pair who wrote it carry the finding into the next conversation, and everyone else picks it up by osmosis.
-
-Solo, that mechanism doesn't exist. There's no pair, no standup, and nobody carrying context between sessions — and contribution here is intermittent by design (see **Sizing**, above). A spike whose output was never written down leaves nothing at all, and the same question gets re-derived from scratch weeks later. So SoloCAIRN makes explicit what CAIRN and XP can both afford to leave implicit: **the deliverable of a spike is the written finding, not the code.**
-
-Keep it decision-first — what you concluded and what should happen next, with the concrete result underneath, not just the verdict. Where that document lives, and what it's called, is the adopting repo's decision, not SoloCAIRN's.
+**Spikes: write the finding down.** In XP, the pair carries a spike's result forward by memory; solo, nothing does. The deliverable is the finding, not the code — decision-first, with the evidence underneath. Where it lives is the adopting repo's call, not SoloCAIRN's.
 
 ## The kinds of PR
 
